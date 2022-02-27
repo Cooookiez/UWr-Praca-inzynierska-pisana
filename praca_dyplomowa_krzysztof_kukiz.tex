@@ -108,12 +108,32 @@ INTELLIGENT GREETING
 \Large \textbf{Streszczenie}
 \end{flushleft}
 \vspace{1cm}
-Niniejsza praca przedstawia projekt systemu inteligentnego rozpoznawania osób oraz podejmowania przez system wcześniej zdefiniowanych działań, w zależności od rozpoznanej osoby. W przypadku braku rozpoznania osoby, system poda także odpowiedni komunikat głosowy oraz wizualny.
-\begin{itemize}
-  \item List entries start with the \verb|\item| command.
-  \item Individual entries are indicated with a black dot, a so-called bullet.
-  \item The text in the entries may be of any length.
-\end{itemize}
+Niniejsza praca przedstawia projekt systemu inteligentnego rozpoznawania osób oraz podejmowania przez system wcześniej zdefiniowanych działań, w zależności od rozpoznanej osoby. W przypadku braku rozpoznania osoby, system poda także odpowiedni komunikat głosowy oraz wizualny. 
+\newline
+System opart jest na \textit{Raspberry Pi 4B} \cite{RP4B}, na języku programowania python 3. Oraz wykorzystuje elementy wydrukowane na drukarce 3D Creality Ender-3 v.2
+\newline
+Projekt łączy ze sobą w całość 3 warstwy niezbędne do wykonania wszystkich założonych zadań w taki sposób aby w przyszłości można było rozbudować system o kolejne funkcjonalności.
+\begin{enumerate} % itemize
+  \item Warstwę sprzętową składającą się z trzech elementów.
+  \begin{itemize}
+  	\item kamery, stanowiącej element wejściowy sygnału i odpowiedzialnej za pobranie sygnału video z otoczenia
+  	\item microcomputer Rasppery Pi \cite{RP4B}, odpowiedzialnej za przetworzenie sygnału oraz z kamerki, oraz sprawdzenie czy znamy tą osobe i wyświetlenia oraz wypowiedzenia odpowidniego komunikatu
+  	\item głośnika, stanowiącego element wyjściowy z systemu i służącego do podawania komunikatów głosowych. Głośnij jest podpinany pod port \textit{jack 3,5mm}, więc jest dowolność w wyborze.
+  \end{itemize}
+  \item Warstwę programistyczną odpowiedzialną za:
+  \begin{itemize}
+  	\item obróbkę oraz optymalizację odczytanego obrazu
+  	\item interpretację pobranego obrazu oraz porównanie go z wcześniej zdefiniowaną bazą zdjęć (biblioteka)
+  	\item podjęcie decyzji o tym jakie działanie ma być podjęte oraz wygenerowanie właściwego sygnału skutkującego podjęciem określonych działań
+  \end{itemize}
+  \item Warstwę produktową w postaci dedykowanej, zaprojektowanej specjalnie dla tego projektu obudowy, pełniącej 3 podstawowe funkcje:
+  \begin{itemize}
+  	\item Organizacyjną, zapewniającą spójną organizację podzespołów oraz ich prawidłową wentylację pasywną
+  	\item Ochronną, zabezpieczającą podzespoły użyte w projekcie przed uszkodzeniem
+  	\item \textcolor{red}{zawierającą podstawowe informacje o produkcie}
+  \end{itemize}
+\end{enumerate}
+Celem projektu było stworzenie systemu mobilnego, o jak najmniejszych wymiarach, który jest gotowy do działania natychmiast po podłączeniu zasilania.
 
 \newpage
 \begin{flushleft}
@@ -145,6 +165,7 @@ abcd efgh
 \newpage
 \section{Warstwa programistyczna}
 \subsection{Python jako język programowania}
+\subsubsection{Biblioteki}
 \subsection{Algorytm}
 \subsection{Kod}
 
