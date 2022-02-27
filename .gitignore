@@ -1,0 +1,17 @@
+
+# Macowe indexy
+#.DS_Store
+*.DS_Store
+
+#
+WZORdyplomWFA/
+
+# Latex - zbedne rzeczy
+*.eps
+*.aux
+*.toc
+*.gz
+*.bbl
+*.big
+*.dvi
+*.log
