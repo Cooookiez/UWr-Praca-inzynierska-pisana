@@ -113,21 +113,21 @@ INTELLIGENT GREETING
 \vspace{1cm}
 Niniejsza praca przedstawia projekt systemu inteligentnego rozpoznawania osób oraz podejmowania przez system wcześniej zdefiniowanych działań, w zależności od rozpoznanej osoby. W przypadku braku rozpoznania osoby, system poda także odpowiedni komunikat głosowy oraz wizualny. 
 \newline
-System oparty jest na Raspberry Pi 4B, na języku programowania python 3\textcolor{red}{, oraz} wykorzystuje elementy wydrukowane na drukarce 3D Creality Ender-3 v.2
+Projekt oparty jest na Raspberry Pi 4B, na języku programowania python 3\textcolor{red}{, oraz} wykorzystuje elementy wydrukowane na drukarce 3D Creality Ender-3 v.2
 \newline
 Projekt łączy ze sobą w całość 3 warstwy niezbędne do wykonania wszystkich założonych zadań w taki sposób aby w przyszłości można było rozbudować system o kolejne funkcjonalności.
 \begin{enumerate} % itemize
   \item Warstwę sprzętową składającą się z czterech \textcolor{red}{głównych} elementów.
   \begin{itemize}
   	\item kamery, stanowiącej element wejściowy sygnału i odpowiedzialnej za pobranie sygnału video z otoczenia
-  	\item micro-komputera Rasppery Pi, odpowiedzialnej za przetworzenie sygnału oraz z kamerki, oraz sprawdzenie czy znamy tą osobe i wyświetlenia oraz wypowiedzenia odpowidniego komunikatu
-  	\item głośnika, stanowiącego element wyjściowy z systemu i służącego do podawania komunikatów głosowych. Głośnij jest podpinany pod port jack 3,5mm, więc jest dowolność w wyborze.
-  	\item \textcolor{red}{Wyświetlacza, stanowiący część wizualną powitania. Wyświetlacz jet podłączony pinami do Raspberry Pi}
+  	\item micro-komputera Rasppery Pi, odpowiedzialnej za przetworzenie sygnału oraz z kamerki, oraz sprawdzenie czy zdjęcie danej osoby znajduje się w bazie danych oraz wypowiedzenia odpowidniego komunikatu
+  	\item głośnika, stanowiącego element wyjściowy z systemu i służącego do podawania komunikatów głosowych. Głośnij jest podpinany pod port jack 3,5mm, zatem istnieje możliwość zastosowania dowolnego głośnika.
+  	\item Wyświetlacza, na którym generowana jest część wizualną powitania. Wyświetlacz jet podłączony pinami do Raspberry Pi
   \end{itemize}
   \item Warstwę programistyczną odpowiedzialną za:
   \begin{itemize}
   	\item obróbkę oraz optymalizację odczytanego obrazu
-  	\item interpretację pobranego obrazu oraz porównanie go z wcześniej zdefiniowaną bazą zdjęć (biblioteka) \textcolor{red}{– Teraz jak czytam to ta biblikoteka sugeruje mie że zdjęcia to biblioteka, a nie to coś co używam w kodzie}
+  	\item interpretację pobranego obrazu oraz porównanie go z wcześniej zdefiniowaną bazą zdjęć
   	\item podjęcie decyzji o tym jakie działanie ma być podjęte oraz wygenerowanie właściwego sygnału skutkującego podjęciem określonych działań
   \end{itemize}
   \item Warstwę produktową w postaci dedykowanej, zaprojektowanej specjalnie dla tego projektu obudowy, pełniącej 3 podstawowe funkcje:
@@ -149,16 +149,16 @@ Celem projektu było stworzenie systemu mobilnego, o jak najmniejszych wymiarach
 \vspace{1cm}
 This work presents the design of a system for the intelligent recognition of persons and for the system to take predefined actions, depending on the recognised person. If the person is not recognised, the system will also give an appropriate voice and visual message.
 \newline
-The system is based on a Raspberry Pi 4B, the python 3 programming language, and uses components printed on a Creality Ender-3 v.2 3D printer
+The project is based on a Raspberry Pi 4B, the python 3 programming language, and uses components printed on a Creality Ender-3 v.2 3D printer
 \newline
 The project brings together the 3 layers needed to carry out all the tasks in such a way that the system can be extended in the future with further functionalities.
 \begin{enumerate} % itemize
   \item A hardware layer consisting of four main components.
   \begin{itemize}
   	\item the camera, which is the signal input element and is responsible for collecting the video signal from the environment
-  	\item the Rasppery Pi microcomputer, which is responsible for processing the camera signal and checking whether we know the person and displaying and pronouncing the appropriate message
-  	\item A speaker, which is the output from the system and is used to give voice messages. The speaker is plugged into a 3.5mm jack port, so there is flexibility in choice.
-  	\item Display, which forms the visual part of the greeting. The display is pinned to the Raspberry Pi
+  	\item the Rasppery Pi microcomputer, which is in charge of processing the signal from the camera, checking whether a given person's photo is in the database and issuing an appropriate message
+  	\item A speaker that is an output from the system and is used to give voice announcements. The speaker plugs into a 3.5mm jack port, so any speaker can be used.
+  	\item A display on which the visual part of the greeting is generated. The display is connected to the Raspberry Pi
   \end{itemize}
   \item The programming layer responsible for:
   \begin{itemize}
@@ -201,15 +201,15 @@ System inteligentnego rozpoznawania osób, który jest tematem niniejszego proje
 \newline
 Do realizacji projektu wykorzystałem \textcolor{red}{micro-komputer} Raspperry Pi 4B oraz język programowania Python 3. Jako elementu wejściowego sygnału użyłem kamery Raspberry Pi Camera HD v2 8MPx zgodnej z Raspperry Pi 4B, oraz najzwyklejszego głośnika pod wejscie jack 3,5mm
 \subsection{Cel i zakres pracy}
-Celem głównym projektu jest stworzenie prototypu inteligentnego, mobilnego systemu rozpoznawania osób, na podstawie wcześniej zgromadzonej bazy zdjęciowej oraz wygenerowanie unikatowego powitania głosowego oraz wizualnego w zależności od rozpoznanej osoby.
+Celem głównym projektu jest stworzenie prototypu inteligentnego, mobilnego systemu rozpoznawania osób, na podstawie wcześniej zgromadzonej bazy zdjęciowej, a także wygenerowanie unikatowego powitania głosowego oraz wizualnego w zależności od rozpoznanej osoby.
 \newline
 Celami szczegółowymi projektu są wybór technologii sprzętowej, wybór technologii programistycznej oraz zaprojektowanie i wykonanie obudowy prototypu, mieszczącej wszystkie elementy projektu
 \newline
 Praca swoim zakresem obejmuje zarówno tematykę z dziedziny elektroniki, informatyki projektowania oraz prototypowania 3D.
 \newline
-W zakresie elektroniki wykorzystane zostały układy i sensory zgodne z płytką Rasppery 4B, w zakresie informatyki napisany został program w języku Python 3 i wykorzystujący do realizacji zadań dostępne biblioteki, natomiast w zakresie prototypowania z wykorzystaniem druku 3D, użyta została drukarka 3D Creality Ender v2 oraz materiał \textcolor{red}{PLA xx}. Do celów zaprojektowania obudowy wykorzystano program SOLIDWORKS.
+W zakresie elektroniki wykorzystane zostały układy i sensory zgodne z płytką Rasppery 4B, w zakresie informatyki napisany został program w języku Python 3 i wykorzystujący do realizacji zadań dostępne biblioteki, natomiast w zakresie prototypowania z wykorzystaniem druku 3D, użyta została drukarka 3D Creality Ender v2 oraz materiał \textcolor{red}{PET-G}. Do celów zaprojektowania obudowy wykorzystano program SOLIDWORKS.
 \newline
-Projekt z jednej strony pokazuje, że połączenie wiedzy z zakresu informatyki oraz projektowania dostarcza każdemu studentowi odpowiednią wiedzę oraz umiejętności, do wykonania prototypu od fazy projektowej do fazy praktycznego zastosowania,  z drugiej udowadnia, że wiedza ta pozwala na wykonania projektu z wykorzystaniem elementów ogólnodostępnych na rynku.
+Projekt z jednej strony pokazuje, że połączenie wiedzy z zakresu elektroniki, informatyki oraz projektowania dostarcza każdemu studentowi odpowiednią wiedzę oraz umiejętności, do wykonania prototypu od fazy projektowej do fazy praktycznego zastosowania,  z drugiej udowadnia, że wiedza ta pozwala na wykonania projektu z wykorzystaniem elementów ogólnodostępnych na rynku.
 \subsection{Struktura pracy} % tutorial jak prrace czytać
 
 \newpage
