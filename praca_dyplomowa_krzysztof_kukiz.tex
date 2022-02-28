@@ -104,47 +104,83 @@ INTELLIGENT GREETING
 
 \newpage
 
+%
+%	Streszczenie PL
+%
 \begin{flushleft}
 \Large \textbf{Streszczenie}
 \end{flushleft}
 \vspace{1cm}
 Niniejsza praca przedstawia projekt systemu inteligentnego rozpoznawania osób oraz podejmowania przez system wcześniej zdefiniowanych działań, w zależności od rozpoznanej osoby. W przypadku braku rozpoznania osoby, system poda także odpowiedni komunikat głosowy oraz wizualny. 
 \newline
-System oparty jest na Raspberry Pi 4B, na języku programowania python 3. Oraz wykorzystuje elementy wydrukowane na drukarce 3D Creality Ender-3 v.2
+System oparty jest na Raspberry Pi 4B, na języku programowania python 3\textcolor{red}{, oraz} wykorzystuje elementy wydrukowane na drukarce 3D Creality Ender-3 v.2
 \newline
 Projekt łączy ze sobą w całość 3 warstwy niezbędne do wykonania wszystkich założonych zadań w taki sposób aby w przyszłości można było rozbudować system o kolejne funkcjonalności.
 \begin{enumerate} % itemize
-  \item Warstwę sprzętową składającą się z czterech elementów.
+  \item Warstwę sprzętową składającą się z czterech \textcolor{red}{głównych} elementów.
   \begin{itemize}
   	\item kamery, stanowiącej element wejściowy sygnału i odpowiedzialnej za pobranie sygnału video z otoczenia
   	\item micro-komputera Rasppery Pi, odpowiedzialnej za przetworzenie sygnału oraz z kamerki, oraz sprawdzenie czy znamy tą osobe i wyświetlenia oraz wypowiedzenia odpowidniego komunikatu
   	\item głośnika, stanowiącego element wyjściowy z systemu i służącego do podawania komunikatów głosowych. Głośnij jest podpinany pod port jack 3,5mm, więc jest dowolność w wyborze.
-  	\item \textcolor{red}{Wyświetlacza}
+  	\item \textcolor{red}{Wyświetlacza, stanowiący część wizualną powitania. Wyświetlacz jet podłączony pinami do Raspberry Pi}
   \end{itemize}
   \item Warstwę programistyczną odpowiedzialną za:
   \begin{itemize}
   	\item obróbkę oraz optymalizację odczytanego obrazu
-  	\item interpretację pobranego obrazu oraz porównanie go z wcześniej zdefiniowaną bazą zdjęć (biblioteka)
+  	\item interpretację pobranego obrazu oraz porównanie go z wcześniej zdefiniowaną bazą zdjęć (biblioteka) \textcolor{red}{– Teraz jak czytam to ta biblikoteka sugeruje mie że zdjęcia to biblioteka, a nie to coś co używam w kodzie}
   	\item podjęcie decyzji o tym jakie działanie ma być podjęte oraz wygenerowanie właściwego sygnału skutkującego podjęciem określonych działań
   \end{itemize}
   \item Warstwę produktową w postaci dedykowanej, zaprojektowanej specjalnie dla tego projektu obudowy, pełniącej 3 podstawowe funkcje:
   \begin{itemize}
   	\item Organizacyjną, zapewniającą spójną organizację podzespołów oraz ich prawidłową wentylację pasywną
   	\item Ochronną, zabezpieczającą podzespoły użyte w projekcie przed uszkodzeniem
-  	\item Informacyjn zawierającą podstawowe informacje o produkcie
+  	\item Informacyjną, zawierającą podstawowe informacje o produkcie
   \end{itemize}
 \end{enumerate}
 Celem projektu było stworzenie systemu mobilnego, o jak najmniejszych wymiarach, który jest gotowy do działania natychmiast po podłączeniu zasilania.
 
+%
+%	Streszczenie EN
+%
 \newpage
 \begin{flushleft}
 \Large \textbf{Abstract}
 \end{flushleft}
 \vspace{1cm}
-Po angielsku
+This work presents the design of a system for the intelligent recognition of persons and for the system to take predefined actions, depending on the recognised person. If the person is not recognised, the system will also give an appropriate voice and visual message.
+\newline
+The system is based on a Raspberry Pi 4B, the python 3 programming language, and uses components printed on a Creality Ender-3 v.2 3D printer
+\newline
+The project brings together the 3 layers needed to carry out all the tasks in such a way that the system can be extended in the future with further functionalities.
+\begin{enumerate} % itemize
+  \item A hardware layer consisting of four main components.
+  \begin{itemize}
+  	\item the camera, which is the signal input element and is responsible for collecting the video signal from the environment
+  	\item the Rasppery Pi microcomputer, which is responsible for processing the camera signal and checking whether we know the person and displaying and pronouncing the appropriate message
+  	\item A speaker, which is the output from the system and is used to give voice messages. The speaker is plugged into a 3.5mm jack port, so there is flexibility in choice.
+  	\item Display, which forms the visual part of the greeting. The display is pinned to the Raspberry Pi
+  \end{itemize}
+  \item The programming layer responsible for:
+  \begin{itemize}
+  	\item processing and optimisation of the read image
+  	\item interpretation of the retrieved image and comparison with a predefined image database (library)
+  	\item deciding on the action to be taken and generating the right signal to take the specified action
+  \end{itemize}
+  \item A product layer in the form of a dedicated enclosure \textcolor{red}{(Etui)}, designed specifically for this project, performing 3 basic functions:
+  \begin{itemize}
+  	\item Organisational, to ensure consistent organisation of the components and their proper passive ventilation
+  	\item Protective, to prevent damage to the components used in the project
+  	\item Information, including basic product information
+  \end{itemize}
+\end{enumerate}
+The aim of the project was to create a mobile system with the smallest possible dimensions, which is ready for operation as soon as the power is connected.
+
 
 \newpage
 
+%
+%	Wstęp
+%
 \section{Wstęp}
 \subsection{Wprowadzenie}
 Systemy inteligentne są stosowane obecnie na całym świecie. Znajdują coraz szersze zastosowanie w życiu codziennym każdego z nas zarówno w pracy jak i w domu. Potrafią reagować na nasze zachowania, odczytywać intencje oraz gromadzić i wykorzystywać dane, które im udostępnimy zarówno na poziomie jednostki, jak i całych grup społecznych.
