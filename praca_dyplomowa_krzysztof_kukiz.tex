@@ -84,11 +84,11 @@ Wydział Fizyki i Astronomii\\
 \vspace{3.2cm}
 \Large \textbf{INTELIGENTNE POWITANIE} \\
 \vspace{1.5cm}
-INTELLIGENT GREETING
+INTELLIGENT WELCOMING
 \end{center}
 \vspace{3.7cm}
 \begin{flushright}
-\large{ Praca inżynierska na kierunku \\Informatyka Stosowana i Systemy Pomiarowe \\}
+\large{Praca inżynierska na kierunku \\Informatyka Stosowana i Systemy Pomiarowe \\}
 \vspace{0.5cm}
 \large{ Opiekun \\ dr hab. Maciej Matyka, prof. UWr}
 \end{flushright}
@@ -111,8 +111,9 @@ INTELLIGENT GREETING
 \Large \textbf{Streszczenie}
 \end{flushleft}
 \vspace{1cm}
+
 Niniejsza praca przedstawia projekt systemu inteligentnego rozpoznawania osób oraz podejmowania przez system wcześniej zdefiniowanych działań, w zależności od rozpoznanej osoby. W przypadku braku rozpoznania osoby, system poda także odpowiedni komunikat głosowy oraz wizualny. 
-\newline
+
 Projekt oparty jest na Raspberry Pi 4B, na języku programowania python 3, oraz2 wykorzystuje elementy wydrukowane na drukarce 3D Creality Ender-3 v.2
 \newline
 Projekt łączy ze sobą w całość 3 warstwy niezbędne do wykonania wszystkich założonych zadań w taki sposób aby w przyszłości można było rozbudować system o kolejne funkcjonalności.
@@ -300,10 +301,124 @@ Przykłady realizacji funkcji powitania:
 
 \newpage
 \section{Warstwa sprzętowa}
+W ramach warstwy sprzętowej projekt składa się z 4 elementów. Kamery, mirko-komputera Raspberry Pi, głośnika oraz ekranu.
+\newline
+Podstawą systemu jest Raspberry Pi, do którego podłączone są wszystkie elementy wejściowe oraz wyjściowe prototypu, tak aby stanowiły spójną całość. W ten sposób przygotowana warstwa sprzętowa będzie następnie oprogramowana (patrz rozdział \textcolor{blue}{5}) oraz zabezpieczona obudową (patrz rozdział \textcolor{blue}{6})
 \subsection{Kamera jako element wejściowy}
+Spośród dostępnych kamer w projekcie zastosowano kamerę  HD v2 8MPx dedykowaną do mikrokomputera Raspberry Pi. Urządzenie posiada matrycę o rozdzielczości 8 Mpx, wspiera tryb HD 1080p, 720p oraz 640 x 480p oraz jest w stanie wykonywać zdjęcia w wyższej rozdzielczości 3280 x 2464 px.
+\newline
+Aby uniknąć potencjalnych problemów w przesyle sygnału zastosowano oficjalny moduł Raspberry Pi Camera HD v2, który jest całkowicie zgodny ze sterownikami, dostarczanymi wraz z systemem Raspberry Pi OS.
+\newline
+Dzięki takiemu rozwiązaniu możliwe jest jednocześnie szerokie wsparcie w zakresie dokumentacji, tutoriali oraz bibliotek programistycznych.
+\newline
+\textcolor{red}{Dostępne są także programy konsolowe do obsługi różnych trybów pracy kamery.}
+\begin{figure}[!ht]%
+\centering
+\includegraphics[width=0.8\columnwidth]{imgs/domkable.png}
+\caption{Zdjęcie x. Kamera HD [źródło: ] \label{kamera}}
+\quad
+\end{figure}
+Parametry kamery
+\begin{itemize}
+	\item HD 1080p / 30 fps,
+	\item 720p / 60 fps,
+	\item 640 x 480p / 90 fps.
+\end{itemize}
 \subsection{Płyta Raspberry Pi}
+Spośród dostępnych modeli Raspberry Pi do projektu wykorzystano model w wersji 4B, który charakteryzuje się zwiększoną pojemnością pamięci RAP (4GB) oraz wydajniejszym procesorem (Broadcom BCM2711) quad-core 64-bitowy ARM-8.
+\newline
+Posiada on dwa złącza microHDMI, dwa złączami USB 3.0 i 2 złącza USB 2.0. Zasilanie realizowane jest przez złącze USB C.
+\newline
+Mikrokomputer wyposażony jest także w dwuzakresowe WiFi 2,4 GHz i 5 GHz, Bluetooth w standardzie 5, oraz port Ethernet o prędkości do 1000 Mb/s.
+\begin{figure}[!ht]%
+\centering
+\includegraphics[width=0.8\columnwidth]{imgs/domkable.png}
+\caption{Zdjęcie x. Raspberry Pi 4B [źródło: ] \label{rp4b}}
+\quad
+\end{figure}
+Specyfikacja techniczna
+\begin{itemize}
+	\item Pamięć RAM - 1GB, 2GB lub 4GB LPDDR4
+	\item Procesor - Broadcom BCM2711, quad-core Cortex-A72 (ARM v8) 64-bit SoC @ 1.5GHz
+	\item GPIO - 2 x 20 pin, raster 2,54 mm (wstecznie kompatybilne)
+	\item Łączność \textcolor{blue}{danych}
+		\begin{itemize}
+			\item 2.4 GHz \textcolor{blue}{oraz} 5.0 GHz IEEE 802.11b/g/n/ac
+			\item LAN \textcolor{red}{Gigabit Ethernet}
+			\item Bluetooth 5.0
+			\item \textcolor{red}{BLE}
+			\item 2 × USB 3.0
+			\item 2 × USB 2.0
+		\end{itemize}
+	\item Obraz i dźwięk - 2 × microHDMI (wsparcie 4k)
+	\item \textcolor{blue}{Złącza
+		\begin{itemize}
+			\item DSI dla wyświetlaczy
+			\item CSI dla kamer
+			\item \textcolor{red}{ Komunikacja - UART, SPI, I2C, GPIO}
+		\end{itemize}}
+	\item \textcolor{blue}{Multimedia
+		\begin{itemize}
+			\item H.265 (4Kp60 decode)
+			\item H.264 (1080p60 decode, 1080p30 encode)
+			\item OpenGL ES, 3.0 graphics
+		\end{itemize}}
+	\item Karta pamięci - microSD
+	\item Systemy operacyjne - Linux Raspbian
+	\item Temperatura pracy - 0–50°C
+	\item Zasilanie - złącze USB C minimum 5V/3A, złącza GPIO minimum 5V/3A
+PoE przy zastosowaniu dedykowanej nakładki
+	\item Wymiary - 85 x 56 x 17 mm
+\end{itemize}
 \subsection{Głośnik jako element wyjściowy}
+W zakresie komunikatów głosowych w projekcie został zastosowany głośnik LOGIC CONCEPT LS-09.
+
+Logic Concept LS-09, to zestaw dwóch głośników, które można podłączyć zarówno do komputerów stacjonarnych, laptopów, jak i różnego rodzaju urządzeń multimedialnych. Głośniki charakteryzują się niewielkimi rozmiarami, co było jednym z warunków niezbędnych do realizacji projektu.
+
+Każdy głośnik o mocy 3W. Dzięki niewielkim rozmiarom oraz lekkiej konstrukcji w łatwy i wygodny sposób można je przetransportować.
+
+Zasilane realizowane jest poprzez kabel USB \textcolor{blue}{podłączany do Raspberry pi}.
+
+\begin{figure}[!ht]%
+\centering
+\includegraphics[width=0.8\columnwidth]{imgs/domkable.png}
+\caption{Zdjęcie x. Głośniki LOGIC CONCEPT LS-09 [źródło: ] \label{glosnik}}
+\quad
+\end{figure}
+
 \subsection{Ekran jako element wyjściowy}
+
+W projekcie został zastosowany ekran Ekran dotykowy Waveshare 9904. Jest to ekran rezystancyjny LCD TFT o przekątnej 3,5'' i rozdzielczości 320x480px kompatybilny z Raspberry Pi 4/3/2/B+/Zero.
+
+Oprogramowanie ekranu dotykowego przygotowane przez producenta zawiera sterownikami.
+
+\begin{figure}[!ht]%
+\centering
+\includegraphics[width=0.8\columnwidth]{imgs/domkable.png}
+\caption{Zdjęcie x. Ekran Waveshare 9904 [źródło: ] \label{ekran}}
+\quad
+\end{figure}
+
+Specyfikacja ekranu dotykowego Waveshare
+
+\begin{itemize}
+	\item Typ: ekran dotykowy, rezystancyjny
+	\item Przekątna: 3.5"
+	\item Rozdzielczość: 320px x 480px
+	\item Komunikacja SPI
+	\item Współpracuje z: Raspberry Pi w wersji 4B, 3B+, 3B, 2B, B+, Zero i Zero
+	\item Wymiary ekranu: 85mm x 56.5mm
+\end{itemize}
+
+\subsection{Radiatory}
+
+W celu odprowadzenia ciepła z podzespołów został zastosowany zestaw radiatorów do Raspberry Pi - z taśmą termoprzewodzącą.
+
+Radiatory zbudowane są ze stopów metali dobrze przewodzących ciepło. Ich powierzchnia od strony zewnętrznej jest rozwinięta w postaci żeber.
+
+\subsection{Wentylator}
+
+W celu poprawienia parametrów cieplnych projektu zastosowano w projekcie wymuszony obieg powietrza. W projekcie zastosowano \textcolor{red}{...}
 
 \newpage
 \section{Warstwa programistyczna}
