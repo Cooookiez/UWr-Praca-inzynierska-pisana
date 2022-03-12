@@ -20,6 +20,7 @@
 \usepackage{listings}
 \usepackage[toc,page]{appendix}
 \usepackage{url}
+\usepackage{indentfirst}
 
 \definecolor{codegreen}{rgb}{0.5, 0.09, 0.09}
 \definecolor{codegray}{rgb}{0.5,0.5,0.5}
@@ -115,8 +116,9 @@ INTELLIGENT WELCOMING
 Niniejsza praca przedstawia projekt systemu inteligentnego rozpoznawania osób oraz podejmowania przez system wcześniej zdefiniowanych działań, w zależności od rozpoznanej osoby. W przypadku braku rozpoznania osoby, system poda także odpowiedni komunikat głosowy oraz wizualny. 
 
 Projekt oparty jest na Raspberry Pi 4B, na języku programowania python 3, oraz2 wykorzystuje elementy wydrukowane na drukarce 3D Creality Ender-3 v.2
-\newline
+
 Projekt łączy ze sobą w całość 3 warstwy niezbędne do wykonania wszystkich założonych zadań w taki sposób aby w przyszłości można było rozbudować system o kolejne funkcjonalności.
+
 \begin{enumerate} % itemize
   \item Warstwę sprzętową składającą się z czterech głównych elementów.
   \begin{itemize}
@@ -138,6 +140,7 @@ Projekt łączy ze sobą w całość 3 warstwy niezbędne do wykonania wszystkic
   	\item Informacyjną, zawierającą podstawowe informacje o produkcie
   \end{itemize}
 \end{enumerate}
+
 Celem projektu było stworzenie systemu mobilnego, o jak najmniejszych wymiarach, który jest gotowy do działania natychmiast po podłączeniu zasilania.
 
 %
@@ -148,11 +151,13 @@ Celem projektu było stworzenie systemu mobilnego, o jak najmniejszych wymiarach
 \Large \textbf{Abstract}
 \end{flushleft}
 \vspace{1cm}
+
 This work presents the design of a system for the intelligent recognition of persons and for the system to take predefined actions, depending on the recognised person. If the person is not recognised, the system will also give an appropriate voice and visual message.
-\newline
+
 The project is based on a Raspberry Pi 4B, the python 3 programming language, and uses components printed on a Creality Ender-3 v.2 3D printer
-\newline
+
 The project brings together the 3 layers needed to carry out all the tasks in such a way that the system can be extended in the future with further functionalities.
+
 \begin{enumerate} % itemize
   \item A hardware layer consisting of four main components.
   \begin{itemize}
@@ -174,8 +179,8 @@ The project brings together the 3 layers needed to carry out all the tasks in su
   	\item Information, including basic product information
   \end{itemize}
 \end{enumerate}
-The aim of the project was to create a mobile system with the smallest possible dimensions, which is ready for operation as soon as the power is connected.
 
+The aim of the project was to create a mobile system with the smallest possible dimensions, which is ready for operation as soon as the power is connected.
 
 \newpage
 
@@ -183,66 +188,78 @@ The aim of the project was to create a mobile system with the smallest possible 
 %	Wstęp
 %
 \section{Wstęp}
+
 \subsection{Wprowadzenie}
+
 Systemy inteligentne są stosowane obecnie na całym świecie. Znajdują coraz szersze zastosowanie w życiu codziennym każdego z nas zarówno w pracy jak i w domu. Potrafią reagować na nasze zachowania, odczytywać intencje oraz gromadzić i wykorzystywać dane, które im udostępnimy zarówno na poziomie jednostki, jak i całych grup społecznych.
-\newline
+
 W naszym codziennym życiu są elementem składowym inteligentnych budynków opartych między innymi o systemy LOXONE, KNX, AMPIO, czy też FIBARO i znacznie ułatwiają codzienne czynności poprzez sterowanie klimatem, ogrzewaniem, rekuperacją, czy też podlewaniem ogrodów, sprzątaniem, a nawet optymalnym wykorzystaniem energii elektrycznej.
-\newline
+
 Systemy inteligentne pomimo swoich kosztów zdobywają coraz większą popularność nie tylko w zastosowaniach profesjonalnych, ale także w zastosowaniach prywatnych i mogą być oparte zarówno o infrastrukturę przewodową (patrz rys. (\ref{kable})), jak i mogą być oparte na rozwiązaniach bezprzewodowych.
+
 \begin{figure}[!ht]%
 \centering
 \includegraphics[width=0.8\columnwidth]{imgs/domkable.png}
 \caption{Przykład okablowaniem domu inteligentnego. [źródło: materiały własne] \label{kable}}
 \quad
 \end{figure}
-\newline
+
 Żaden system nie posiada jednak wszystkich funkcjonalności, które są niezbędne danemu użytkownikowi. W większości z nich brakuje mobilnego systemu pozwalającego na rozpoznanie osób oraz podjęcia konkretnych działań w zależności od osoby, która została zidentyfikowana.
-\newline
+
 System inteligentnego rozpoznawania osób, który jest tematem niniejszego projektu, pozwala właśnie na identyfikację osób wchodzących do pomieszczenia na podstawie zapisanej wcześniej bazy zdjęć oraz powitanie ich indywidualnym komunikatem zarówno głosowym, jak i wizualnym.
-\newline
+
 Do realizacji projektu wykorzystałem \textcolor{red}{micro-komputer} Raspperry Pi 4B oraz język programowania Python 3. Jako elementu wejściowego sygnału użyłem kamery Raspberry Pi Camera HD v2 8MPx zgodnej z Raspperry Pi 4B, oraz najzwyklejszego głośnika pod wejscie jack 3,5mm
+
 \subsection{Cel i zakres pracy}
+
 Celem głównym projektu jest stworzenie prototypu inteligentnego, mobilnego systemu rozpoznawania osób, na podstawie wcześniej zgromadzonej bazy zdjęciowej, a także wygenerowanie unikatowego powitania głosowego oraz wizualnego w zależności od rozpoznanej osoby.
-\newline
+
 Celami szczegółowymi projektu są wybór technologii sprzętowej, wybór technologii programistycznej oraz zaprojektowanie i wykonanie obudowy prototypu, mieszczącej wszystkie elementy projektu
-\newline
+
 Praca swoim zakresem obejmuje zarówno tematykę z dziedziny elektroniki, informatyki projektowania oraz prototypowania 3D.
-\newline
+
 W zakresie elektroniki wykorzystane zostały układy i sensory zgodne z płytką Rasppery 4B, w zakresie informatyki napisany został program w języku Python 3 i wykorzystujący do realizacji zadań dostępne biblioteki, natomiast w zakresie prototypowania z wykorzystaniem druku 3D, użyta została drukarka 3D Creality Ender v2 oraz materiał \textcolor{red}{PET-G}. Do celów zaprojektowania obudowy wykorzystano program SOLIDWORKS. % w PET-G prototypuje, nie wiem czy starczy mi akurat tego materiału 
-\newline
+
 Projekt z jednej strony pokazuje, że połączenie wiedzy z zakresu elektroniki, informatyki oraz projektowania dostarcza każdemu studentowi odpowiednią wiedzę oraz umiejętności, do wykonania prototypu od fazy projektowej do fazy praktycznego zastosowania,  z drugiej udowadnia, że wiedza ta pozwala na wykonania projektu z wykorzystaniem elementów ogólnodostępnych na rynku.
+
 \subsection{Struktura pracy} % tutorial jak prrace czytać
+
 Rozdział pierwszy zawiera wstęp, wprowadzenie, opis celu oraz zakresu pracy, a także strukturę pracy. Znajdują się w nim podstawowe informacje opisujące główne elementy składowe projektu, oraz umożliwia szybkie zapoznania się z projektem na poziomie ogólnym
-\newline
+
 Rozdział drugi zawiera założenia odnośnie szczegółowych wymagań stawianych projektowi i umożliwia zrozumienie koncepcji projektu zarówno na poziomie ogólnym i bardziej szczegółowym.
-\newline
+
 Rozdział trzeci zawiera zestawienie założone funkcjonalności projektu, które będą zaimplementowane w projektowanym systemie oraz sposób korzystania z tych funkcjonalności.
-\newline
+
 Rozdział czwarty zawiera szczegółowy opis warstwy sprzętowej z wyszczególnieniem użytych w projekcie podzespołów oraz ich parametrów. Znajdują się w nim szczegółowe opisy użytej do projektu kamery, mikrokomputera Raspberry Pi, głośnika oraz ekranu służącego do komunikacji z użytkownikiem.
-\newline
+
 W rozdziale piątym znajduje się opis warstwy programistycznej projektu z uzasadnieniem wyboru języka Python jako języka programowania użytego w projekcie, opis zastosowanych bibliotek, algorytm oraz główne elementy kodu odpowiedzialne za działanie całego projektu.
-\newline
+
 W rozdziale szóstym znajduje się opis warstwy produktowej projektu z opisem użytej technologii druku 3D, kroków projektowania obudowy, procesu wykonania obudowy oraz szczegółów samej obudowy.
-\newline
+
 W rozdziale siódmym opisane zostały kwestie związane z samą realizacją projektu, napotkane problemy oraz sposoby jakimi problemy zostały rozwiązane. Omówiono także potencjalne możliwości rozbudowy projektu o kolejne funkcjonalności i zastosowania.
-\newline
+
 W rozdziale ósmym zawarto wnioski oraz „Lessons learned” z wykonanego projektu. Stanowią one podstawę do dalszego doskonalenia podejścia przy kolejnych projektach.
 
 \newpage
 \section{Wymagania stawiane projektowi}
+
 W celu realizacji pracy w pierwszej kolejności zostały określone wymagania, które stanowiły punkt docelowy projektu, jaki należało osiągnąć w ramach prac projektowych, a następnie pozwoliły na zaplanowanie drogi dojścia do założonego celu.
-\newline
+
 Na podstawie założonego celu zostały określone kroki milowe, które należało osiągnąć. Kroki te dzieliły cały projekt na mniejsze etapy, z jednej strony pozwalające na lepszy nadzór nad postępami pracy, oraz natychmiastowe określenie punktów stanowiących problem i wstrzymujących postępy, a z drugiej strony pozwalały na elastyczne reagowanie i zmiany projektowe bez konieczności zmian poprzednich etapów.
-\newline
+
 Takie podejście miało zapewnić iż ewentualny błąd popełniony na dalszych etapach nie będzie miał wpływu na etapy poprzednie projektu.
+
 \begin{figure}[!ht]%
 \centering
 \includegraphics[width=0.8\columnwidth]{imgs/domkable.png}
 \caption{Etapy prac projektowych. [źródło: opracowanie własne] \label{etapypracy}}
 \quad
 \end{figure}
+
 \subsection{Wymagania dla prototypu}
+
 W ramach realizacji projektu zostały określone następujące wymagania dla prototypu.
+
 \begin{itemize}
 	\item \textbf{Mobilność.} Głównym założeniem projektu jest mobilność prototypu. Oznacza to, iż będzie posiadał wymiary oraz wagę umożliwiającą łatwe przenoszenie w dowolne miejsce.
 	\item \textbf{Łatwość zasilania.} Prototyp powinien mieć możliwość zasilania z ogólnodostępnej sieci 230V, tak aby istniała możliwość stałego podłączenia do gniazda elektrycznego. Opcjonalnie założono, że prototyp będzie posiadał możliwość podłączenia do zasilania z baterii lub akumulatorów, tak aby mógł znaleźć zastosowanie w miejscach, w których dostęp do sieci elektrycznej jest utrudniony.
@@ -252,8 +269,11 @@ W ramach realizacji projektu zostały określone następujące wymagania dla pro
 	\item \textbf{Łatwość rozbudowy.} Platforma na jakiej zostanie zbudowany prototyp będzie pozwalała na jego łatwą rozbudowę.
 	\item \textbf{Łatwość programowania.} System będzie oparty o jeden z popularnych języków programowania, w którym dostępne są biblioteki niezbędne do realizacji wszystkich zadań, tak aby użytkownik mógł skorzystać z dostępnych standardowych rozwiązań programistycznych, bez ponoszenia dodatkowych kosztó
 \end{itemize}
+
 \subsection{Wymagania dla procesu projektowego}
+
 W celu wykonania prototypu zostały określone następujące wymagania dla procesu projektowego.
+
 \begin{itemize}
 	\item \textbf{Elastyczność.} Projekt zostanie podzielony na mniejsze etapy, tak aby w każdej chwili istniała możliwość modyfikacji założeń lub działań przy jednoczesnym zapewnieniu realizacji założonych celów.
 	\item \textbf{Dostępność narzędzi.} Dla każdego etapu projektu zostaną użyte narzędzia dostępne na rynku, tak aby uniknąć konieczności projektowania samych narzędzi.
@@ -263,7 +283,9 @@ W celu wykonania prototypu zostały określone następujące wymagania dla proce
 
 \newpage
 \section{Oczekiwane funkcjonalności projektu}
+
 W ramach realizacji projektu zostały zaimplementowane następujące funkcjonalności.
+
 \begin{itemize}
 	\item \textcolor{red}{\textbf{Zencodowanie znanych twarzy.} Użytkownik do imiennych folderów wprowadza zdjęcia osoby (np. Zdjęcia Jana wrzucam do folderu "Jan Nowak") i odpala program encodujący zamieniając twarz na wartości liczbowe.}
 	\item \textcolor{red}{\textbf{Użycie syntezatora mowy.}} System korzysta z syntezatora mowy w celu \textcolor{red}{dodania deflautowego powitania do pliku .mp3.}
@@ -273,24 +295,30 @@ W ramach realizacji projektu zostały zaimplementowane następujące funkcjonaln
 	\item \textbf{Komunikat głosowy.} \textcolor{red}{Z puli powitań plików \textcolor{blue}{.mp3} (deflautowo jeden, można wrzucić własne dzwięki), program losuje jeden i go odpala \textcolor{blue}{(W przypadku gdy jest tylko jeden plik, losowanie się nie odbywa)}.}
 	\item \textbf{Komunikat wizualny.} \textcolor{red}{Na ekranie dodatkowo pojawia się komunikat graficzny \textcolor{blue}{z imieniem i nazwiskiem}. W przypadku wykrycia osoby nieznanej pojawia się stosowny komunikat (Patrz rys. \ref{komunikatgraficzny1}, \ref{komunikatgraficzny2})}
 \end{itemize}
+
 \begin{figure}[!ht]%
 \centering
 \includegraphics[width=0.8\columnwidth]{imgs/domkable.png}
 \caption{Komunikat graficzny rozpoznanej osoby. [źródło: opracowanie własne] \label{komunikatgraficzny1}}
 \quad
 \end{figure}
+
 \begin{figure}[!ht]%
 \centering
 \includegraphics[width=0.8\columnwidth]{imgs/domkable.png}
 \caption{Komunikat graficzny NIE rozpoznanej osoby. [źródło: opracowanie własne] \label{komunikatgraficzny2}}
 \quad
 \end{figure}
+
 Powyższe funkcjonalności pozwalają na realizację funkcji
+
 \begin{itemize}
 	\item powitania
 	\item nadzur\textcolor{red}{?}
 \end{itemize}
+
 Przykłady realizacji funkcji powitania:
+
 \begin{itemize}
 	\item "Cześć Krzysiek, miło Cię widzieć"
 	\item \textcolor{red}{"Witaj Krzysztof Kukiz"}
@@ -298,45 +326,55 @@ Przykłady realizacji funkcji powitania:
 	\item "Dzień dobry, zapraszamy do recepcji na pierwszym piętrze. Winda jest po prawej stronie"
 \end{itemize}
 
-
 \newpage
 \section{Warstwa sprzętowa}
+
 W ramach warstwy sprzętowej projekt składa się z 4 elementów. Kamery, mirko-komputera Raspberry Pi, głośnika oraz ekranu.
-\newline
+
 Podstawą systemu jest Raspberry Pi, do którego podłączone są wszystkie elementy wejściowe oraz wyjściowe prototypu, tak aby stanowiły spójną całość. W ten sposób przygotowana warstwa sprzętowa będzie następnie oprogramowana (patrz rozdział \textcolor{blue}{5}) oraz zabezpieczona obudową (patrz rozdział \textcolor{blue}{6})
+
 \subsection{Kamera jako element wejściowy}
+
 Spośród dostępnych kamer w projekcie zastosowano kamerę  HD v2 8MPx dedykowaną do mikrokomputera Raspberry Pi. Urządzenie posiada matrycę o rozdzielczości 8 Mpx, wspiera tryb HD 1080p, 720p oraz 640 x 480p oraz jest w stanie wykonywać zdjęcia w wyższej rozdzielczości 3280 x 2464 px.
-\newline
+
 Aby uniknąć potencjalnych problemów w przesyle sygnału zastosowano oficjalny moduł Raspberry Pi Camera HD v2, który jest całkowicie zgodny ze sterownikami, dostarczanymi wraz z systemem Raspberry Pi OS.
-\newline
+
 Dzięki takiemu rozwiązaniu możliwe jest jednocześnie szerokie wsparcie w zakresie dokumentacji, tutoriali oraz bibliotek programistycznych.
-\newline
+
 \textcolor{red}{Dostępne są także programy konsolowe do obsługi różnych trybów pracy kamery.}
+
 \begin{figure}[!ht]%
 \centering
 \includegraphics[width=0.8\columnwidth]{imgs/domkable.png}
 \caption{Zdjęcie x. Kamera HD [źródło: ] \label{kamera}}
 \quad
 \end{figure}
+
 Parametry kamery
+
 \begin{itemize}
 	\item HD 1080p / 30 fps,
 	\item 720p / 60 fps,
 	\item 640 x 480p / 90 fps.
 \end{itemize}
+
 \subsection{Płyta Raspberry Pi}
+
 Spośród dostępnych modeli Raspberry Pi do projektu wykorzystano model w wersji 4B, który charakteryzuje się zwiększoną pojemnością pamięci RAP (4GB) oraz wydajniejszym procesorem (Broadcom BCM2711) quad-core 64-bitowy ARM-8.
-\newline
+
 Posiada on dwa złącza microHDMI, dwa złączami USB 3.0 i 2 złącza USB 2.0. Zasilanie realizowane jest przez złącze USB C.
-\newline
+
 Mikrokomputer wyposażony jest także w dwuzakresowe WiFi 2,4 GHz i 5 GHz, Bluetooth w standardzie 5, oraz port Ethernet o prędkości do 1000 Mb/s.
+
 \begin{figure}[!ht]%
 \centering
 \includegraphics[width=0.8\columnwidth]{imgs/domkable.png}
 \caption{Zdjęcie x. Raspberry Pi 4B [źródło: ] \label{rp4b}}
 \quad
 \end{figure}
+
 Specyfikacja techniczna
+
 \begin{itemize}
 	\item Pamięć RAM - 1GB, 2GB lub 4GB LPDDR4
 	\item Procesor - Broadcom BCM2711, quad-core Cortex-A72 (ARM v8) 64-bit SoC @ 1.5GHz
@@ -370,7 +408,9 @@ Specyfikacja techniczna
 PoE przy zastosowaniu dedykowanej nakładki
 	\item Wymiary - 85 x 56 x 17 mm
 \end{itemize}
+
 \subsection{Głośnik jako element wyjściowy}
+
 W zakresie komunikatów głosowych w projekcie został zastosowany głośnik LOGIC CONCEPT LS-09.
 
 Logic Concept LS-09, to zestaw dwóch głośników, które można podłączyć zarówno do komputerów stacjonarnych, laptopów, jak i różnego rodzaju urządzeń multimedialnych. Głośniki charakteryzują się niewielkimi rozmiarami, co było jednym z warunków niezbędnych do realizacji projektu.
