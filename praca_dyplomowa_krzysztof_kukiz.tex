@@ -279,7 +279,7 @@ W celu wykonania prototypu zostały określone następujące wymagania dla proce
 	\item \textbf{Elastyczność.} Projekt zostanie podzielony na mniejsze etapy, tak aby w każdej chwili istniała możliwość modyfikacji założeń lub działań przy jednoczesnym zapewnieniu realizacji założonych celów.
 	\item \textbf{Dostępność narzędzi.} Dla każdego etapu projektu zostaną użyte narzędzia dostępne na rynku, tak aby uniknąć konieczności projektowania samych narzędzi.
 	\item \textbf{Przejrzystość.} Na każdym etapie status prac będzie łatwo weryfikowalny aby zidentyfikować potencjalne przeszkody mogące powodować opóźnienie realizacji projektu.
-	\item \textbf{Bezpieczeństwo.} \textcolor{red}{W celu uniknięcia utraty danych zostanie wykorzystane repozytorium Git, a dodatkowo dane będą zapisywane na komputerze lokalnym.}
+	\item \textbf{Backup.} W celu uniknięcia utraty danych \textcolor{red}{lub zgubienia kodu} zostanie wykorzystane repozytorium Git. \textcolor{red}{Wersja zdalna znajduje się na Githubie}
 \end{itemize}
 
 \newpage
@@ -322,13 +322,25 @@ Powyższe funkcjonalności pozwalają na realizację funkcji
 \end{itemize}
 
 Przykłady realizacji funkcji powitania:
-
+\textcolor{red}{
 \begin{itemize}
-	\item "Cześć Krzysiek, miło Cię widzieć"
-	\item \textcolor{red}{"Witaj Krzysztof Kukiz"}
-	\item \textcolor{red}{"Witaj w domu Krzysiek"}
-	\item "Dzień dobry, zapraszamy do recepcji na pierwszym piętrze. Winda jest po prawej stronie"
+	\item "Urządzenie rozpoznała Jana, który ma 3 wersje powitania. Program wylosuje i powie jedno z:"
+	\begin{itemize}
+		\item "Cześć Jan, miło Cię widzieć"
+		\item "Witaj w domu Janek"
+		\item "Panie Janie, Panie Janie ..." % ♫ ... ♫
+	\end{itemize}
+	\item "Urządzenie rozpoznała Adama Nowaka, który ma tylko podstawowe pytanie. Program bez losowania odrazu je wybierze i powie:"
+	\begin{itemize}
+		\item "Witaj Adam Nowak"
+	\end{itemize}
+	\item Dla nierozpoznanej osoby możemy mieć tylko deflautowe przywitanie, ale możemy dać ich więcej. Program zachowa się analogicznie do wcześniej wymienionych przypadków:
+	\begin{itemize}
+		\item "Witaj nieznajomy"
+		\item "Witamy w domostwie Nowaków"
+	\end{itemize}
 \end{itemize}
+}
 
 \newpage
 \section{Warstwa sprzętowa}
@@ -344,8 +356,6 @@ Spośród dostępnych kamer w projekcie zastosowano kamerę  HD v2 8MPx dedykowa
 Aby uniknąć potencjalnych problemów w przesyle sygnału zastosowano oficjalny moduł Raspberry Pi Camera HD v2, który jest całkowicie zgodny ze sterownikami, dostarczanymi wraz z systemem Raspberry Pi OS.
 
 Dzięki takiemu rozwiązaniu możliwe jest jednocześnie szerokie wsparcie w zakresie dokumentacji, tutoriali oraz bibliotek programistycznych.
-
-\textcolor{red}{Dostępne są także programy konsolowe do obsługi różnych trybów pracy kamery.}
 
 \begin{figure}[!ht]%
 \centering
@@ -383,7 +393,7 @@ Specyfikacja techniczna
 	\item Pamięć RAM - 1GB, 2GB lub 4GB LPDDR4
 	\item Procesor - Broadcom BCM2711, quad-core Cortex-A72 (ARM v8) 64-bit SoC @ 1.5GHz
 	\item GPIO - 2 x 20 pin, raster 2,54 mm (wstecznie kompatybilne)
-	\item Łączność \textcolor{blue}{danych}
+	\item Przesył danych
 		\begin{itemize}
 			\item 2.4 GHz \textcolor{blue}{oraz} 5.0 GHz IEEE 802.11b/g/n/ac
 			\item LAN \textcolor{red}{Gigabit Ethernet}
@@ -391,6 +401,7 @@ Specyfikacja techniczna
 			\item \textcolor{red}{BLE}
 			\item 2 × USB 3.0
 			\item 2 × USB 2.0
+			\item \textcolor{red}{jack}
 		\end{itemize}
 	\item Obraz i dźwięk - 2 × microHDMI (wsparcie 4k)
 	\item \textcolor{blue}{Złącza
@@ -406,7 +417,7 @@ Specyfikacja techniczna
 			\item OpenGL ES, 3.0 graphics
 		\end{itemize}}
 	\item Karta pamięci - microSD
-	\item Systemy operacyjne - Linux Raspbian
+	\item Systemy operacyjne - Linux Raspbian, Windows 10 loT i wiele innych
 	\item Temperatura pracy - 0–50°C
 	\item Zasilanie - złącze USB C minimum 5V/3A, złącza GPIO minimum 5V/3A
 PoE przy zastosowaniu dedykowanej nakładki
@@ -467,12 +478,16 @@ W celu poprawienia parametrów cieplnych projektu zastosowano w projekcie wymusz
 \newpage
 \section{Warstwa programistyczna}
 \subsection{Python jako język programowania}
+% dlaczego python a nie c++
 \subsection{Biblioteki}
+% lista bibliotek i do czego je wykorzystuje
 \subsection{Algorytm}
+% prostokąty, kułka i trujkąty
 \subsection{Kod}
+% screeny / ładne ctrl+c, ctrl+v
 
 \newpage
-\section{Warstwa produktowa}
+\section{Warstwa produktowa} % wysłać skreeny z solidworksa i zdjęcia obudowy
 \subsection{Technologia druku 3D}
 \subsection{Projekt obudowy}
 \subsection{Wykonanie obudowy}
@@ -480,6 +495,12 @@ W celu poprawienia parametrów cieplnych projektu zastosowano w projekcie wymusz
 \newpage
 \section{Realizacja projektu}
 \subsection{Napotkane problemy}
+\begin{itemize}
+	\item Wątki
+	\item Brak miejsca na radiator (z starym wyświetlaczo-głośnikiem, w nowym miejsce się znajdzie)
+	\item wyświetlaczo-głośnik nie miał wsparcia do puszczania dzwięków zpoza spotify
+	\item raspbian segmentation fault (Corrupted filesystem) - problem prawdopodobnie dodyczy wątkuw - do sprawdzenia
+\end{itemize}
 \subsection{Możliwości rozbudowy}
 
 \newpage
