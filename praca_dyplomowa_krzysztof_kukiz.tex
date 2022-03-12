@@ -237,7 +237,7 @@ Takie podejście miało zapewnić iż ewentualny błąd popełniony na dalszych 
 \begin{figure}[!ht]%
 \centering
 \includegraphics[width=0.8\columnwidth]{imgs/domkable.png}
-\caption{Etapy prac projektowych. [źródło: opracowanie własne] \label{kable}}
+\caption{Etapy prac projektowych. [źródło: opracowanie własne] \label{etapypracy}}
 \quad
 \end{figure}
 \subsection{Wymagania dla prototypu}
@@ -246,8 +246,8 @@ W ramach realizacji projektu zostały określone następujące wymagania dla pro
 	\item \textbf{Mobilność.} Głównym założeniem projektu jest mobilność prototypu. Oznacza to, iż będzie posiadał wymiary oraz wagę umożliwiającą łatwe przenoszenie w dowolne miejsce.
 	\item \textbf{Łatwość zasilania.} Prototyp powinien mieć możliwość zasilania z ogólnodostępnej sieci 230V, tak aby istniała możliwość stałego podłączenia do gniazda elektrycznego. Opcjonalnie założono, że prototyp będzie posiadał możliwość podłączenia do zasilania z baterii lub akumulatorów, tak aby mógł znaleźć zastosowanie w miejscach, w których dostęp do sieci elektrycznej jest utrudniony.
 	\item \textbf{Dostępność.} Prototyp zostanie wykonany ze standardowych elementów dostępnych na rynku polskim.
-	\item \textbf{Relatywnie niski koszt.} Wykonanie prototypu powinno mieścić się w kwocie nie większej niż \textcolor{red}{1000zł}
-	\item \textbf{Łatwość obsługi.} Prototyp będzie umożliwiał obsługę bez konieczności znajomości zagadnień technicznych. Zadaniem użytkownika będzie jedynie wprowadzenie bazy zdjęć do określonego folderu, \textcolor{blue}{odpalenia dwóch programów (program "zapisujący" zjęcia twarzy do zakodowanego pliku, główny program rozpoznający przechodniów)} i odpowiednie nakierowanie kamery prototypu.
+	\item \textbf{Relatywnie niski koszt.} Wykonanie prototypu powinno mieścić się w kwocie nie większej niż \textcolor{blue}{1000zł?}
+	\item \textbf{Łatwość obsługi.} Prototyp będzie umożliwiał obsługę bez konieczności znajomości zagadnień technicznych. Zadaniem użytkownika będzie jedynie wprowadzenie bazy zdjęć do określonego folderu, \textcolor{red}{odpalenia dwóch programów (program "zapisujący" zjęcia twarzy do zakodowanego pliku, główny program rozpoznający przechodniów)} i odpowiednie nakierowanie kamery prototypu.
 	\item \textbf{Łatwość rozbudowy.} Platforma na jakiej zostanie zbudowany prototyp będzie pozwalała na jego łatwą rozbudowę.
 	\item \textbf{Łatwość programowania.} System będzie oparty o jeden z popularnych języków programowania, w którym dostępne są biblioteki niezbędne do realizacji wszystkich zadań, tak aby użytkownik mógł skorzystać z dostępnych standardowych rozwiązań programistycznych, bez ponoszenia dodatkowych kosztó
 \end{itemize}
@@ -262,6 +262,41 @@ W celu wykonania prototypu zostały określone następujące wymagania dla proce
 
 \newpage
 \section{Oczekiwane funkcjonalności projektu}
+W ramach realizacji projektu zostały zaimplementowane następujące funkcjonalności.
+\begin{itemize}
+	\item \textcolor{red}{\textbf{Zencodowanie znanych twarzy.} Użytkownik do imiennych folderów wprowadza zdjęcia osoby (np. Zdjęcia Jana wrzucam do folderu "Jan Nowak") i odpala program encodujący zamieniając twarz na wartości liczbowe.}
+	\item \textcolor{red}{\textbf{Użycie syntezatora mowy.}} System korzysta z syntezatora mowy w celu \textcolor{red}{dodania deflautowego powitania do pliku .mp3.}
+	\item \textbf{Wykrycie osoby.} System skanuje wybrany obszar przestrzeni i wykrywa czy w nadzorowanym obszarze znajduje się osoba. W przypadku wykrycia aktywowane są kolejne algorytmy programu. System pomija zwierzęta oraz przedmioty.
+	\item \textbf{Skanowanie  twarzy.} Po wykryciu obiektu kamera koncentruje się na twarzy wykrytej osoby i \textcolor{red}{encoduje w celu porównania z lokalną bazą.}
+	\item \textbf{Porównanie \textcolor{red}{(Identyfikacja)} twarzy.} \textcolor{red}{System porównuje nasze zencodowane zdjęcie z wcześniej zencodowanymi zdjęciami bazowymi, jeśli znalazło taki sam hasz, to znalazło osobę.}
+	\item \textbf{Komunikat głosowy.} \textcolor{red}{Z puli powitań plików \textcolor{blue}{.mp3} (deflautowo jeden, można wrzucić własne dzwięki), program losuje jeden i go odpala \textcolor{blue}{(W przypadku gdy jest tylko jeden plik, losowanie się nie odbywa)}.}
+	\item \textbf{Komunikat wizualny.} \textcolor{red}{Na ekranie dodatkowo pojawia się komunikat graficzny \textcolor{blue}{z imieniem i nazwiskiem}. W przypadku wykrycia osoby nieznanej pojawia się stosowny komunikat (Patrz rys. \ref{komunikatgraficzny1}, \ref{komunikatgraficzny2})}
+\end{itemize}
+\begin{figure}[!ht]%
+\centering
+\includegraphics[width=0.8\columnwidth]{imgs/domkable.png}
+\caption{Komunikat graficzny rozpoznanej osoby. [źródło: opracowanie własne] \label{komunikatgraficzny1}}
+\quad
+\end{figure}
+\begin{figure}[!ht]%
+\centering
+\includegraphics[width=0.8\columnwidth]{imgs/domkable.png}
+\caption{Komunikat graficzny NIE rozpoznanej osoby. [źródło: opracowanie własne] \label{komunikatgraficzny2}}
+\quad
+\end{figure}
+Powyższe funkcjonalności pozwalają na realizację funkcji
+\begin{itemize}
+	\item powitania
+	\item nadzur\textcolor{red}{?}
+\end{itemize}
+Przykłady realizacji funkcji powitania:
+\begin{itemize}
+	\item "Cześć Krzysiek, miło Cię widzieć"
+	\item \textcolor{red}{"Witaj Krzysztof Kukiz"}
+	\item \textcolor{red}{"Witaj w domu Krzysiek"}
+	\item "Dzień dobry, zapraszamy do recepcji na pierwszym piętrze. Winda jest po prawej stronie"
+\end{itemize}
+
 
 \newpage
 \section{Warstwa sprzętowa}
