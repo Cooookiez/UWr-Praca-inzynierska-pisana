@@ -21,6 +21,7 @@
 \usepackage[toc,page]{appendix}
 \usepackage{url}
 \usepackage{indentfirst}
+\usepackage{subcaption}
 
 \definecolor{codegreen}{rgb}{0.5, 0.09, 0.09}
 \definecolor{codegray}{rgb}{0.5,0.5,0.5}
@@ -293,28 +294,31 @@ W ramach realizacji projektu zostały zaimplementowane następujące funkcjonaln
 	\item \textbf{Skanowanie  twarzy.} Po wykryciu obiektu kamera koncentruje się na twarzy wykrytej osoby i \textcolor{red}{encoduje w celu porównania z lokalną bazą.}
 	\item \textbf{Porównanie \textcolor{red}{(Identyfikacja)} twarzy.} \textcolor{red}{System porównuje nasze zencodowane zdjęcie z wcześniej zencodowanymi zdjęciami bazowymi, jeśli znalazło taki sam hasz, to znalazło osobę.}
 	\item \textbf{Komunikat głosowy.} \textcolor{red}{Z puli powitań plików \textcolor{blue}{.mp3} (deflautowo jeden, można wrzucić własne dzwięki), program losuje jeden i go odpala \textcolor{blue}{(W przypadku gdy jest tylko jeden plik, losowanie się nie odbywa)}.}
-	\item \textbf{Komunikat wizualny.} \textcolor{red}{Na ekranie dodatkowo pojawia się komunikat graficzny \textcolor{blue}{z imieniem i nazwiskiem}. W przypadku wykrycia osoby nieznanej pojawia się stosowny komunikat (Patrz rys. \ref{komunikatgraficzny1}, \ref{komunikatgraficzny2})}
+	\item \textbf{Komunikat wizualny.} \textcolor{red}{Na ekranie dodatkowo pojawia się komunikat graficzny \textcolor{blue}{z imieniem i nazwiskiem}. W przypadku wykrycia osoby nieznanej pojawia się stosowny komunikat (Patrz rys. \ref{komunikatgraficzny:komunikatgraficzny}\subref{komunikatgraficzny:1}, \ref{komunikatgraficzny:komunikatgraficzny}\subref{komunikatgraficzny:2})}
 \end{itemize}
-
 \begin{figure}[!ht]%
-\centering
-\includegraphics[width=0.8\columnwidth]{imgs/domkable.png}
-\caption{Komunikat graficzny rozpoznanej osoby. [źródło: opracowanie własne] \label{komunikatgraficzny1}}
-\quad
-\end{figure}
-
-\begin{figure}[!ht]%
-\centering
-\includegraphics[width=0.8\columnwidth]{imgs/domkable.png}
-\caption{Komunikat graficzny NIE rozpoznanej osoby. [źródło: opracowanie własne] \label{komunikatgraficzny2}}
-\quad
+	\centering
+	\begin{subfigure}{.5\textwidth}
+		\centering
+		\includegraphics[width=0.8\linewidth]{imgs/domkable.png}
+		\caption{Rozpoznanej osoby.}	
+		\label{komunikatgraficzny:1}
+	\end{subfigure}%
+	\begin{subfigure}{.5\textwidth}
+		\centering
+		\includegraphics[width=0.8\linewidth]{imgs/domkable.png}
+		\caption{NIE rozpoznanej osoby}
+		\label{komunikatgraficzny:2}
+	\end{subfigure}%
+\caption{Komunikaty graficzne}
+\label{komunikatgraficzny:komunikatgraficzny}
 \end{figure}
 
 Powyższe funkcjonalności pozwalają na realizację funkcji
 
 \begin{itemize}
 	\item powitania
-	\item nadzur\textcolor{red}{?}
+	\item nadzór\textcolor{red}{?}
 \end{itemize}
 
 Przykłady realizacji funkcji powitania:
