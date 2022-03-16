@@ -29,6 +29,12 @@
 \definecolor{backcolour}{rgb}{0.94,0.94,0.94}
 \definecolor{gray}{rgb}{0,0.6,0}
 
+% color codes
+\definecolor{new}{RGB}{14, 107, 0}
+\definecolor{edited}{RGB}{181, 154, 0}
+\definecolor{to_change}{RGB}{255, 0, 0}
+\definecolor{to_check_at_end}{RGB}{172, 0, 181}
+
 \lstdefinestyle{mystyle}{
     backgroundcolor=\color{backcolour},  
     commentstyle=\color{codegreen},
@@ -188,7 +194,7 @@ The aim of the project was to create a mobile system with the smallest possible 
 %
 %	Wstęp
 %
-\section{Wstęp}
+\section{Wstęp} \label{section:wstep}
 
 \subsection{Wprowadzenie}
 
@@ -209,7 +215,7 @@ Systemy inteligentne pomimo swoich kosztów zdobywają coraz większą popularno
 
 System inteligentnego rozpoznawania osób, który jest tematem niniejszego projektu, pozwala właśnie na identyfikację osób wchodzących do pomieszczenia na podstawie zapisanej wcześniej bazy zdjęć oraz powitanie ich indywidualnym komunikatem zarówno głosowym, jak i wizualnym.
 
-Do realizacji projektu wykorzystałem \textcolor{red}{micro-komputer} Raspperry Pi 4B oraz język programowania Python 3. Jako elementu wejściowego sygnału użyłem kamery Raspberry Pi Camera HD v2 8MPx zgodnej z Raspperry Pi 4B, oraz najzwyklejszego głośnika pod wejscie jack 3,5mm
+Do realizacji projektu wykorzystałem micro-komputer Raspperry Pi 4B oraz język programowania Python 3. Jako elementu wejściowego sygnału użyłem kamery Raspberry Pi Camera HD v2 8MPx zgodnej z Raspperry Pi 4B, oraz najzwyklejszego głośnika pod wejscie jack 3,5mm
 
 \subsection{Cel i zakres pracy}
 
@@ -219,7 +225,7 @@ Celami szczegółowymi projektu są wybór technologii sprzętowej, wybór techn
 
 Praca swoim zakresem obejmuje zarówno tematykę z dziedziny elektroniki, informatyki projektowania oraz prototypowania 3D.
 
-W zakresie elektroniki wykorzystane zostały układy i sensory zgodne z płytką Rasppery 4B, w zakresie informatyki napisany został program w języku Python 3 i wykorzystujący do realizacji zadań dostępne biblioteki, natomiast w zakresie prototypowania z wykorzystaniem druku 3D, użyta została drukarka 3D Creality Ender v2 oraz materiał \textcolor{red}{PET-G}. Do celów zaprojektowania obudowy wykorzystano program SOLIDWORKS. % w PET-G prototypuje, nie wiem czy starczy mi akurat tego materiału 
+W zakresie elektroniki wykorzystane zostały układy i sensory zgodne z płytką Rasppery 4B, w zakresie informatyki napisany został program w języku Python 3 i wykorzystujący do realizacji zadań dostępne biblioteki, natomiast w zakresie prototypowania z wykorzystaniem druku 3D, użyta została drukarka 3D Creality Ender v2 oraz materiał \textcolor{to_check_at_end}{PET-G}. Do celów zaprojektowania obudowy wykorzystano program SOLIDWORKS. % w PET-G prototypuje, nie wiem czy starczy mi akurat tego materiału 
 
 Projekt z jednej strony pokazuje, że połączenie wiedzy z zakresu elektroniki, informatyki oraz projektowania dostarcza każdemu studentowi odpowiednią wiedzę oraz umiejętności, do wykonania prototypu od fazy projektowej do fazy praktycznego zastosowania,  z drugiej udowadnia, że wiedza ta pozwala na wykonania projektu z wykorzystaniem elementów ogólnodostępnych na rynku.
 
@@ -242,7 +248,7 @@ W rozdziale siódmym opisane zostały kwestie związane z samą realizacją proj
 W rozdziale ósmym zawarto wnioski oraz „Lessons learned” z wykonanego projektu. Stanowią one podstawę do dalszego doskonalenia podejścia przy kolejnych projektach.
 
 \newpage
-\section{Wymagania stawiane projektowi}
+\section{Wymagania stawiane projektowi} \label{section:wymagania}
 
 W celu realizacji pracy w pierwszej kolejności zostały określone wymagania, które stanowiły punkt docelowy projektu, jaki należało osiągnąć w ramach prac projektowych, a następnie pozwoliły na zaplanowanie drogi dojścia do założonego celu.
 
@@ -265,10 +271,16 @@ W ramach realizacji projektu zostały określone następujące wymagania dla pro
 	\item \textbf{Mobilność.} Głównym założeniem projektu jest mobilność prototypu. Oznacza to, iż będzie posiadał wymiary oraz wagę umożliwiającą łatwe przenoszenie w dowolne miejsce.
 	\item \textbf{Łatwość zasilania.} Prototyp powinien mieć możliwość zasilania z ogólnodostępnej sieci 230V, tak aby istniała możliwość stałego podłączenia do gniazda elektrycznego. Opcjonalnie założono, że prototyp będzie posiadał możliwość podłączenia do zasilania z baterii lub akumulatorów, tak aby mógł znaleźć zastosowanie w miejscach, w których dostęp do sieci elektrycznej jest utrudniony.
 	\item \textbf{Dostępność.} Prototyp zostanie wykonany ze standardowych elementów dostępnych na rynku polskim.
-	\item \textbf{Relatywnie niski koszt.} Wykonanie prototypu powinno mieścić się w kwocie nie większej niż \textcolor{blue}{1000zł?}
-	\item \textbf{Łatwość obsługi.} Prototyp będzie umożliwiał obsługę bez konieczności znajomości zagadnień technicznych. Zadaniem użytkownika będzie jedynie wprowadzenie bazy zdjęć do określonego folderu, \textcolor{red}{odpalenia dwóch programów (program "zapisujący" zjęcia twarzy do zakodowanego pliku, główny program rozpoznający przechodniów)} i odpowiednie nakierowanie kamery prototypu.
+	\item \textbf{Relatywnie niski koszt.} Wykonanie prototypu powinno mieścić się w kwocie nie większej niż \textcolor{to_check_at_end}{1000zł?}
+	\item \textbf{Łatwość obsługi.} Prototyp będzie umożliwiał obsługę bez konieczności znajomości zagadnień technicznych. Zadaniem użytkownika będzie jedynie wprowadzenie bazy zdjęć do określonego folderu, \textcolor{new}{oraz uruchomienie dwóch programów:
+		\begin{itemize}
+			\item program "zapisujący" zdjęcia twarzy do zakodowanego pliku,
+			\item główny program rozpoznający przechodniów
+		\end{itemize}	
+	}
+	i odpowiednie nakierowanie kamery prototypu.
 	\item \textbf{Łatwość rozbudowy.} Platforma na jakiej zostanie zbudowany prototyp będzie pozwalała na jego łatwą rozbudowę.
-	\item \textbf{Łatwość programowania.} System będzie oparty o jeden z popularnych języków programowania, w którym dostępne są biblioteki niezbędne do realizacji wszystkich zadań, tak aby użytkownik mógł skorzystać z dostępnych standardowych rozwiązań programistycznych, bez ponoszenia dodatkowych kosztó
+	\item \textbf{Łatwość programowania.} System będzie oparty o jeden z popularnych języków programowania, w którym dostępne są biblioteki niezbędne do realizacji wszystkich zadań, tak aby użytkownik mógł skorzystać z dostępnych standardowych rozwiązań programistycznych, bez ponoszenia dodatkowych kosztów.
 \end{itemize}
 
 \subsection{Wymagania dla procesu projektowego}
@@ -279,22 +291,22 @@ W celu wykonania prototypu zostały określone następujące wymagania dla proce
 	\item \textbf{Elastyczność.} Projekt zostanie podzielony na mniejsze etapy, tak aby w każdej chwili istniała możliwość modyfikacji założeń lub działań przy jednoczesnym zapewnieniu realizacji założonych celów.
 	\item \textbf{Dostępność narzędzi.} Dla każdego etapu projektu zostaną użyte narzędzia dostępne na rynku, tak aby uniknąć konieczności projektowania samych narzędzi.
 	\item \textbf{Przejrzystość.} Na każdym etapie status prac będzie łatwo weryfikowalny aby zidentyfikować potencjalne przeszkody mogące powodować opóźnienie realizacji projektu.
-	\item \textbf{Backup.} W celu uniknięcia utraty danych \textcolor{red}{lub zgubienia kodu} zostanie wykorzystane repozytorium Git. \textcolor{red}{Wersja zdalna znajduje się na Githubie}
+	\item \textbf{Backup.} W celu uniknięcia utraty danych \textcolor{edited}{lub kodu źródłowego} zostanie wykorzystane repozytorium Git. \textcolor{edited}{Wersja dostępna online znajduje się na Githubie}
 \end{itemize}
 
 \newpage
-\section{Oczekiwane funkcjonalności projektu}
+\section{Oczekiwane funkcjonalności projektu} \label{section:oczekiwania}
 
 W ramach realizacji projektu zostały zaimplementowane następujące funkcjonalności.
 
 \begin{itemize}
-	\item \textcolor{red}{\textbf{Zencodowanie znanych twarzy.} Użytkownik do imiennych folderów wprowadza zdjęcia osoby (np. Zdjęcia Jana wrzucam do folderu "Jan Nowak") i odpala program encodujący zamieniając twarz na wartości liczbowe.}
-	\item \textcolor{red}{\textbf{Użycie syntezatora mowy.}} System korzysta z syntezatora mowy w celu \textcolor{red}{dodania deflautowego powitania do pliku .mp3.}
+	\item \textcolor{edited}{\textbf{Zapis zdjęć twarzy} do postaci numerycznej. Użytkownik do imiennych folderów wprowadza zdjęcia twarzy osoby (np. zdjęcia Jana wrzucam do folderu "Jan Nowak") i uruchamia program encodujący zamieniając zdjęcie twarzy na wartości liczbowe.}
+	\item \textbf{Użycie syntezatora mowy.} System korzysta z syntezatora mowy w celu dodania deflautowego powitania do pliku \textcolor{to_check_at_end}{.mp3.}
 	\item \textbf{Wykrycie osoby.} System skanuje wybrany obszar przestrzeni i wykrywa czy w nadzorowanym obszarze znajduje się osoba. W przypadku wykrycia aktywowane są kolejne algorytmy programu. System pomija zwierzęta oraz przedmioty.
-	\item \textbf{Skanowanie  twarzy.} Po wykryciu obiektu kamera koncentruje się na twarzy wykrytej osoby i \textcolor{red}{encoduje w celu porównania z lokalną bazą.}
-	\item \textbf{Porównanie \textcolor{red}{(Identyfikacja)} twarzy.} \textcolor{red}{System porównuje nasze zencodowane zdjęcie z wcześniej zencodowanymi zdjęciami bazowymi, jeśli znalazło taki sam hasz, to znalazło osobę.}
-	\item \textbf{Komunikat głosowy.} \textcolor{red}{Z puli powitań plików \textcolor{blue}{.mp3} (deflautowo jeden, można wrzucić własne dzwięki), program losuje jeden i go odpala \textcolor{blue}{(W przypadku gdy jest tylko jeden plik, losowanie się nie odbywa)}.}
-	\item \textbf{Komunikat wizualny.} \textcolor{red}{Na ekranie dodatkowo pojawia się komunikat graficzny \textcolor{blue}{z imieniem i nazwiskiem}. W przypadku wykrycia osoby nieznanej pojawia się stosowny komunikat (Patrz rys. \ref{komunikatgraficzny:komunikatgraficzny}\subref{komunikatgraficzny:1}, \ref{komunikatgraficzny:komunikatgraficzny}\subref{komunikatgraficzny:2})}
+	\item \textbf{Skanowanie  twarzy.} Po wykryciu obiektu kamera koncentruje się na twarzy wykrytej osoby i encoduje w celu porównania z lokalną bazą.
+	\item \textbf{Porównanie (Identyfikacja) twarzy.} \textcolor{edited}{System porównuje zencodowane zdjęcia z wcześniej zencodowanymi zdjęciami znajdującymi się w \textcolor{to_change}{bazie danych}. System przekształca dane wejściowe \textcolor{new}{do matrixa liczb. Funkcja z biblioteki teraz porównuje wszystkie matrixy i patrzy czy dana osoba istnieje.}}
+	\item \textbf{Komunikat głosowy.} Z puli powitań plików \textcolor{to_check_at_end}{.mp3} (deflautowo jeden, można wrzucić własne dzwięki), program losuje jeden i go odpala (W przypadku gdy jest tylko jeden plik, losowanie się nie odbywa).
+	\item \textbf{Komunikat wizualny.} Na ekranie dodatkowo pojawia się komunikat graficzny z imieniem i nazwiskiem. W przypadku wykrycia osoby nieznanej pojawia się stosowny komunikat (Patrz rys. \ref{komunikatgraficzny:komunikatgraficzny}\subref{komunikatgraficzny:1}, \ref{komunikatgraficzny:komunikatgraficzny}\subref{komunikatgraficzny:2})
 \end{itemize}
 \begin{figure}[!ht]%
 	\centering
@@ -318,11 +330,10 @@ Powyższe funkcjonalności pozwalają na realizację funkcji
 
 \begin{itemize}
 	\item powitania
-	\item nadzór\textcolor{red}{?}
+	\item nadzór\textcolor{to_check_at_end}{?}
 \end{itemize}
 
 Przykłady realizacji funkcji powitania:
-\textcolor{red}{
 \begin{itemize}
 	\item "Urządzenie rozpoznała Jana, który ma 3 wersje powitania. Program wylosuje i powie jedno z:"
 	\begin{itemize}
@@ -340,14 +351,13 @@ Przykłady realizacji funkcji powitania:
 		\item "Witamy w domostwie Nowaków"
 	\end{itemize}
 \end{itemize}
-}
 
 \newpage
-\section{Warstwa sprzętowa}
+\section{Warstwa sprzętowa} \label{section:warstwa_sprzetowa}
 
 W ramach warstwy sprzętowej projekt składa się z 4 elementów. Kamery, mirko-komputera Raspberry Pi, głośnika oraz ekranu.
 
-Podstawą systemu jest Raspberry Pi, do którego podłączone są wszystkie elementy wejściowe oraz wyjściowe prototypu, tak aby stanowiły spójną całość. W ten sposób przygotowana warstwa sprzętowa będzie następnie oprogramowana (patrz rozdział \textcolor{blue}{5}) oraz zabezpieczona obudową (patrz rozdział \textcolor{blue}{6})
+Podstawą systemu jest Raspberry Pi, do którego podłączone są wszystkie elementy wejściowe oraz wyjściowe prototypu, tak aby stanowiły spójną całość. W ten sposób przygotowana warstwa sprzętowa będzie następnie oprogramowana (patrz rozdział ~\ref{section:warstwa_programistyczna}) oraz zabezpieczona obudową (patrz rozdział ~\ref{section:warstwa_produkcyjna})
 
 \subsection{Kamera jako element wejściowy}
 
@@ -395,27 +405,27 @@ Specyfikacja techniczna
 	\item GPIO - 2 x 20 pin, raster 2,54 mm (wstecznie kompatybilne)
 	\item Przesył danych
 		\begin{itemize}
-			\item 2.4 GHz \textcolor{blue}{oraz} 5.0 GHz IEEE 802.11b/g/n/ac
-			\item LAN \textcolor{red}{Gigabit Ethernet}
+			\item 2.4 GHz oraz 5.0 GHz IEEE 802.11b/g/n/ac
+			\item LAN Gigabit Ethernet
 			\item Bluetooth 5.0
-			\item \textcolor{red}{BLE}
+			\item \textcolor{to_check_at_end}{BLE}
 			\item 2 × USB 3.0
 			\item 2 × USB 2.0
-			\item \textcolor{red}{jack}
+			\item \textcolor{edited}{mini jack 3.5mm}
 		\end{itemize}
 	\item Obraz i dźwięk - 2 × microHDMI (wsparcie 4k)
-	\item \textcolor{blue}{Złącza
+	\item Złącza
 		\begin{itemize}
 			\item DSI dla wyświetlaczy
 			\item CSI dla kamer
-			\item \textcolor{red}{ Komunikacja - UART, SPI, I2C, GPIO}
-		\end{itemize}}
-	\item \textcolor{blue}{Multimedia
+			\item Komunikacja - UART, SPI, I2C, GPIO
+		\end{itemize}
+	\item Multimedia
 		\begin{itemize}
 			\item H.265 (4Kp60 decode)
 			\item H.264 (1080p60 decode, 1080p30 encode)
 			\item OpenGL ES, 3.0 graphics
-		\end{itemize}}
+		\end{itemize}
 	\item Karta pamięci - microSD
 	\item Systemy operacyjne - Linux Raspbian, Windows 10 loT i wiele innych
 	\item Temperatura pracy - 0–50°C
@@ -432,7 +442,7 @@ Logic Concept LS-09, to zestaw dwóch głośników, które można podłączyć z
 
 Każdy głośnik o mocy 3W. Dzięki niewielkim rozmiarom oraz lekkiej konstrukcji w łatwy i wygodny sposób można je przetransportować.
 
-Zasilane realizowane jest poprzez kabel USB \textcolor{blue}{podłączany do Raspberry pi}.
+Zasilane realizowane jest poprzez kabel USB podłączany do Raspberry pi.
 
 \begin{figure}[!ht]%
 \centering
@@ -476,7 +486,7 @@ Radiatory zbudowane są ze stopów metali dobrze przewodzących ciepło. Ich pow
 W celu poprawienia parametrów cieplnych projektu zastosowano w projekcie wymuszony obieg powietrza. W projekcie zastosowano \textcolor{red}{...}
 
 \newpage
-\section{Warstwa programistyczna}
+\section{Warstwa programistyczna} \label{section:warstwa_programistyczna}
 \subsection{Python jako język programowania}
 % dlaczego python a nie c++
 \subsection{Biblioteki}
@@ -487,13 +497,13 @@ W celu poprawienia parametrów cieplnych projektu zastosowano w projekcie wymusz
 % screeny / ładne ctrl+c, ctrl+v
 
 \newpage
-\section{Warstwa produktowa} % wysłać skreeny z solidworksa i zdjęcia obudowy
+\section{Warstwa produktowa} \label{section:warstwa_produkcyjna} % wysłać skreeny z solidworksa i zdjęcia obudowy
 \subsection{Technologia druku 3D}
 \subsection{Projekt obudowy}
 \subsection{Wykonanie obudowy}
 
 \newpage
-\section{Realizacja projektu}
+\section{Realizacja projektu} \label{section:realizacja}
 \subsection{Napotkane problemy}
 \begin{itemize}
 	\item Wątki
@@ -504,7 +514,7 @@ W celu poprawienia parametrów cieplnych projektu zastosowano w projekcie wymusz
 \subsection{Możliwości rozbudowy}
 
 \newpage
-\section{Wnioski}
+\section{Wnioski} \label{section:wnioski}
 
 \newpage
 
@@ -532,6 +542,14 @@ W celu poprawienia parametrów cieplnych projektu zastosowano w projekcie wymusz
 %
 \qquad
 \end{figure} 
+
+\bf{Color codes:}
+\begin{itemize}
+\item \textcolor{new}{new} – nowy text
+\item \textcolor{edited}{edited} – poprawiony text
+\item \textcolor{to_change}{to\_change} – coś mi tu nie pasuje i chce zmienić / dodać
+\item \textcolor{to_check_at_end}{to\_check\_at\_end} – sprawdzić przy oddawaniu pracy czy dalej się zgadza
+\end{itemize}
 
 \end{document}
 
