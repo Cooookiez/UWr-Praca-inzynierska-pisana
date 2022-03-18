@@ -22,6 +22,7 @@
 \usepackage{url}
 \usepackage{indentfirst}
 \usepackage{subcaption}
+\usepackage{minted}
 
 \definecolor{codegreen}{rgb}{0.5, 0.09, 0.09}
 \definecolor{codegray}{rgb}{0.5,0.5,0.5}
@@ -489,12 +490,93 @@ W celu poprawienia parametrów cieplnych projektu zastosowano w projekcie wymusz
 \section{Warstwa programistyczna} \label{section:warstwa_programistyczna}
 \subsection{Python jako język programowania}
 % dlaczego python a nie c++
+W celu realizacji funkcji prototypu zostały wzięte pod uwagę języki C++ oraz Python. Po wstępnej analizie został wybrany język Python ze względu na \textcolor{new}{wsparcie producenta raspberry pi, większy wybór bibliotek oraz łatwiejszy do pisania i debugowania kod}. Jednocześnie język programowania Python charakteryzuje się \textcolor{new}{wolniejszym działaniem w porównaniu do języka c++, co w moim przypadku nie jest problemem, gdyż zasobożerna biblioteka jest napisana pod pythona ale w języku c++. Dzięki czemu nie tracę na szybkości}.
+
+Z tego powodu biorąc pod uwagę przede wszystkim:
+\textcolor{new}{
+\begin{itemize}
+\item większy wybór bibliotek
+\item wsparcie raspberry pi
+\item przejrzystość kodu
+\end{itemize}
+}
+Język Python stanowi lepszy wybór z punktu widzenia działania całości projektu
 \subsection{Biblioteki}
 % lista bibliotek i do czego je wykorzystuje
+W celu realizacji poszczególnych zadań zostały użyte następujące biblioteki języka Python:
+\textcolor{new}{
+\begin{itemize}
+\item cv2, odpowiadająca za \textcolor{to_check_at_end}{xyz}.
+\item face\_recognition, odpowiadająca za \textcolor{to_check_at_end}{pobieranie obrazu z kamerki}.
+\item gtts, odpowiadająca za \textcolor{to_check_at_end}{stworzenie deflautowego powitania do pliku .mp3}.
+\item json, odpowiadająca za zapisywanie i odczytywanie zencodowancyh twarzy do plików.
+\item numpy, odpowiadająca za \textcolor{to_check_at_end}{tworzenie zoptymalizowanych pod bibliotege rozpoznawania twarzy macierzy}.
+\item os, odpowiadająca za poruszanie się po folderach.
+\item pygame, odpowiadająca za \textcolor{to_check_at_end}{odtworzenie powitalnego dźwięku}.
+\item random, odpowiadająca za \textcolor{to_check_at_end}{wybranie losowej ścieszki do ottworzenia}.
+\item sys, odpowiadająca za \textcolor{to_check_at_end}{pobranie wartości przy odpaleniu programu sprawdzających czy zendcodować wszystkich, czy tylko jedną osobę}.
+\item \textcolor{to_check_at_end}{threading, odpowiadająca za to smuszenia programu żeby działał na wątkach}.
+\end{itemize}
+}
 \subsection{Algorytm}
 % prostokąty, kułka i trujkąty
+Poniżej znajdują się algorytmy programów zastosowanych w projekcie:
+
+\begin{figure}[!ht]%
+\centering
+\includegraphics[width=0.8\columnwidth]{imgs/domkable.png}
+\caption{Program encodujący zdjęcia do plików .json \label{algorytm_encode_faces}}
+\quad
+\end{figure}
+
+\begin{figure}[!ht]%
+\centering
+\includegraphics[width=0.8\columnwidth]{imgs/domkable.png}
+\caption{Program główny \label{algorytm_start_recognition}}
+\quad
+\end{figure}
+
 \subsection{Kod}
 % screeny / ładne ctrl+c, ctrl+v
+W tym rozdziale znajduje się omówienie kodu odpowiedzialnego za realizację warstwy softwarowej projektu.
+Prezentowany kod podzielony jest na następujące elementy:
+
+\begin{listing}
+\begin{minted}{python}
+if __name__ == '__main__':
+
+    ts = time.time()
+    argc = len(sys.argv)
+    if argc == 1: # encode ALL people
+        encode_for_all()
+        create_welcome_voice_for_unknown_person()
+    elif argc == 2: # encode SINGLE person
+        name = sys.argv[1]
+        if check_if_person_exist(name):
+            print()
+            encode_for(name)
+            create_welcome_voice_for_unknown_person()
+        else:
+            print(f"There is no \"{name}\" folder in {KNOW_PEOPLE_DIR_PATH_NAME}")
+    else:
+        pass
+
+    print(f"Program execiuted in {(time.time() - ts):.4} seconds!")
+\end{minted}
+\caption{Funkcja 1}
+\label{listing:py1}
+\end{listing}
+
+\begin{listing}
+\begin{minted}{python}
+def check_if_person_exist(name, path2root=PATH_TO_ROOT):
+    # get person directory path
+    person_dir_path = os.path.join(path2root, KNOW_PEOPLE_DIR_PATH_NAME, name)
+    return not os.path.isfile(person_dir_path) and os.path.isdir(person_dir_path)
+\end{minted}
+\caption{Funkcja 2}
+\label{listing:py2}
+\end{listing}
 
 \newpage
 \section{Warstwa produktowa} \label{section:warstwa_produkcyjna} % wysłać skreeny z solidworksa i zdjęcia obudowy
