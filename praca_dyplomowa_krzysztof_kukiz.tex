@@ -23,12 +23,14 @@
 \usepackage{indentfirst}
 \usepackage{subcaption}
 \usepackage{minted}
+\usepackage{mdframed}
 
 \definecolor{codegreen}{rgb}{0.5, 0.09, 0.09}
 \definecolor{codegray}{rgb}{0.5,0.5,0.5}
 \definecolor{codepurple}{rgb}{0.58,0,0.82}
 \definecolor{backcolour}{rgb}{0.94,0.94,0.94}
 \definecolor{gray}{rgb}{0,0.6,0}
+\definecolor{codebg}{RGB}{186, 186, 186}
 
 % color codes
 \definecolor{new}{RGB}{14, 107, 0}
@@ -542,6 +544,7 @@ W tym rozdziale znajduje się omówienie kodu odpowiedzialnego za realizację wa
 Prezentowany kod podzielony jest na następujące elementy:
 
 \begin{listing}
+\begin{mdframed}[backgroundcolor=codebg]
 \begin{minted}{python}
 if __name__ == '__main__':
 
@@ -557,23 +560,29 @@ if __name__ == '__main__':
             encode_for(name)
             create_welcome_voice_for_unknown_person()
         else:
-            print(f"There is no \"{name}\" folder in {KNOW_PEOPLE_DIR_PATH_NAME}")
+            print(f"There is no \"{name}\" folder in {KNOW_PEOPLE_DI
+            R_PATH_NAME}")
     else:
         pass
 
     print(f"Program execiuted in {(time.time() - ts):.4} seconds!")
 \end{minted}
+\end{mdframed}
 \caption{Funkcja 1}
 \label{listing:py1}
 \end{listing}
 
 \begin{listing}
+\begin{mdframed}[backgroundcolor=codebg]
 \begin{minted}{python}
 def check_if_person_exist(name, path2root=PATH_TO_ROOT):
     # get person directory path
-    person_dir_path = os.path.join(path2root, KNOW_PEOPLE_DIR_PATH_NAME, name)
-    return not os.path.isfile(person_dir_path) and os.path.isdir(person_dir_path)
+    person_dir_path = os.path.join(path2root, KNOW_PEOPLE_DIR_PATH_N
+    AME, name)
+    return not os.path.isfile(person_dir_path) and os.path.isdir(per
+    son_dir_path)
 \end{minted}
+\end{mdframed}
 \caption{Funkcja 2}
 \label{listing:py2}
 \end{listing}
