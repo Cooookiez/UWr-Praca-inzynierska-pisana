@@ -650,15 +650,45 @@ W ramach wykonania projektu ostatecznego były wprowadzane poprawki do projektu 
 \textbf{D – DO}: wykonaj \newline
 \textbf{C – CHECK}: sprawdź \newline
 \textbf{A – ACT}: popraw
+
+\begin{figure}[!ht]%
+\centering
+\includegraphics[width=0.8\columnwidth]{imgs/domkable.png}
+\caption{Drukarka 3D Creality Ender wykorzystana w projekcie [materiały własne] \label{ender3d}}
+\quad
+\end{figure}
+
 \subsection{Wykonanie obudowy}
+W celu osiągnięcia ostatecznego wyniku przeprowadzono \textcolor{to_check_at_end}{4} iteracje cyklu Deminga (PDCA)
+
+\begin{figure}[!ht]%
+\centering
+\includegraphics[width=0.8\columnwidth]{imgs/domkable.png}
+\caption{\textcolor{edited}{PDCA – Iteracja 1} [materiały własne] \label{PDCA_01}}
+\quad
+\end{figure}
+
+W pierwszej iteracji (Patrz rys. \ref{PDCA_01}) okazało się, że ...
+
+\begin{figure}[!ht]%
+\centering
+\includegraphics[width=0.8\columnwidth]{imgs/domkable.png}
+\caption{\textcolor{edited}{PDCA – Iteracja 2} [materiały własne] \label{PDCA_02}}
+\quad
+\end{figure}
+
+W drugiej iteracji (Patrz rys. \ref{PDCA_02}) okazało się, że ...
+
+...
 
 \newpage
 \section{Realizacja projektu} \label{section:realizacja}
 \subsection{Napotkane problemy}
+W trakcie realizacji projektu napotkano następujące problemy.
 \begin{itemize}
-	\item Wątki
-	\item Brak miejsca na radiator (z starym wyświetlaczo-głośnikiem, w nowym miejsce się znajdzie)
-	\item wyświetlaczo-głośnik nie miał wsparcia do puszczania dzwięków zpoza spotify
+	\item \textbf{Wykorzystanie tylko jednego rdzenia procesora} (wątku). Raspberry Pi wyposażony jest w procesor czterordzeniowym, dzięki czemu można jednocześnie realizować 4 równoległe operacje. \newline \textbf{\textcolor{to_change}{Problem:}} \newline Okazało się że procesor Raspberry ma problemy z wykorzystaniem większej lioczby wątków w ramach jednego programu.
+	\item \textbf{Brak możliwość realizacji komunikatów głosowych.} \newline \textbf{\textcolor{to_change}{Problem:}} \newline Pierwotnie zastosowany głośnik nie posiadał wsparcia dla realizacji komunikatów głosowych zapisanych w pamięci prototypu. Jedyną możliwością było odtwarzanie plików przez Spotify. \newline \textbf{\textcolor{to_change}{Rozwiązanie:}} \newline Zastosowano zewnętrzne głośniki podpinane przez złącze jack. \textcolor{new}{Plusem tego rozwiązanie jest równiesz dowolność wyboru głośników. Jeśli chce to i na metrowym głośniku mogę odtwarzać dźwięki.}
+	\item \textbf{Zbyt duża temperatura prototypu ze względu na konieczność wykonywania dużej liczby obliczeń.} \newline \textbf{\textcolor{to_change}{Problem:}} \newline W początkowej fazie projektu planowano użyć wyświetlacza zintegrowanego z głośnikiem. Okazało się iż takie rozwiązanie powoduje, że brakuje miejsca na radiator. \newline \textbf{\textcolor{to_change}{Rozwiązanie:}} \newline Znaleziono nowy wyświetlacz oraz wyprowadzono głośniki na zewnątrz przy pomocy gniazda typu jack.
 	\item raspbian segmentation fault (Corrupted filesystem) - problem prawdopodobnie dodyczy wątkuw - do sprawdzenia
 \end{itemize}
 \subsection{Możliwości rozbudowy}
@@ -681,7 +711,7 @@ W ramach wykonania projektu ostatecznego były wprowadzane poprawki do projektu 
 \begin{figure}[!ht]%
 \centering
 \includegraphics[scale=0.85]{logo.eps}
-\caption{Podpis rysunku, który jest obrazem wektorowym (EPS). \label{logotyp}}
+\caption{Zasada PDCA\label{PDCA}}
 \qquad
 \end{figure}   
 
