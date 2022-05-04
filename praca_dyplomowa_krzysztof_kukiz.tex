@@ -682,20 +682,34 @@ def create_welcome_voice_for_unknown_person(path2root=PATH_TO_ROOT):
 \begin{mdframed}[backgroundcolor=codebg]
 \begin{minted}{python}
 def screenVisualization():
-    match appActiveMode:
-        case Mods.PROCESSING:
-            Tk.configure(background=appBackground["PROCESSING"])
+    global appLastMode
+    global lastMods2Show
+    print(f"\t|{mods2ShowQueue}|")
+    if len(mods2ShowQueue) > 0:
+        mods2ShowQueue.sort()
+        # is queue itme still valid
+        if time.time() > mods2ShowQueue[0].time_end:
+            # pop
+            mods2ShowQueue.pop(0)
+            screenVisualization()
             pass
-        case Mods.IDLE:
-            Tk.configure(background=appBackground["IDLE"])
+        else:
+            activeMode2show = mods2ShowQueue[0]
+            # change only if mod2show is new
+            if activeMode2show != lastMods2Show:
+                Tk.configure(background=appBackground[activeMode2show.activeMode])
+                Tk.update()
+                lastMods2Show = activeMode2show
+                appLastMode = activeMode2show.activeMode;
+                pass
             pass
-        case Mods.UNKNOWN:
-            Tk.configure(background=appBackground["UNKNOWN"])
-            pass
-        case Mods.KNOWN:
-            Tk.configure(background=appBackground["KNOWN"])
-            pass
-    Tk.update()
+        pass
+    else:
+        # change to idle (expect it is not idle)
+        if appLastMode != Mods.IDLE:
+            Tk.configure(background=appBackground[Mods.IDLE])
+            Tk.update()
+        appLastMode = Mods.IDLE;
 \end{minted}
 \end{mdframed}
 \caption{Wysłanie komunikatu graficznego na ekran}
@@ -751,23 +765,43 @@ def say_hello(name, path2root=PATH_TO_ROOT):
 \begin{listing}
 \begin{mdframed}[backgroundcolor=codebg]
 \begin{minted}{python}
-if name == "Unknown":
-    appActiveMode = Mods.UNKNOWN
-    pass
+def say_hello(name, path2root=PATH_TO_ROOT):
+    global addPersoneMode2queue
+    
+    appActiveName = name
+    
+    # get mp3' dir
+    mp3s = []
+    path_to_welcomes_for_name = os.path.join(path2root, KNOW_PEOPLE_DIR_PATH_NAME)
+    if name == "Unknown":
+        addPersoneMode2queue(Mods.UNKNOWN)
+        path_to_welcomes_for_name = os.path.join(path_to_welcomes_for_name, "welcomes_unknown")
+    else:
+        addPersoneMode2queue(Mods.KNOWN, name)
+        path_to_welcomes_for_name = os.path.join(path_to_welcomes_for_name, name, WELCOMES_DIR_PATH_NAME)
+        
+    # get mp3s
+    for file in os.listdir(path_to_welcomes_for_name):
+        print(file)
+        extension = os.path.splitext(file)[1] # extension of file
+        print(extension)
+        if extension.lower() == ".mp3":
+            mp3s.append(os.path.join(path_to_welcomes_for_name, file))
+    print(mp3s)        
+        
+    # rand file to play
+    mp3_to_paly = random.choice(mp3s)
+    print(mp3_to_paly)
+    
+    # play      
+    pygame.mixer.init()
+    pygame.mixer.music.load(mp3_to_paly)
+    pygame.mixer.music.play()
+    while pygame.mixer.get_busy() == True:
+        continue
 \end{minted}
 \end{mdframed}
-\caption{Obsługa sytuacji w której twarz nie została rozpoznana}
-\label{listing:py1}
-\end{listing}
-
-% code
-\begin{listing}
-\begin{mdframed}[backgroundcolor=codebg]
-\begin{minted}{python}
-
-\end{minted}
-\end{mdframed}
-\caption{Funkcja 1}
+\caption{Obsługa sytuacji w zależności od tego czy twarz została rozpoznana}
 \label{listing:py1}
 \end{listing}
 
