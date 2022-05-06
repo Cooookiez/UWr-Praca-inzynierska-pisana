@@ -310,21 +310,21 @@ W ramach realizacji projektu zostały zaimplementowane następujące funkcjonaln
 	\item \textbf{Skanowanie  twarzy.} Po wykryciu obiektu kamera koncentruje się na twarzy wykrytej osoby i encoduje w celu porównania z lokalną bazą.
 	\item \textbf{Porównanie (Identyfikacja) twarzy.} \textcolor{edited}{System porównuje zencodowane zdjęcia z wcześniej zencodowanymi zdjęciami znajdującymi się w \textcolor{to_change}{bazie danych}. System przekształca dane wejściowe \textcolor{new}{do matrixa liczb. Funkcja z biblioteki teraz porównuje wszystkie matrixy i patrzy czy dana osoba istnieje.}}
 	\item \textbf{Komunikat głosowy.} Z puli powitań plików \textcolor{to_check_at_end}{.mp3} (deflautowo jeden, można wrzucić własne dzwięki), program losuje jeden i go odpala (W przypadku gdy jest tylko jeden plik, losowanie się nie odbywa).
-	\item \textbf{Komunikat wizualny.} Na ekranie dodatkowo pojawia się komunikat graficzny z imieniem i nazwiskiem. W przypadku wykrycia osoby nieznanej pojawia się stosowny komunikat (Patrz rys. \ref{komunikatgraficzny:komunikatgraficzny}\subref{komunikatgraficzny:1}, \ref{komunikatgraficzny:komunikatgraficzny}\subref{komunikatgraficzny:2})
+	\item \textbf{Komunikat wizualny.} Na ekranie dodatkowo pojawia się komunikat graficzny z imieniem i nazwiskiem. W przypadku wykrycia osoby nieznanej pojawia się stosowny komunikat (Patrz rys. \ref{komunikatgraficzny:komunikatgraficzny}\subref{komunikatgraficzny:rozpoznana}, \ref{komunikatgraficzny:komunikatgraficzny}\subref{komunikatgraficzny:NIErozpoznana})
 \end{itemize}
 \begin{figure}[!ht]%
 	\centering
 	\begin{subfigure}{.5\textwidth}
 		\centering
-		\includegraphics[width=0.8\linewidth]{imgs/domkable.png}
+		\includegraphics[width=0.8\linewidth]{imgs/testy_rozpoznana.png}
 		\caption{Rozpoznanej osoby.}	
-		\label{komunikatgraficzny:1}
+		\label{komunikatgraficzny:rozpoznana}
 	\end{subfigure}%
 	\begin{subfigure}{.5\textwidth}
 		\centering
-		\includegraphics[width=0.8\linewidth]{imgs/domkable.png}
+		\includegraphics[width=0.8\linewidth]{imgs/testy_NIErozpoznana.png}
 		\caption{NIE rozpoznanej osoby}
-		\label{komunikatgraficzny:2}
+		\label{komunikatgraficzny:NIErozpoznana}
 	\end{subfigure}%
 \caption{Komunikaty graficzne}
 \label{komunikatgraficzny:komunikatgraficzny}
