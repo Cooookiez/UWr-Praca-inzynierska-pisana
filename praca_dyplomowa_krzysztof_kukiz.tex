@@ -880,7 +880,7 @@ Zgodnie z „(...) prototypowanie z wykorzystaniem druku 3D pozwala na wypracowa
 
 \begin{figure}[!ht]%
 \centering
-\includegraphics[width=0.8\columnwidth]{imgs/domkable.png}
+\includegraphics[width=0.8\columnwidth]{imgs/ender3v2.png}
 \caption{Drukarka 3D Creality Ender wykorzystana w projekcie [materiały własne] \label{ender3d}}
 \quad
 \end{figure}
@@ -895,37 +895,64 @@ W ramach wykonania projektu ostatecznego były wprowadzane poprawki do projektu 
 \textbf{C – CHECK}: sprawdź \newline
 \textbf{A – ACT}: popraw
 
-\begin{figure}[!ht]%
-\centering
-\includegraphics[width=0.8\columnwidth]{imgs/domkable.png}
-\caption{Drukarka 3D Creality Ender wykorzystana w projekcie [materiały własne] \label{ender3d}}
-\quad
-\end{figure}
-
 \subsection{Wykonanie obudowy}
-W celu osiągnięcia ostatecznego wyniku przeprowadzono \textcolor{to_check_at_end}{4} iteracje cyklu Deminga (PDCA)
+W celu osiągnięcia ostatecznego wyniku przeprowadzono \textcolor{edited}{kilka} iteracje cyklu Deminga (PDCA)
 
 \begin{figure}[!ht]%
 \centering
-\includegraphics[width=0.8\columnwidth]{imgs/domkable.png}
-\caption{\textcolor{edited}{PDCA – Iteracja 1} [materiały własne] \label{PDCA_01}}
+\includegraphics[width=0.8\columnwidth]{imgs/print_0.png}
+\caption{PDCA – Iteracja \textcolor{edited}{Początkowa} [materiały własne] \label{PDCA_00}}
 \quad
 \end{figure}
 
-W pierwszej iteracji (Patrz rys. \ref{PDCA_01}) okazało się, że ...
-
-\begin{figure}[!ht]%
-\centering
-\includegraphics[width=0.8\columnwidth]{imgs/domkable.png}
-\caption{\textcolor{edited}{PDCA – Iteracja 2} [materiały własne] \label{PDCA_02}}
-\quad
-\end{figure}
-
-W drugiej iteracji (Patrz rys. \ref{PDCA_02}) okazało się, że ...
-
-...
+W pierwszej iteracji (Patrz rys. \ref{PDCA_00}) okazało się, że wymiary i rozmieszczenie bolców jest lekko przesunięte względem Raspberry Pi
 
 \newpage
+W jednej z pośrednich iteracji (Patrz rys. \ref{PDCA_01}) okazało się, że wymiary i rozmieszczenie bolców jest lekko przesunięte względem Raspberry Pi
+
+\begin{figure}[!ht]%
+\centering
+\includegraphics[width=0.8\columnwidth]{imgs/print_1.png}
+\caption{PDCA – Iteracja \textcolor{edited}{pośrednia 1} [materiały własne] \label{PDCA_01}}
+\quad
+\end{figure}
+
+\begin{figure}[!ht]%
+\centering
+\includegraphics[width=0.8\columnwidth]{imgs/print_2.png}
+\caption{PDCA – Iteracja \textcolor{edited}{pośrednia 2} [materiały własne] \label{PDCA_02}}
+\quad
+\end{figure}
+
+Następna iteracji (Patrz rys. \ref{PDCA_02}) miała na celu wydrukowanie poprawynch wymiarów dla kamery. Z powodu niewielkich rozmiarów urządzenia nie było łatwo dokładnie zmierzyć otworów. Nawet z uwzględnieniem niepewności pomiarowej trzeba było wydrukować komponent kilka razy z różnicą kilku dziesiątych mm.
+
+\begin{figure}[!ht]%
+\centering
+\includegraphics[width=0.8\columnwidth]{imgs/print_3.png}
+\caption{PDCA – Iteracja \textcolor{edited}{pośrednia 32} [materiały własne] \label{PDCA_03}}
+\quad
+\end{figure}
+
+W jednej z końcowych iteracji (Patrz rys. \ref{PDCA_03}) celem było wpasowanie obu części obudowy w siebie nawzajem. Na "Papierze" wszystkie wymiary się zgadzały i powinny pasować. Jednak z względu niedoskonałości wydruku było inaczej.
+
+\newpage
+Ostatnia iteracjia (Patrz rys. \ref{PDCA_END}) złożona z zamontowanymi w niej częściami, oraz śrubą aparatową pod stojak.
+\begin{figure}[!ht]%
+\centering
+\includegraphics[width=0.8\columnwidth]{imgs/print_last_assembled.png}
+\caption{PDCA – Iteracja \textcolor{edited}{końcowa} [materiały własne] \label{PDCA_END}}
+\quad
+\end{figure}
+
+Prawie wszystkie wydrukowane Iteracje PDCA (Patrz rys. \ref{PDCA_ALL}).
+
+\begin{figure}[!ht]%
+\centering
+\includegraphics[width=0.8\columnwidth]{imgs/print_all.png}
+\caption{\textcolor{new}{Wszystkie wydrukowane Iteracje PDCA} [materiały własne] \label{PDCA_ALL}}
+\quad
+\end{figure}
+
 \section{Realizacja projektu} \label{section:realizacja}
 \subsection{Napotkane problemy}
 W trakcie realizacji projektu napotkano następujące problemy.
