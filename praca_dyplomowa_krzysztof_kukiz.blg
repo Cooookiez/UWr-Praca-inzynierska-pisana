@@ -9,45 +9,53 @@ Warning--entry type for "funkcje_opakowan_01" isn't style-file defined
 --line 41 of file praca_dyplomowa_krzysztof_kukiz.bib
 Warning--entry type for "funkcje_opakowan_02" isn't style-file defined
 --line 49 of file praca_dyplomowa_krzysztof_kukiz.bib
-You've used 3 entries,
+Warning--entry type for "img_by_me" isn't style-file defined
+--line 141 of file praca_dyplomowa_krzysztof_kukiz.bib
+Warning--entry type for "img_cam" isn't style-file defined
+--line 149 of file praca_dyplomowa_krzysztof_kukiz.bib
+Warning--entry type for "img_rp4b" isn't style-file defined
+--line 157 of file praca_dyplomowa_krzysztof_kukiz.bib
+Warning--entry type for "img_screen" isn't style-file defined
+--line 165 of file praca_dyplomowa_krzysztof_kukiz.bib
+You've used 7 entries,
             2118 wiz_defined-function locations,
-            506 strings with 4208 characters,
-and the built_in function-call counts, 611 in all, are:
-= -- 51
-> -- 21
+            513 strings with 4274 characters,
+and the built_in function-call counts, 1399 in all, are:
+= -- 119
+> -- 49
 < -- 0
-+ -- 9
-- -- 6
-* -- 20
-:= -- 105
-add.period$ -- 6
-call.type$ -- 3
-change.case$ -- 12
++ -- 21
+- -- 14
+* -- 44
+:= -- 233
+add.period$ -- 14
+call.type$ -- 7
+change.case$ -- 28
 chr.to.int$ -- 0
-cite$ -- 3
-duplicate$ -- 21
-empty$ -- 67
-format.name$ -- 6
-if$ -- 130
+cite$ -- 7
+duplicate$ -- 49
+empty$ -- 155
+format.name$ -- 14
+if$ -- 302
 int.to.chr$ -- 0
-int.to.str$ -- 3
+int.to.str$ -- 7
 missing$ -- 0
-newline$ -- 15
-num.names$ -- 6
-pop$ -- 27
+newline$ -- 31
+num.names$ -- 14
+pop$ -- 63
 preamble$ -- 1
-purify$ -- 9
+purify$ -- 21
 quote$ -- 0
-skip$ -- 24
+skip$ -- 56
 stack$ -- 0
-substring$ -- 15
-swap$ -- 3
+substring$ -- 35
+swap$ -- 7
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 12
+type$ -- 28
 warning$ -- 0
-while$ -- 6
-width$ -- 4
-write$ -- 26
-(There were 3 warnings)
+while$ -- 14
+width$ -- 8
+write$ -- 58
+(There were 7 warnings)
