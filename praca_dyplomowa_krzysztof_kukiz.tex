@@ -25,6 +25,7 @@
 \usepackage{minted}
 \usepackage{mdframed}
 \usepackage{tabularx}
+\usepackage{float}
 
 \definecolor{codegreen}{rgb}{0.5, 0.09, 0.09}
 \definecolor{codegray}{rgb}{0.5,0.5,0.5}
@@ -208,7 +209,7 @@ W naszym codziennym życiu są elementem składowym inteligentnych budynków opa
 
 Systemy inteligentne pomimo swoich kosztów zdobywają coraz większą popularność nie tylko w zastosowaniach profesjonalnych, ale także w zastosowaniach prywatnych i mogą być oparte zarówno o infrastrukturę przewodową (patrz rys. (\ref{kable})), jak i mogą być oparte na rozwiązaniach bezprzewodowych.
 
-\begin{figure}[!ht]%
+\begin{figure}[H]%
 \centering
 \includegraphics[width=0.8\columnwidth]{imgs/domkable.png}
 \caption{Przykład okablowaniem domu inteligentnego. \cite{img_by_me} \label{kable}}
@@ -260,7 +261,7 @@ Na podstawie założonego celu zostały określone kroki milowe, które należa�
 
 Takie podejście miało zapewnić iż ewentualny błąd popełniony na dalszych etapach nie będzie miał wpływu na etapy poprzednie projektu.
 
-\begin{figure}[!ht]%
+\begin{figure}[H]%
 \centering
 \includegraphics[width=0.8\columnwidth]{imgs/etapy.drawio.png}
 \caption{Etapy prac projektowych. \cite{img_by_me} \label{etapypracy}}
@@ -371,7 +372,7 @@ Aby uniknąć potencjalnych problemów w przesyle sygnału zastosowano oficjalny
 
 Dzięki takiemu rozwiązaniu możliwe jest jednocześnie szerokie wsparcie w zakresie dokumentacji, tutoriali oraz bibliotek programistycznych.
 
-\begin{figure}[!ht]%
+\begin{figure}[H]%
 \centering
 \includegraphics[width=0.8\columnwidth]{imgs/camera.png}
 \caption{Kamera HD \cite{img_cam} \label{kamera}}
@@ -394,7 +395,7 @@ Posiada on dwa złącza microHDMI, dwa złączami USB 3.0 i 2 złącza USB 2.0. 
 
 Mikrokomputer wyposażony jest także w dwuzakresowe WiFi 2,4 GHz i 5 GHz, Bluetooth w standardzie 5, oraz port Ethernet o prędkości do 1000 Mb/s.
 
-\begin{figure}[!ht]%
+\begin{figure}[H]%
 \centering
 \includegraphics[width=0.8\columnwidth]{imgs/raspberrypi4.png}
 \caption{Raspberry Pi 4B \cite{img_rp4b} \label{rp4b}}
@@ -448,7 +449,7 @@ Każdy głośnik o mocy 3W. Dzięki niewielkim rozmiarom oraz lekkiej konstrukcj
 
 Zasilane realizowane jest poprzez kabel USB podłączany do Raspberry pi.
 
-\begin{figure}[!ht]%
+\begin{figure}[H]%
 \centering
 \includegraphics[width=0.8\columnwidth]{imgs/glosnik.png}
 \caption{Głośniki LOGIC CONCEPT LS-09 \cite{img_by_me} \label{glosnik}}
@@ -461,7 +462,7 @@ W projekcie został zastosowany ekran Ekran dotykowy Waveshare 9904. Jest to ekr
 
 Oprogramowanie ekranu dotykowego przygotowane przez producenta zawiera sterownikami.
 
-\begin{figure}[!ht]%
+\begin{figure}[H]%
 \centering
 \includegraphics[width=0.8\columnwidth]{imgs/ekran.png}
 \caption{Ekran Waveshare 9904 \cite{img_screen} \label{ekran}}
@@ -528,21 +529,20 @@ W celu realizacji poszczególnych zadań zostały użyte następujące bibliotek
 % prostokąty, kułka i trujkąty
 Poniżej znajdują się algorytmy programów zastosowanych w projekcie:
 
-\begin{figure}[!ht]%
+\begin{figure}[H]%
 \centering
 \includegraphics[width=0.8\columnwidth]{imgs/generujacy.drawio.png}
 \caption{Program encodujący zdjęcia do plików .json \cite{img_by_me} \label{algorytm_encode_faces}}
 \quad
 \end{figure}
 
-\begin{figure}[!ht]%
+\begin{figure}[H]%
 \centering
 \includegraphics[width=0.8\columnwidth]{imgs/glowny.drawio.png}
 \caption{Program główny \cite{img_by_me} \label{algorytm_start_recognition}}
 \quad
 \end{figure}
 
-\newpage
 \subsection{Kod}
 % screeny / ładne ctrl+c, ctrl+v
 W tym rozdziale znajduje się omówienie kodu odpowiedzialnego za realizację warstwy softwarowej projektu.
@@ -880,7 +880,7 @@ Po naniesieniu ostatniej warstwy \textcolor{new}{wydruku}, wydruk \textcolor{new
 
 Zgodnie z „(...) prototypowanie z wykorzystaniem druku 3D pozwala na wypracowanie oszczędności – czasu i pieniędzy. Umożliwia szybkie testowanie prototypów i przyspiesza czas, jaki niezbędny jest do wprowadzenia docelowego produktu na rynek. Dodatkowo na każdym etapie procesu prototypowania można otrzymać natychmiast podgląd wydruku i śledzić proces powstawania modelu (...)” \cite{prototyp3dzalety}
 
-\begin{figure}[!ht]%
+\begin{figure}[H]%
 \centering
 \includegraphics[width=0.8\columnwidth]{imgs/ender3v2.png}
 \caption{Drukarka 3D Creality Ender wykorzystana w projekcie \cite{img_by_me} \label{ender3d}}
@@ -900,7 +900,7 @@ W ramach wykonania projektu ostatecznego były wprowadzane poprawki do projektu 
 \subsection{Wykonanie obudowy}
 W celu osiągnięcia ostatecznego wyniku przeprowadzono \textcolor{edited}{kilka} iteracje cyklu Deminga (PDCA)
 
-\begin{figure}[!ht]%
+\begin{figure}[H]%
 \centering
 \includegraphics[width=0.8\columnwidth]{imgs/print_0.png}
 \caption{Iteracja Początkowa \cite{img_by_me} \label{PDCA_00}}
@@ -912,14 +912,14 @@ W pierwszej iteracji (Patrz rys. \ref{PDCA_00}) okazało się, że wymiary i roz
 \newpage
 W jednej z pośrednich iteracji (Patrz rys. \ref{PDCA_01}) okazało się, że wymiary i rozmieszczenie bolców jest lekko przesunięte względem Raspberry Pi
 
-\begin{figure}[!ht]%
+\begin{figure}[H]%
 \centering
 \includegraphics[width=0.8\columnwidth]{imgs/print_1.png}
 \caption{Iteracja pośrednia 1 \cite{img_by_me} \label{PDCA_01}}
 \quad
 \end{figure}
 
-\begin{figure}[!ht]%
+\begin{figure}[H]%
 \centering
 \includegraphics[width=0.8\columnwidth]{imgs/print_2.png}
 \caption{Iteracja pośrednia 2 \cite{img_by_me} \label{PDCA_02}}
@@ -928,7 +928,7 @@ W jednej z pośrednich iteracji (Patrz rys. \ref{PDCA_01}) okazało się, że wy
 
 Następna iteracji (Patrz rys. \ref{PDCA_02}) miała na celu wydrukowanie poprawynch wymiarów dla kamery. Z powodu niewielkich rozmiarów urządzenia nie było łatwo dokładnie zmierzyć otworów. Nawet z uwzględnieniem niepewności pomiarowej trzeba było wydrukować komponent kilka razy z różnicą kilku dziesiątych mm.
 
-\begin{figure}[!ht]%
+\begin{figure}[H]%
 \centering
 \includegraphics[width=0.8\columnwidth]{imgs/print_3.png}
 \caption{Iteracja pośrednia 3 \cite{img_by_me} \label{PDCA_03}}
@@ -939,7 +939,7 @@ W jednej z końcowych iteracji (Patrz rys. \ref{PDCA_03}) celem było wpasowanie
 
 \newpage
 Ostatnia iteracjia (Patrz rys. \ref{PDCA_END}) złożona z zamontowanymi w niej częściami, oraz śrubą aparatową pod stojak.
-\begin{figure}[!ht]%
+\begin{figure}[H]%
 \centering
 \includegraphics[width=0.8\columnwidth]{imgs/print_last_assembled.png}
 \caption{Iteracja końcowa \cite{img_by_me} \label{PDCA_END}}
@@ -948,7 +948,7 @@ Ostatnia iteracjia (Patrz rys. \ref{PDCA_END}) złożona z zamontowanymi w niej 
 
 Prawie wszystkie wydrukowane Iteracje PDCA (Patrz rys. \ref{PDCA_ALL}).
 
-\begin{figure}[!ht]%
+\begin{figure}[H]%
 \centering
 \includegraphics[width=0.8\columnwidth]{imgs/print_all.png}
 \caption{Wszystkie wydrukowane Iteracje \cite{img_by_me} \label{PDCA_ALL}}
@@ -1029,14 +1029,14 @@ Stworzenie projektu inteligentnego rozpoznawania twarzy pozwala na sformułowani
 \rho\left(\frac{\partial\vec v}{\partial t}+(\vec v\cdot\nabla)\vec v\right) =\rho\vec f - \nabla p + \mu\triangle\vec v, \label{rownanie}
 \end{equation} 
 
-\begin{figure}[!ht]%
+\begin{figure}[H]%
 \centering
 \includegraphics[scale=0.85]{logo.eps}
 \caption{Zasada PDCA\label{PDCA}}
 \qquad
 \end{figure}   
 
-\begin{figure}[!ht]%
+\begin{figure}[H]%
 \centering
 \includegraphics[width=0.8\columnwidth]{pendulums.png}
 \caption{To jest rysunek drugi, kilkadziesiąt wahadeł podwójnych z syntezą dźwięku.\label{wahadla}}%
