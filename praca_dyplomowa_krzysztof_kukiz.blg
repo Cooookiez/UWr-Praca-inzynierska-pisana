@@ -34,37 +34,40 @@ Warning--entry type for "img_by_me" isn't style-file defined
 Warning--entry type for "img_cam" isn't style-file defined
 --line 149 of file praca_dyplomowa_krzysztof_kukiz.bib
 Warning--entry type for "img_rp4b" isn't style-file defined
---line 157 of file praca_dyplomowa_krzysztof_kukiz.bib
+--line 156 of file praca_dyplomowa_krzysztof_kukiz.bib
 Warning--entry type for "img_screen" isn't style-file defined
---line 165 of file praca_dyplomowa_krzysztof_kukiz.bib
+--line 163 of file praca_dyplomowa_krzysztof_kukiz.bib
+Warning--to sort, need author or key in img_cam
+Warning--to sort, need author or key in img_rp4b
+Warning--to sort, need author or key in img_screen
 You've used 17 entries,
             2118 wiz_defined-function locations,
-            546 strings with 5137 characters,
-and the built_in function-call counts, 3371 in all, are:
-= -- 289
-> -- 119
+            546 strings with 5129 characters,
+and the built_in function-call counts, 3236 in all, are:
+= -- 277
+> -- 101
 < -- 0
-+ -- 51
-- -- 34
++ -- 45
+- -- 28
 * -- 104
-:= -- 555
-add.period$ -- 34
+:= -- 504
+add.period$ -- 31
 call.type$ -- 17
-change.case$ -- 68
+change.case$ -- 65
 chr.to.int$ -- 0
-cite$ -- 17
+cite$ -- 20
 duplicate$ -- 119
-empty$ -- 375
-format.name$ -- 34
-if$ -- 732
+empty$ -- 378
+format.name$ -- 28
+if$ -- 717
 int.to.chr$ -- 0
 int.to.str$ -- 17
 missing$ -- 0
-newline$ -- 71
-num.names$ -- 34
+newline$ -- 68
+num.names$ -- 28
 pop$ -- 153
 preamble$ -- 1
-purify$ -- 51
+purify$ -- 48
 quote$ -- 0
 skip$ -- 135
 stack$ -- 0
@@ -74,8 +77,8 @@ text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 68
-warning$ -- 0
-while$ -- 34
+warning$ -- 3
+while$ -- 28
 width$ -- 19
-write$ -- 138
-(There were 17 warnings)
+write$ -- 132
+(There were 20 warnings)
