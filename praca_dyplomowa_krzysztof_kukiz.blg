@@ -5,10 +5,30 @@ The style file: plain.bst
 Database file #1: praca_dyplomowa_krzysztof_kukiz.bib
 Warning--entry type for "prototyp3dzalety" isn't style-file defined
 --line 26 of file praca_dyplomowa_krzysztof_kukiz.bib
+Warning--entry type for "watki_jak_pisac" isn't style-file defined
+--line 33 of file praca_dyplomowa_krzysztof_kukiz.bib
 Warning--entry type for "funkcje_opakowan_01" isn't style-file defined
 --line 41 of file praca_dyplomowa_krzysztof_kukiz.bib
 Warning--entry type for "funkcje_opakowan_02" isn't style-file defined
 --line 49 of file praca_dyplomowa_krzysztof_kukiz.bib
+Warning--entry type for "face_recognition_with_python" isn't style-file defined
+--line 57 of file praca_dyplomowa_krzysztof_kukiz.bib
+Warning--entry type for "face_recognition_github" isn't style-file defined
+--line 65 of file praca_dyplomowa_krzysztof_kukiz.bib
+Warning--entry type for "face_recognition_python" isn't style-file defined
+--line 73 of file praca_dyplomowa_krzysztof_kukiz.bib
+Warning--entry type for "face_detection_and_recognition_using_opencv" isn't style-file defined
+--line 89 of file praca_dyplomowa_krzysztof_kukiz.bib
+Warning--entry type for "face_recognition_implementation_on_raspberrypi" isn't style-file defined
+--line 97 of file praca_dyplomowa_krzysztof_kukiz.bib
+Warning--entry type for "how_to_setup_ender3" isn't style-file defined
+--line 105 of file praca_dyplomowa_krzysztof_kukiz.bib
+Warning--entry type for "jakie_materialy_w_druku" isn't style-file defined
+--line 113 of file praca_dyplomowa_krzysztof_kukiz.bib
+Warning--entry type for "jak_wybrac_tworzywo_do_drukarek" isn't style-file defined
+--line 121 of file praca_dyplomowa_krzysztof_kukiz.bib
+Warning--entry type for "opakowanie" isn't style-file defined
+--line 129 of file praca_dyplomowa_krzysztof_kukiz.bib
 Warning--entry type for "img_by_me" isn't style-file defined
 --line 141 of file praca_dyplomowa_krzysztof_kukiz.bib
 Warning--entry type for "img_cam" isn't style-file defined
@@ -17,45 +37,45 @@ Warning--entry type for "img_rp4b" isn't style-file defined
 --line 157 of file praca_dyplomowa_krzysztof_kukiz.bib
 Warning--entry type for "img_screen" isn't style-file defined
 --line 165 of file praca_dyplomowa_krzysztof_kukiz.bib
-You've used 7 entries,
+You've used 17 entries,
             2118 wiz_defined-function locations,
-            513 strings with 4274 characters,
-and the built_in function-call counts, 1399 in all, are:
-= -- 119
-> -- 49
+            544 strings with 5103 characters,
+and the built_in function-call counts, 3371 in all, are:
+= -- 289
+> -- 119
 < -- 0
-+ -- 21
-- -- 14
-* -- 44
-:= -- 233
-add.period$ -- 14
-call.type$ -- 7
-change.case$ -- 28
++ -- 51
+- -- 34
+* -- 104
+:= -- 555
+add.period$ -- 34
+call.type$ -- 17
+change.case$ -- 68
 chr.to.int$ -- 0
-cite$ -- 7
-duplicate$ -- 49
-empty$ -- 155
-format.name$ -- 14
-if$ -- 302
+cite$ -- 17
+duplicate$ -- 119
+empty$ -- 375
+format.name$ -- 34
+if$ -- 732
 int.to.chr$ -- 0
-int.to.str$ -- 7
+int.to.str$ -- 17
 missing$ -- 0
-newline$ -- 31
-num.names$ -- 14
-pop$ -- 63
+newline$ -- 71
+num.names$ -- 34
+pop$ -- 153
 preamble$ -- 1
-purify$ -- 21
+purify$ -- 51
 quote$ -- 0
-skip$ -- 56
+skip$ -- 135
 stack$ -- 0
-substring$ -- 35
-swap$ -- 7
+substring$ -- 85
+swap$ -- 17
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 28
+type$ -- 68
 warning$ -- 0
-while$ -- 14
-width$ -- 8
-write$ -- 58
-(There were 7 warnings)
+while$ -- 34
+width$ -- 19
+write$ -- 138
+(There were 17 warnings)
