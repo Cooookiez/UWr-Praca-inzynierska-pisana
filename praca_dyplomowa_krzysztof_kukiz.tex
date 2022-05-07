@@ -546,7 +546,9 @@ Poniżej znajdują się algorytmy programów zastosowanych w projekcie:
 \subsection{Kod}
 % screeny / ładne ctrl+c, ctrl+v
 W tym rozdziale znajduje się omówienie kodu odpowiedzialnego za realizację warstwy softwarowej projektu.
-Prezentowany kod podzielony jest na następujące elementy:
+Prezentowany kod podzielony jest na następujące elementy:\newline
+
+Zamiana obrazu twarzy na postać cyfrową (encodowanie) (Patrz \ref{listing:py_camAndStaff}).
 
 % code
 \begin{listing}[H]%
@@ -580,10 +582,12 @@ while True:
 	(...)
 \end{minted}
 \end{mdframed}
-\caption{Zamiana obrazu twarzy na postać cyfrową (encodowanie)}
+\caption{start\_cam()}
 \label{listing:py_camAndStaff}
 \end{listing}
 
+\newpage
+Przypisanie rozpoznanej twarzy do zdefiniowanego w bazie danych imienia i nazwiska (Patrz \ref{listing:py_encodeThisFrameFaces_1}, \ref{listing:py_encodeThisFrameFaces_2}).
 % code
 \begin{listing}[H]%
 \begin{mdframed}[backgroundcolor=codebg]
@@ -614,7 +618,7 @@ def encodeThisFrameFaces(frame):
         face_names.append(name)
 \end{minted}
 \end{mdframed}
-\caption{Przypisanie rozpoznanej twarzy do zdefiniowanego w bazie danych imienia i nazwiska (1/2)}
+\caption{encodeThisFrameFaces(frame) (part 1 / 2)}
 \label{listing:py_encodeThisFrameFaces_1}
 \end{listing}
 
@@ -655,10 +659,12 @@ def encodeThisFrameFaces(frame):
     pass
 \end{minted}
 \end{mdframed}
-\caption{Przypisanie rozpoznanej twarzy do zdefiniowanego w bazie danych imienia i nazwiska (2/2)}
+\caption{encodeThisFrameFaces(frame) (part 2 / 2)}
 \label{listing:py_encodeThisFrameFaces_2}
 \end{listing}
 
+\newpage
+Generowanie domyślnego komunikatu głosowego  (Patrz \ref{listing:py_make_sound}).
 % code
 \begin{listing}[H]%
 \begin{mdframed}[backgroundcolor=codebg]
@@ -694,10 +700,12 @@ def create_welcome_voice_for_unknown_person(path2root=PATH_TO_ROOT):
     file_path)
 \end{minted}
 \end{mdframed}
-\caption{Generowanie domyślnego komunikatu głosowego}
-\label{listing:py1}
+\caption{create\_welcome\_voice\_for\_[]\_person(name, path2root=PATH\_TO\_ROOT)}
+\label{listing:py_make_sound}
 \end{listing}
 
+\newpage
+Wysłanie komunikatu graficznego na ekran (Patrz \ref{listing:py_visual}).
 % code
 \begin{listing}[H]%
 \begin{mdframed}[backgroundcolor=codebg]
@@ -734,10 +742,12 @@ def screenVisualization():
         appLastMode = Mods.IDLE;
 \end{minted}
 \end{mdframed}
-\caption{Wysłanie komunikatu graficznego na ekran}
-\label{listing:py1}
+\caption{screenVisualization()}
+\label{listing:py_visual}
 \end{listing}
 
+\newpage
+Wysłanie komunikatu głosowego do głośników  (Patrz \ref{listing:py_play_sound}).
 % code
 \begin{listing}[H]%
 \begin{mdframed}[backgroundcolor=codebg]
@@ -781,10 +791,12 @@ def say_hello(name, path2root=PATH_TO_ROOT):
     pass
 \end{minted}
 \end{mdframed}
-\caption{Wysłanie komunikatu głosowego do głośników}
-\label{listing:py1}
+\caption{say\_hello(name, path2root=PATH\_TO\_ROOT)}
+\label{listing:py_play_sound}
 \end{listing}
 
+\newpage
+Obsługa sytuacji w zależności od tego czy twarz została rozpoznana  (Patrz \ref{listing:py_sytuacje}).
 % code
 \begin{listing}[H]%
 \begin{mdframed}[backgroundcolor=codebg]
@@ -829,8 +841,8 @@ def say_hello(name, path2root=PATH_TO_ROOT):
         continue
 \end{minted}
 \end{mdframed}
-\caption{Obsługa sytuacji w zależności od tego czy twarz została rozpoznana}
-\label{listing:py1}
+\caption{say\_hello(name, path2root=PATH\_TO\_ROOT)}
+\label{listing:py_sytuacje}
 \end{listing}
 
 \newpage
