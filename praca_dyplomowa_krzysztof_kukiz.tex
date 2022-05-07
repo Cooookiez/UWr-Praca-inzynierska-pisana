@@ -549,7 +549,7 @@ W tym rozdziale znajduje się omówienie kodu odpowiedzialnego za realizację wa
 Prezentowany kod podzielony jest na następujące elementy:
 
 % code
-\begin{listing}
+\begin{listing}[H]%
 \begin{mdframed}[backgroundcolor=codebg]
 \begin{minted}{python}
 video_capture = cv2.VideoCapture(CAM_REF)
@@ -585,7 +585,7 @@ while True:
 \end{listing}
 
 % code
-\begin{listing}
+\begin{listing}[H]%
 \begin{mdframed}[backgroundcolor=codebg]
 \begin{minted}{python}
 def encodeThisFrameFaces(frame):
@@ -619,7 +619,7 @@ def encodeThisFrameFaces(frame):
 \end{listing}
 
 % code
-\begin{listing}
+\begin{listing}[H]%
 \begin{mdframed}[backgroundcolor=codebg]
 \begin{minted}{python}
     # check if person desnt repeat too soon
@@ -660,7 +660,7 @@ def encodeThisFrameFaces(frame):
 \end{listing}
 
 % code
-\begin{listing}
+\begin{listing}[H]%
 \begin{mdframed}[backgroundcolor=codebg]
 \begin{minted}{python}
 def create_welcome_voice_for_known_person(name, path2root=
@@ -699,7 +699,7 @@ def create_welcome_voice_for_unknown_person(path2root=PATH_TO_ROOT):
 \end{listing}
 
 % code
-\begin{listing}
+\begin{listing}[H]%
 \begin{mdframed}[backgroundcolor=codebg]
 \begin{minted}{python}
 def screenVisualization():
@@ -739,7 +739,7 @@ def screenVisualization():
 \end{listing}
 
 % code
-\begin{listing}
+\begin{listing}[H]%
 \begin{mdframed}[backgroundcolor=codebg]
 \begin{minted}{python}
 def say_hello(name, path2root=PATH_TO_ROOT):
@@ -786,7 +786,7 @@ def say_hello(name, path2root=PATH_TO_ROOT):
 \end{listing}
 
 % code
-\begin{listing}
+\begin{listing}[H]%
 \begin{mdframed}[backgroundcolor=codebg]
 \begin{minted}{python}
 def say_hello(name, path2root=PATH_TO_ROOT):
