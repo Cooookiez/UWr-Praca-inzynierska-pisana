@@ -230,7 +230,7 @@ Celami szczegółowymi projektu są wybór technologii sprzętowej, wybór techn
 
 Praca swoim zakresem obejmuje zarówno tematykę z dziedziny elektroniki, informatyki projektowania oraz prototypowania 3D.
 
-W zakresie elektroniki wykorzystane zostały układy i sensory zgodne z płytką Rasppery 4B, w zakresie informatyki napisany został program w języku Python 3 i wykorzystujący do realizacji zadań dostępne biblioteki, natomiast w zakresie prototypowania z wykorzystaniem druku 3D, użyta została drukarka 3D Creality Ender v2 oraz materiał \textcolor{to_check_at_end}{PET-G}. Do celów zaprojektowania obudowy wykorzystano program SOLIDWORKS. % w PET-G prototypuje, nie wiem czy starczy mi akurat tego materiału 
+W zakresie elektroniki wykorzystane zostały układy i sensory zgodne z płytką Rasppery 4B, w zakresie informatyki napisany został program w języku Python 3 i wykorzystujący do realizacji zadań dostępne biblioteki, natomiast w zakresie prototypowania z wykorzystaniem druku 3D, użyta została drukarka 3D Creality Ender v2 oraz materiał EASY PET-G. Do celów zaprojektowania obudowy wykorzystano program SOLIDWORKS.
 
 Projekt z jednej strony pokazuje, że połączenie wiedzy z zakresu elektroniki, informatyki oraz projektowania dostarcza każdemu studentowi odpowiednią wiedzę oraz umiejętności, do wykonania prototypu od fazy projektowej do fazy praktycznego zastosowania,  z drugiej udowadnia, że wiedza ta pozwala na wykonania projektu z wykorzystaniem elementów ogólnodostępnych na rynku.
 
@@ -277,12 +277,11 @@ W ramach realizacji projektu zostały określone następujące wymagania dla pro
 	\item \textbf{Łatwość zasilania.} Prototyp powinien mieć możliwość zasilania z ogólnodostępnej sieci 230V, tak aby istniała możliwość stałego podłączenia do gniazda elektrycznego. Opcjonalnie założono, że prototyp będzie posiadał możliwość podłączenia do zasilania z baterii lub akumulatorów, tak aby mógł znaleźć zastosowanie w miejscach, w których dostęp do sieci elektrycznej jest utrudniony.
 	\item \textbf{Dostępność.} Prototyp zostanie wykonany ze standardowych elementów dostępnych na rynku polskim.
 	\item \textbf{Relatywnie niski koszt.} Wykonanie prototypu powinno mieścić się w kwocie nie większej niż \textcolor{to_check_at_end}{815,58 zŁ}
-	\item \textbf{Łatwość obsługi.} Prototyp będzie umożliwiał obsługę bez konieczności znajomości zagadnień technicznych. Zadaniem użytkownika będzie jedynie wprowadzenie bazy zdjęć do określonego folderu, \textcolor{new}{oraz uruchomienie dwóch programów:
+	\item \textbf{Łatwość obsługi.} Prototyp będzie umożliwiał obsługę bez konieczności znajomości zagadnień technicznych. Zadaniem użytkownika będzie jedynie wprowadzenie bazy zdjęć do określonego folderu, oraz uruchomienie dwóch programów:
 		\begin{itemize}
 			\item program "zapisujący" zdjęcia twarzy do zakodowanego pliku,
 			\item główny program rozpoznający przechodniów
-		\end{itemize}	
-	}
+		\end{itemize}
 	i odpowiednie nakierowanie kamery prototypu.
 	\item \textbf{Łatwość rozbudowy.} Platforma na jakiej zostanie zbudowany prototyp będzie pozwalała na jego łatwą rozbudowę.
 	\item \textbf{Łatwość programowania.} System będzie oparty o jeden z popularnych języków programowania, w którym dostępne są biblioteki niezbędne do realizacji wszystkich zadań, tak aby użytkownik mógł skorzystać z dostępnych standardowych rozwiązań programistycznych, bez ponoszenia dodatkowych kosztów.
@@ -296,7 +295,7 @@ W celu wykonania prototypu zostały określone następujące wymagania dla proce
 	\item \textbf{Elastyczność.} Projekt zostanie podzielony na mniejsze etapy, tak aby w każdej chwili istniała możliwość modyfikacji założeń lub działań przy jednoczesnym zapewnieniu realizacji założonych celów.
 	\item \textbf{Dostępność narzędzi.} Dla każdego etapu projektu zostaną użyte narzędzia dostępne na rynku, tak aby uniknąć konieczności projektowania samych narzędzi.
 	\item \textbf{Przejrzystość.} Na każdym etapie status prac będzie łatwo weryfikowalny aby zidentyfikować potencjalne przeszkody mogące powodować opóźnienie realizacji projektu.
-	\item \textbf{Backup.} W celu uniknięcia utraty danych \textcolor{edited}{lub kodu źródłowego} zostanie wykorzystane repozytorium Git. \textcolor{edited}{Wersja dostępna online znajduje się na Githubie}
+	\item \textbf{Backup.} W celu uniknięcia utraty danych lub kodu źródłowego zostanie wykorzystane repozytorium Git. Wersja dostępna online znajduje się na Githubie
 \end{itemize}
 
 \newpage
@@ -305,12 +304,12 @@ W celu wykonania prototypu zostały określone następujące wymagania dla proce
 W ramach realizacji projektu zostały zaimplementowane następujące funkcjonalności.
 
 \begin{itemize}
-	\item \textcolor{edited}{\textbf{Zapis zdjęć twarzy} do postaci numerycznej. Użytkownik do imiennych folderów wprowadza zdjęcia twarzy osoby (np. zdjęcia Jana wrzucam do folderu "Jan Nowak") i uruchamia program encodujący zamieniając zdjęcie twarzy na wartości liczbowe.}
-	\item \textbf{Użycie syntezatora mowy.} System korzysta z syntezatora mowy w celu dodania deflautowego powitania do pliku \textcolor{to_check_at_end}{.mp3.}
+	\item \textbf{Zapis zdjęć twarzy} do postaci numerycznej. Użytkownik do imiennych folderów wprowadza zdjęcia twarzy osoby (np. zdjęcia Jana wrzucam do folderu "Jan Nowak") i uruchamia program encodujący zamieniając zdjęcie twarzy na wartości liczbowe.
+	\item \textbf{Użycie syntezatora mowy.} System korzysta z syntezatora mowy w celu dodania deflautowego powitania do pliku .mp3.
 	\item \textbf{Wykrycie osoby.} System skanuje wybrany obszar przestrzeni i wykrywa czy w nadzorowanym obszarze znajduje się osoba. W przypadku wykrycia aktywowane są kolejne algorytmy programu. System pomija zwierzęta oraz przedmioty.
 	\item \textbf{Skanowanie  twarzy.} Po wykryciu obiektu kamera koncentruje się na twarzy wykrytej osoby i encoduje w celu porównania z lokalną bazą.
-	\item \textbf{Porównanie (Identyfikacja) twarzy.} \textcolor{edited}{System porównuje zencodowane zdjęcia z wcześniej zencodowanymi zdjęciami znajdującymi się w \textcolor{to_change}{bazie danych}. System przekształca dane wejściowe \textcolor{new}{do matrixa liczb. Funkcja z biblioteki teraz porównuje wszystkie matrixy i patrzy czy dana osoba istnieje.}}
-	\item \textbf{Komunikat głosowy.} Z puli powitań plików \textcolor{to_check_at_end}{.mp3} (deflautowo jeden, można wrzucić własne dzwięki), program losuje jeden i go odpala (W przypadku gdy jest tylko jeden plik, losowanie się nie odbywa).
+	\item \textbf{Porównanie (Identyfikacja) twarzy.} System porównuje zencodowane zdjęcia z wcześniej zencodowanymi zdjęciami znajdującymi się wbazie danych. System przekształca dane wejściowe do matrixa liczb. Funkcja z biblioteki teraz porównuje wszystkie matrixy i patrzy czy dana osoba istnieje.
+	\item \textbf{Komunikat głosowy.} Z puli powitań plików .mp3 (deflautowo jeden, można wrzucić własne dzwięki), program losuje jeden i go odpala (W przypadku gdy jest tylko jeden plik, losowanie się nie odbywa).
 	\item \textbf{Komunikat wizualny.} Na ekranie dodatkowo pojawia się komunikat graficzny z imieniem i nazwiskiem. W przypadku wykrycia osoby nieznanej pojawia się stosowny komunikat (Patrz rys. \ref{komunikatgraficzny:komunikatgraficzny}\subref{komunikatgraficzny:rozpoznana}, \ref{komunikatgraficzny:komunikatgraficzny}\subref{komunikatgraficzny:NIErozpoznana})
 \end{itemize}
 \begin{figure}[H]%
@@ -413,10 +412,10 @@ Specyfikacja techniczna
 			\item 2.4 GHz oraz 5.0 GHz IEEE 802.11b/g/n/ac
 			\item LAN Gigabit Ethernet
 			\item Bluetooth 5.0
-			\item \textcolor{to_check_at_end}{BLE}
+			\item BLE
 			\item 2 × USB 3.0
 			\item 2 × USB 2.0
-			\item \textcolor{edited}{mini jack 3.5mm}
+			\item mini jack 3.5mm
 		\end{itemize}
 	\item Obraz i dźwięk - 2 × microHDMI (wsparcie 4k)
 	\item Złącza
@@ -490,35 +489,31 @@ Radiatory zbudowane są ze stopów metali dobrze przewodzących ciepło. Ich pow
 \section{Warstwa programistyczna} \label{section:warstwa_programistyczna}
 \subsection{Python jako język programowania}
 % dlaczego python a nie c++
-W celu realizacji funkcji prototypu zostały wzięte pod uwagę języki C++ oraz Python. Po wstępnej analizie został wybrany język Python ze względu na \textcolor{new}{wsparcie producenta raspberry pi, większy wybór bibliotek oraz łatwiejszy do pisania i debugowania kod}. Jednocześnie język programowania Python charakteryzuje się \textcolor{new}{wolniejszym działaniem w porównaniu do języka c++, co w moim przypadku nie jest problemem, gdyż zasobożerna biblioteka jest napisana pod pythona ale w języku c++. Dzięki czemu nie tracę na szybkości}.
+W celu realizacji funkcji prototypu zostały wzięte pod uwagę języki C++ oraz Python. Po wstępnej analizie został wybrany język Python ze względu na wsparcie producenta raspberry pi, większy wybór bibliotek oraz łatwiejszy do pisania i debugowania kod. Jednocześnie język programowania Python charakteryzuje się wolniejszym działaniem w porównaniu do języka c++, co w moim przypadku nie jest problemem, gdyż zasobożerna biblioteka jest napisana pod pythona ale w języku c++. Dzięki czemu nie tracę na szybkości.
 
 Z tego powodu biorąc pod uwagę przede wszystkim:
-\textcolor{new}{
 \begin{itemize}
 \item większy wybór bibliotek
 \item wsparcie raspberry pi
 \item przejrzystość kodu
 \end{itemize}
-}
 Język Python stanowi lepszy wybór z punktu widzenia działania całości projektu
 \subsection{Biblioteki}
 % lista bibliotek i do czego je wykorzystuje
 W celu realizacji poszczególnych zadań zostały użyte następujące biblioteki języka Python:
-\textcolor{new}{
 \begin{itemize}
-\item cv2, odpowiadająca za \textcolor{to_check_at_end}{xyz}.
-\item face\_recognition, odpowiadająca za \textcolor{to_check_at_end}{pobieranie obrazu z kamerki}.
-\item gtts, odpowiadająca za \textcolor{to_check_at_end}{stworzenie deflautowego powitania do pliku .mp3}.
-\item json, odpowiadająca za zapisywanie i odczytywanie zencodowancyh twarzy do plików.
-\item numpy, odpowiadająca za \textcolor{to_check_at_end}{tworzenie zoptymalizowanych pod bibliotege rozpoznawania twarzy macierzy}.
+\item cv2, odpowiadająca za pobieranie obrazu z kamerki.
+\item face\_recognition, odpowiadająca za rozpoznawanie twarzy.
+\item gtts, odpowiadająca za stworzenie deflautowego powitania do pliku .mp3.
+\item json, odpowiadająca za zapisywanie i odczytywanie zencodowanych twarzy do plików.
+\item numpy, odpowiadająca za tworzenie zoptymalizowanych pod bibliotekę rozpoznawania twarzy macierzy.
 \item os, odpowiadająca za poruszanie się po folderach.
-\item pygame, odpowiadająca za \textcolor{to_check_at_end}{odtworzenie powitalnego dźwięku}.
-\item random, odpowiadająca za \textcolor{to_check_at_end}{wybranie losowej ścieszki do ottworzenia}.
-\item sys, odpowiadająca za \textcolor{to_check_at_end}{pobranie wartości przy odpaleniu programu sprawdzających czy zendcodować wszystkich, czy tylko jedną osobę}.
-\item \textcolor{to_check_at_end}{threading, odpowiadająca za to smuszenia programu żeby działał na wątkach}.
-\item \textcolor{new}{tkinter - odpowiada za wyświetlenie obrazu}
+\item pygame, odpowiadająca za odtworzenie powitalnego dźwięku.
+\item random, odpowiadająca za wybranie losowej ścieżki do otworzenia.
+\item sys, odpowiadająca zapobranie wartości przy odpaleniu programu sprawdzających czy zendcodować wszystkich, czy tylko jedną osobę.
+\item threading, odpowiadająca za to zmuszenie programu żeby działał na wątkach.
+\item tkinter - odpowiada za wyświetlenie obrazu
 \end{itemize}
-}
 
 \newpage
 \subsection{Algorytm}
@@ -843,12 +838,12 @@ def say_hello(name, path2root=PATH_TO_ROOT):
 
 \newpage
 \section{Warstwa produktowa} \label{section:warstwa_produkcyjna} % wysłać skreeny z solidworksa i zdjęcia obudowy
-Prototyp to nie tylko elektronika oraz oprogramowanie. Bardzo ważnym elementem jest stworzenie całościowego produktu, do czego niezbędne jest zaprojektowanie oraz wykonanie odpowiedniej obudowy. W celu realizacji tego zadania \textcolor{new}{zostały użyte poniższe programy:
+Prototyp to nie tylko elektronika oraz oprogramowanie. Bardzo ważnym elementem jest stworzenie całościowego produktu, do czego niezbędne jest zaprojektowanie oraz wykonanie odpowiedniej obudowy. W celu realizacji tego zadania zostały użyte poniższe programy:
 \begin{itemize}
 \item SOLIDWORKS – do tworzenia projektu obudowy
 \item ultimaker cura – do przygodowania wexportowanego z solidworksa pliku do postaci g-code którą czytają drukatki 3D.
 \item octoprint (+ Raspbarry pi) – do nadzorowania wydruku
-\end{itemize}}
+\end{itemize}
 oraz prototypowanie przy pomocy drukarki 3D.
 \subsection{Technologia druku 3D}
 Druk 3D został wynaleziony z konieczności szybkiego i stosunkowo taniego przygotowywania wszelkiego rodzaju prototypów praktycznie we wszystkich branżach działalności gospodarczej. 
@@ -860,7 +855,7 @@ Zalety prototypowania przy pomocy druku 3D
 \item Możliwość natychmiastowego rozpoczęcia drukowania projektu
 \item Brak konieczności oczekiwania na realizację zadania przez firmy zewnętrzne
 \item Możliwość zastosowania materiałów o różnych własnościach
-\item \textcolor{new}{Relatywnie mała cena}
+\item Relatywnie mała cena
 \end{itemize}
 
 Drukarki 3D używane do prototypowania, wykorzystują 2 podstawowe technologie przyrostowe.
@@ -878,13 +873,13 @@ Zaletą tej metody jest duża dokładność otrzymanego modelu, natomiast podsta
 
 \textbf{W technologii FDM} drukarki do druku korzystają z tworzyw plastikowych takich jak ABS oraz PLA.
 
-Do celów realizacji niniejszego projektu wybrałem metodę FDM ze względu \textcolor{to_change}{na jej niewielki koszt oraz} już posiadaną drukarkę 3D wykorzystującą właśnie tą technologię druku. 
+Do celów realizacji niniejszego projektu wybrałem metodę FDM ze względu na jej niewielki koszt oraz już posiadaną drukarkę 3D wykorzystującą właśnie tą technologię druku. 
 Do druku drukarki wykorzystujące technologię FDM korzystają z tworzyw plastikowych takich jak ABS oraz PLA.
-Filament, czyli \textcolor{edited}{materiał drukujący} \textcolor{new}{("Tusz")}, przechodzi przez głowicę drukarki, gdzie następuje jego podgrzanie aż do uzyskania formy płynnej materiału. 
+Filament, czyli materiał drukujący ("Tusz"), przechodzi przez głowicę drukarki, gdzie następuje jego podgrzanie aż do uzyskania formy płynnej materiału. 
 Następnie jest on wyciskany przez dedykowaną dyszę (stosowane są różne średnice dysz) na stół roboczy. 
 Dysza rozprowadza w przestrzeni roboczej filament w postaci nakładania na siebie kolejnych warstw, zgodnie z przygotowanym wcześniej projektem. 
 Po nałożeniu warstwy następuje jej schłodzenie i filament twardnieje. 
-Po naniesieniu ostatniej warstwy \textcolor{new}{wydruku}, wydruk \textcolor{new}{(i elementy drugarki) musi się schłodzić, a następnie sam schodzi z powierzchni drukującej}.
+Po naniesieniu ostatniej warstwy wydruku, wydruk (i elementy drugarki) musi się schłodzić, a następnie sam schodzi z powierzchni drukującej.
 
 Zgodnie z „(...) prototypowanie z wykorzystaniem druku 3D pozwala na wypracowanie oszczędności – czasu i pieniędzy. Umożliwia szybkie testowanie prototypów i przyspiesza czas, jaki niezbędny jest do wprowadzenia docelowego produktu na rynek. Dodatkowo na każdym etapie procesu prototypowania można otrzymać natychmiast podgląd wydruku i śledzić proces powstawania modelu (...)” \cite{prototyp3dzalety}
 
@@ -897,7 +892,7 @@ Zgodnie z „(...) prototypowanie z wykorzystaniem druku 3D pozwala na wypracowa
 
 \subsection{Projekt obudowy}
 W celu wykonania projektu obudowy zostały wykorzystane oprogramowanie solidworks	 w wersji 21
-W początkowej fazie użyto oprogramowania autodesk fusion 360, jednak \textcolor{new}{nie mogłem znaleźć w nim wielu narzędzi których się nauczyłem korzystać w solidworksie}
+W początkowej fazie użyto oprogramowania autodesk fusion 360, jednak nie mogłem znaleźć w nim wielu narzędzi których się nauczyłem korzystać w solidworksie
 
 W ramach wykonania projektu ostatecznego były wprowadzane poprawki do projektu zgodnie z zasadą PDCA stanowiącą podstawę zwinnego projektowania \newline
 \textbf{P – PLAN}: zaplanuj \newline
@@ -906,7 +901,7 @@ W ramach wykonania projektu ostatecznego były wprowadzane poprawki do projektu 
 \textbf{A – ACT}: popraw
 
 \subsection{Wykonanie obudowy}
-W celu osiągnięcia ostatecznego wyniku przeprowadzono \textcolor{edited}{kilka} iteracje cyklu Deminga (PDCA)
+W celu osiągnięcia ostatecznego wyniku przeprowadzono kilka iteracje cyklu Deminga (PDCA)
 
 \begin{figure}[H]%
 \centering
@@ -967,9 +962,9 @@ Prawie wszystkie wydrukowane Iteracje PDCA (Patrz rys. \ref{PDCA_ALL}).
 \subsection{Napotkane problemy}
 W trakcie realizacji projektu napotkano następujące problemy.
 \begin{itemize}
-	\item \textbf{Wykorzystanie tylko jednego rdzenia procesora} (wątku). Raspberry Pi wyposażony jest w procesor czterordzeniowym, dzięki czemu można jednocześnie realizować 4 równoległe operacje. \newline \textbf{\textcolor{to_change}{Problem:}} \newline Okazało się że procesor Raspberry ma problemy z wykorzystaniem większej lioczby wątków w ramach jednego programu.
-	\item \textbf{Brak możliwość realizacji komunikatów głosowych.} \newline \textbf{\textcolor{to_change}{Problem:}} \newline Pierwotnie zastosowany głośnik nie posiadał wsparcia dla realizacji komunikatów głosowych zapisanych w pamięci prototypu. Jedyną możliwością było odtwarzanie plików przez Spotify. \newline \textbf{\textcolor{to_change}{Rozwiązanie:}} \newline Zastosowano zewnętrzne głośniki podpinane przez złącze jack. \textcolor{new}{Plusem tego rozwiązanie jest równiesz dowolność wyboru głośników. Jeśli chce to i na metrowym głośniku mogę odtwarzać dźwięki.}
-	\item \textbf{Zbyt duża temperatura prototypu ze względu na konieczność wykonywania dużej liczby obliczeń.} \newline \textbf{\textcolor{to_change}{Problem:}} \newline W początkowej fazie projektu planowano użyć wyświetlacza zintegrowanego z głośnikiem. Okazało się iż takie rozwiązanie powoduje, że brakuje miejsca na radiator. \newline \textbf{\textcolor{to_change}{Rozwiązanie:}} \newline Znaleziono nowy wyświetlacz oraz wyprowadzono głośniki na zewnątrz przy pomocy gniazda typu jack.
+	\item \textbf{Wykorzystanie tylko jednego rdzenia procesora} (wątku). Raspberry Pi wyposażony jest w procesor czterordzeniowym, dzięki czemu można jednocześnie realizować 4 równoległe operacje. \newline \textbf{Problem:} \newline Okazało się że procesor Raspberry ma problemy z wykorzystaniem większej lioczby wątków w ramach jednego programu. \newline \textbf{\textcolor{to_check_at_end}{Rozwiązanie:}} \newline Znaleziono
+	\item \textbf{Brak możliwość realizacji komunikatów głosowych.} \newline \textbf{Problem:} \newline Pierwotnie zastosowany głośnik nie posiadał wsparcia dla realizacji komunikatów głosowych zapisanych w pamięci prototypu. Jedyną możliwością było odtwarzanie plików przez Spotify. \newline \textbf{Rozwiązanie:} \newline Zastosowano zewnętrzne głośniki podpinane przez złącze jack. Plusem tego rozwiązanie jest równiesz dowolność wyboru głośników. Jeśli chce to i na metrowym głośniku mogę odtwarzać dźwięki.
+	\item \textbf{Zbyt duża temperatura prototypu ze względu na konieczność wykonywania dużej liczby obliczeń.} \newline \textbf{Problem:} \newline W początkowej fazie projektu planowano użyć wyświetlacza zintegrowanego z głośnikiem. Okazało się iż takie rozwiązanie powoduje, że brakuje miejsca na radiator. \newline \textbf{Rozwiązanie:} \newline Znaleziono nowy wyświetlacz oraz wyprowadzono głośniki na zewnątrz przy pomocy gniazda typu jack.
 	\item raspbian segmentation fault (Corrupted filesystem) - problem prawdopodobnie dodyczy wątkuw - do sprawdzenia
 \end{itemize}
 
