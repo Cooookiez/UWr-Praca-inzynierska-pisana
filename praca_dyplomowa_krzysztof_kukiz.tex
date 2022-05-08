@@ -95,9 +95,9 @@ Wydział Fizyki i Astronomii\\
 
 \Large Krzysztof Kukiz \\
 \vspace{3.2cm}
-\Large \textbf{INTELIGENTNE POWITANIE} \\
+\Large \textbf{INTELIGENTNE POWITANIE NA PODSTAWIE ROZPOZNAWANIA TWARZY} \\
 \vspace{1.5cm}
-INTELLIGENT WELCOMING
+INTELLIGENT WELCOMING BASET AT FACE RECOGNITION
 \end{center}
 \vspace{3.7cm}
 \begin{flushright}
@@ -127,7 +127,7 @@ INTELLIGENT WELCOMING
 
 Niniejsza praca przedstawia projekt systemu inteligentnego rozpoznawania osób oraz podejmowania przez system wcześniej zdefiniowanych działań, w zależności od rozpoznanej osoby. W przypadku braku rozpoznania osoby, system poda także odpowiedni komunikat głosowy oraz wizualny. 
 
-Projekt oparty jest na Raspberry Pi 4B, na języku programowania python 3, oraz2 wykorzystuje elementy wydrukowane na drukarce 3D Creality Ender-3 v.2
+Projekt oparty jest na Raspberry Pi 4B, na języku programowania python 3, oraz wykorzystuje elementy wydrukowane na drukarce 3D Creality Ender-3 v.2
 
 Projekt łączy ze sobą w całość 3 warstwy niezbędne do wykonania wszystkich założonych zadań w taki sposób aby w przyszłości można było rozbudować system o kolejne funkcjonalności.
 
@@ -136,7 +136,7 @@ Projekt łączy ze sobą w całość 3 warstwy niezbędne do wykonania wszystkic
   \begin{itemize}
   	\item kamery, stanowiącej element wejściowy sygnału i odpowiedzialnej za pobranie sygnału video z otoczenia
   	\item micro-komputera Rasppery Pi, odpowiedzialnej za przetworzenie sygnału oraz z kamerki, oraz sprawdzenie czy zdjęcie danej osoby znajduje się w bazie danych oraz wypowiedzenia odpowidniego komunikatu
-  	\item głośnika, stanowiącego element wyjściowy z systemu i służącego do podawania komunikatów głosowych. Głośnij jest podpinany pod port jack 3,5mm, zatem istnieje możliwość zastosowania dowolnego głośnika.
+  	\item głośnika, stanowiącego element wyjściowy z systemu i służącego do podawania komunikatów głosowych. Głośnik jest podpinany pod port jack 3,5mm, zatem istnieje możliwość zastosowania dowolnego głośnika.
   	\item Wyświetlacza, na którym generowana jest część wizualną powitania. Wyświetlacz jet podłączony do Raspberry Pi
   \end{itemize}
   \item Warstwę programistyczną odpowiedzialną za:
@@ -145,7 +145,7 @@ Projekt łączy ze sobą w całość 3 warstwy niezbędne do wykonania wszystkic
   	\item interpretację pobranego obrazu oraz porównanie go z wcześniej zdefiniowaną bazą zdjęć
   	\item podjęcie decyzji o tym jakie działanie ma być podjęte oraz wygenerowanie właściwego sygnału skutkującego podjęciem określonych działań
   \end{itemize}
-  \item Warstwę produktową w postaci dedykowanej, zaprojektowanej specjalnie dla tego projektu obudowy, pełniącej 3 podstawowe funkcje:
+  \item Warstwę produktową w postaci dedykowanej, zaprojektowanej specjalnie dla tego projektu obudowy będącej jednocześnie opakowaniem produktu, pełniącej jego funkcje \cite{funkcje_opakowan_02} \cite{funkcje_opakowan_01} \cite{opakowanie}:
   \begin{itemize}
   	\item Organizacyjną, zapewniającą spójną organizację podzespołów oraz ich prawidłową wentylację pasywną
   	\item Ochronną, zabezpieczającą podzespoły użyte w projekcie przed uszkodzeniem
@@ -274,13 +274,13 @@ W ramach realizacji projektu zostały określone następujące wymagania dla pro
 
 \begin{itemize}
 	\item \textbf{Mobilność.} Głównym założeniem projektu jest mobilność prototypu. Oznacza to, iż będzie posiadał wymiary oraz wagę umożliwiającą łatwe przenoszenie w dowolne miejsce.
-	\item \textbf{Łatwość zasilania.} Prototyp powinien mieć możliwość zasilania z ogólnodostępnej sieci 230V, tak aby istniała możliwość stałego podłączenia do gniazda elektrycznego. Opcjonalnie założono, że prototyp będzie posiadał możliwość podłączenia do zasilania z baterii lub akumulatorów, tak aby mógł znaleźć zastosowanie w miejscach, w których dostęp do sieci elektrycznej jest utrudniony.
+	\item \textbf{Łatwość zasilania.} Prototyp powinien mieć możliwość zasilania z ogólnodostępnej sieci 230V, tak aby istniała możliwość stałego podłączenia do gniazda elektrycznego. Opcjonalnie założono, że prototyp będzie posiadał możliwość podłączenia do zasilania z powerbanku, tak aby mógł znaleźć zastosowanie w miejscach, w których dostęp do sieci elektrycznej jest utrudniony.
 	\item \textbf{Dostępność.} Prototyp zostanie wykonany ze standardowych elementów dostępnych na rynku polskim.
-	\item \textbf{Relatywnie niski koszt.} Wykonanie prototypu powinno mieścić się w kwocie nie większej niż \textcolor{to_check_at_end}{815,58 zŁ}
+	\item \textbf{Relatywnie niski koszt.} Wykonanie prototypu powinno mieścić się w kwocie nie większej niż 1000 zł
 	\item \textbf{Łatwość obsługi.} Prototyp będzie umożliwiał obsługę bez konieczności znajomości zagadnień technicznych. Zadaniem użytkownika będzie jedynie wprowadzenie bazy zdjęć do określonego folderu, oraz uruchomienie dwóch programów:
 		\begin{itemize}
 			\item program "zapisujący" zdjęcia twarzy do zakodowanego pliku,
-			\item główny program rozpoznający przechodniów
+			\item główny program rozpoznający osoby przechodzące przed kamerą
 		\end{itemize}
 	i odpowiednie nakierowanie kamery prototypu.
 	\item \textbf{Łatwość rozbudowy.} Platforma na jakiej zostanie zbudowany prototyp będzie pozwalała na jego łatwą rozbudowę.
@@ -295,7 +295,7 @@ W celu wykonania prototypu zostały określone następujące wymagania dla proce
 	\item \textbf{Elastyczność.} Projekt zostanie podzielony na mniejsze etapy, tak aby w każdej chwili istniała możliwość modyfikacji założeń lub działań przy jednoczesnym zapewnieniu realizacji założonych celów.
 	\item \textbf{Dostępność narzędzi.} Dla każdego etapu projektu zostaną użyte narzędzia dostępne na rynku, tak aby uniknąć konieczności projektowania samych narzędzi.
 	\item \textbf{Przejrzystość.} Na każdym etapie status prac będzie łatwo weryfikowalny aby zidentyfikować potencjalne przeszkody mogące powodować opóźnienie realizacji projektu.
-	\item \textbf{Backup.} W celu uniknięcia utraty danych lub kodu źródłowego zostanie wykorzystane repozytorium Git. Wersja dostępna online znajduje się na Githubie
+	\item \textbf{Backup.} W celu uniknięcia utraty danych lub kodu źródłowego zostanie wykorzystane repozytorium Git. Wersja dostępna online znajduje się na Githubie \cite{moj_github}
 \end{itemize}
 
 \newpage
@@ -306,11 +306,11 @@ W ramach realizacji projektu zostały zaimplementowane następujące funkcjonaln
 \begin{itemize}
 	\item \textbf{Zapis zdjęć twarzy} do postaci numerycznej. Użytkownik do imiennych folderów wprowadza zdjęcia twarzy osoby (np. zdjęcia Jana wrzucam do folderu "Jan Nowak") i uruchamia program encodujący zamieniając zdjęcie twarzy na wartości liczbowe.
 	\item \textbf{Użycie syntezatora mowy.} System korzysta z syntezatora mowy w celu dodania deflautowego powitania do pliku .mp3.
-	\item \textbf{Wykrycie osoby.} System skanuje wybrany obszar przestrzeni i wykrywa czy w nadzorowanym obszarze znajduje się osoba. W przypadku wykrycia aktywowane są kolejne algorytmy programu. System pomija zwierzęta oraz przedmioty.
-	\item \textbf{Skanowanie  twarzy.} Po wykryciu obiektu kamera koncentruje się na twarzy wykrytej osoby i encoduje w celu porównania z lokalną bazą.
-	\item \textbf{Porównanie (Identyfikacja) twarzy.} System porównuje zencodowane zdjęcia z wcześniej zencodowanymi zdjęciami znajdującymi się wbazie danych. System przekształca dane wejściowe do matrixa liczb. Funkcja z biblioteki teraz porównuje wszystkie matrixy i patrzy czy dana osoba istnieje.
-	\item \textbf{Komunikat głosowy.} Z puli powitań plików .mp3 (deflautowo jeden, można wrzucić własne dzwięki), program losuje jeden i go odpala (W przypadku gdy jest tylko jeden plik, losowanie się nie odbywa).
-	\item \textbf{Komunikat wizualny.} Na ekranie dodatkowo pojawia się komunikat graficzny z imieniem i nazwiskiem. W przypadku wykrycia osoby nieznanej pojawia się stosowny komunikat (Patrz rys. \ref{komunikatgraficzny:komunikatgraficzny}\subref{komunikatgraficzny:rozpoznana}, \ref{komunikatgraficzny:komunikatgraficzny}\subref{komunikatgraficzny:NIErozpoznana})
+	\item \textbf{Wykrycie osoby.} System skanuje wybrany obszar przestrzeni i wykrywa czy w nadzorowanym obszarze znajduje się osoba. W przypadku wykrycia aktywowane są kolejne kroki programu. System pomija zwierzęta oraz przedmioty.
+	\item \textbf{Skanowanie  twarzy.} Po wykryciu obiektu kamera koncentruje się na twarzy wykrytej osoby i encoduje twarz w celu porównania z lokalną bazą.
+	\item \textbf{Porównanie (Identyfikacja) twarzy.} System porównuje zencodowane zdjęcia z wcześniej zencodowanymi zdjęciami znajdującymi się wbazie danych. System przekształca dane wejściowe do macierzy liczb. Funkcja z biblioteki porównuje wszystkie macierze i patrzy czy dana osoba istnieje.
+	\item \textbf{Komunikat głosowy.} Z puli powitań plików .mp3 (domyślnie jeden, można wrzucić własne dzwięki), program losuje jeden i go odpala (W przypadku gdy jest tylko jeden plik, losowanie się nie odbywa).
+	\item \textbf{Komunikat wizualny.} Na ekranie dodatkowo pojawia się komunikat graficzny z imieniem i nazwiskiem (Patrz rys. \ref{komunikatgraficzny:komunikatgraficzny}\subref{komunikatgraficzny:rozpoznana}). W przypadku wykrycia osoby nieznanej pojawia się stosowny komunikat (Patrz rys. \ref{komunikatgraficzny:komunikatgraficzny}\subref{komunikatgraficzny:NIErozpoznana})
 \end{itemize}
 \begin{figure}[H]%
 	\centering
@@ -334,7 +334,7 @@ Powyższe funkcjonalności pozwalają na realizację funkcji
 
 \begin{itemize}
 	\item powitania
-	\item nadzór\textcolor{to_check_at_end}{?}
+	\item nadzór obszaru
 \end{itemize}
 
 Przykłady realizacji funkcji powitania:
@@ -349,7 +349,7 @@ Przykłady realizacji funkcji powitania:
 	\begin{itemize}
 		\item "Witaj Adam Nowak"
 	\end{itemize}
-	\item Dla nierozpoznanej osoby możemy mieć tylko deflautowe przywitanie, ale możemy dać ich więcej. Program zachowa się analogicznie do wcześniej wymienionych przypadków:
+	\item Dla nierozpoznanej osoby możemy mieć tylko domyślne przywitanie, ale możemy dać ich więcej. Program zachowa się analogicznie do wcześniej wymienionych przypadków:
 	\begin{itemize}
 		\item "Witaj nieznajomy"
 		\item "Witamy w domostwie Nowaków"
@@ -361,7 +361,7 @@ Przykłady realizacji funkcji powitania:
 
 W ramach warstwy sprzętowej projekt składa się z 4 elementów. Kamery, mirko-komputera Raspberry Pi, głośnika oraz ekranu.
 
-Podstawą systemu jest Raspberry Pi, do którego podłączone są wszystkie elementy wejściowe oraz wyjściowe prototypu, tak aby stanowiły spójną całość. W ten sposób przygotowana warstwa sprzętowa będzie następnie oprogramowana (patrz rozdział ~\ref{section:warstwa_programistyczna}) oraz zabezpieczona obudową (patrz rozdział ~\ref{section:warstwa_produkcyjna})
+Podstawą systemu jest Raspberry Pi, do którego podłączone są wszystkie elementy wejściowe oraz wyjściowe prototypu, tak aby stanowiły spójną całość. W ten sposób przygotowana warstwa sprzętowa będzie następnie oprogramowana (patrz rozdział ~\ref{section:warstwa_programistyczna}) oraz zabezpieczona obudową pełniącą jednocześnie funkcje opakowania (patrz rozdział ~\ref{section:warstwa_produkcyjna})
 
 \subsection{Kamera jako element wejściowy}
 
@@ -459,7 +459,7 @@ Zasilane realizowane jest poprzez kabel USB podłączany do Raspberry pi.
 
 W projekcie został zastosowany ekran Ekran dotykowy Waveshare 9904. Jest to ekran rezystancyjny LCD TFT o przekątnej 3,5'' i rozdzielczości 320x480px kompatybilny z Raspberry Pi 4/3/2/B+/Zero.
 
-Oprogramowanie ekranu dotykowego przygotowane przez producenta zawiera sterownikami.
+Oprogramowanie ekranu dotykowego przygotowane przez producenta zawiera sterowniki.
 
 \begin{figure}[H]%
 \centering
@@ -489,7 +489,7 @@ Radiatory zbudowane są ze stopów metali dobrze przewodzących ciepło. Ich pow
 \section{Warstwa programistyczna} \label{section:warstwa_programistyczna}
 \subsection{Python jako język programowania}
 % dlaczego python a nie c++
-W celu realizacji funkcji prototypu zostały wzięte pod uwagę języki C++ oraz Python. Po wstępnej analizie został wybrany język Python ze względu na wsparcie producenta raspberry pi, większy wybór bibliotek oraz łatwiejszy do pisania i debugowania kod. Jednocześnie język programowania Python charakteryzuje się wolniejszym działaniem w porównaniu do języka c++, co w moim przypadku nie jest problemem, gdyż zasobożerna biblioteka jest napisana pod pythona ale w języku c++. Dzięki czemu nie tracę na szybkości.
+W celu realizacji funkcji prototypu zostały wzięte pod uwagę języki C++ oraz Python. Po wstępnej analizie został wybrany język Python ze względu na wsparcie producenta raspberry pi \cite{watki_jak_pisac}, większy wybór bibliotek \cite{face_detection_and_recognition_using_opencv} oraz łatwiejszy do pisania i debugowania kod \cite{face_recognition_with_python}. Jednocześnie język programowania Python charakteryzuje się wolniejszym działaniem w porównaniu do języka c++, co w moim przypadku nie jest problemem, gdyż zasobożerna biblioteka jest napisana pod pythona ale w języku c++. Dzięki czemu nie tracę na szybkości.
 
 Z tego powodu biorąc pod uwagę przede wszystkim:
 \begin{itemize}
@@ -503,15 +503,15 @@ Język Python stanowi lepszy wybór z punktu widzenia działania całości proje
 W celu realizacji poszczególnych zadań zostały użyte następujące biblioteki języka Python:
 \begin{itemize}
 \item cv2, odpowiadająca za pobieranie obrazu z kamerki.
-\item face\_recognition, odpowiadająca za rozpoznawanie twarzy.
+\item face\_recognition, odpowiadająca za rozpoznawanie twarzy \cite{face_recognition_github} \cite{face_recognition_implementation_on_raspberrypi} \cite{face_recognition_python}.
 \item gtts, odpowiadająca za stworzenie deflautowego powitania do pliku .mp3.
 \item json, odpowiadająca za zapisywanie i odczytywanie zencodowanych twarzy do plików.
 \item numpy, odpowiadająca za tworzenie zoptymalizowanych pod bibliotekę rozpoznawania twarzy macierzy.
 \item os, odpowiadająca za poruszanie się po folderach.
 \item pygame, odpowiadająca za odtworzenie powitalnego dźwięku.
 \item random, odpowiadająca za wybranie losowej ścieżki do otworzenia.
-\item sys, odpowiadająca zapobranie wartości przy odpaleniu programu sprawdzających czy zendcodować wszystkich, czy tylko jedną osobę.
-\item threading, odpowiadająca za to zmuszenie programu żeby działał na wątkach.
+\item sys, odpowiadająca za pobranie wartości przy uruchomieniu programu sprawdzających czy zencodować wszystkich, czy tylko jedną osobę.
+\item threading, odpowiadająca za wykorzystywanie przez program wszystkich dostępnych wątków procesora.
 \item tkinter - odpowiada za wyświetlenie obrazu
 \end{itemize}
 
@@ -536,7 +536,7 @@ Poniżej znajdują się algorytmy programów zastosowanych w projekcie:
 
 \subsection{Kod}
 % screeny / ładne ctrl+c, ctrl+v
-W tym rozdziale znajduje się omówienie kodu odpowiedzialnego za realizację warstwy softwarowej projektu.
+W tym rozdziale znajdują się listingi kodu odpowiedzialnego za realizację warstwy softwarowej projektu.
 Prezentowany kod podzielony jest na następujące elementy:\newline
 
 Zamiana obrazu twarzy na postać cyfrową (encodowanie) (Patrz \ref{listing:py_camAndStaff}).
@@ -849,7 +849,7 @@ oraz prototypowanie przy pomocy drukarki 3D.
 Druk 3D został wynaleziony z konieczności szybkiego i stosunkowo taniego przygotowywania wszelkiego rodzaju prototypów praktycznie we wszystkich branżach działalności gospodarczej. 
 Obecnie prototypowanie przy użyciu wydruków 3D zdecydowanie ułatwia i przyspiesza całość prac od projektu do wykonania wyrobu końcowego.
 
-Zalety prototypowania przy pomocy druku 3D
+Zalety prototypowania przy pomocy druku 3D \cite{prototyp3dzalety}
 \begin{itemize}
 \item Łatwość modyfikacji projektu 
 \item Możliwość natychmiastowego rozpoczęcia drukowania projektu
@@ -859,11 +859,12 @@ Zalety prototypowania przy pomocy druku 3D
 \end{itemize}
 
 Drukarki 3D używane do prototypowania, wykorzystują 2 podstawowe technologie przyrostowe.
+\cite{prototyp3dzalety}
 \begin{itemize}
 \item SLA, oraz
 \item FDM
 \end{itemize}
-\textbf{W technologii SLA} do wydruku wykorzystuje się żywicę, która jest materiałem światło utwardzalnym. Poszczególne warstwy nanosi się na specjalnie zaprojektowanej płytce. Poszczególne warstwy utwardzane są wiązką laserową.
+\textbf{W technologii SLA} do wydruku wykorzystuje się żywicę, która jest materiałem światło utwardzalnym. Poszczególne warstwy nanosi się na specjalnie zaprojektowanej płytce. Poszczególne warstwy utwardzane są wiązką laserową. \cite{jakie_materialy_w_druku}
 
 Zaletą tej metody jest duża dokładność otrzymanego modelu, natomiast podstawową wadą tej technologii jest:
 \begin{itemize}
@@ -871,7 +872,7 @@ Zaletą tej metody jest duża dokładność otrzymanego modelu, natomiast podsta
 \item konieczność stosowania wyciągów mechanicznych w celu odprowadzenia powstających w trakcie procesu oparów.
 \end{itemize}
 
-\textbf{W technologii FDM} drukarki do druku korzystają z tworzyw plastikowych takich jak ABS oraz PLA.
+\textbf{W technologii FDM} drukarki do druku korzystają z tworzyw plastikowych takich jak ABS oraz PLA \cite{jak_wybrac_tworzywo_do_drukarek} \cite{jakie_materialy_w_druku}.
 
 Do celów realizacji niniejszego projektu wybrałem metodę FDM ze względu na jej niewielki koszt oraz już posiadaną drukarkę 3D wykorzystującą właśnie tą technologię druku. 
 Do druku drukarki wykorzystujące technologię FDM korzystają z tworzyw plastikowych takich jak ABS oraz PLA.
@@ -881,7 +882,7 @@ Dysza rozprowadza w przestrzeni roboczej filament w postaci nakładania na siebi
 Po nałożeniu warstwy następuje jej schłodzenie i filament twardnieje. 
 Po naniesieniu ostatniej warstwy wydruku, wydruk (i elementy drugarki) musi się schłodzić, a następnie sam schodzi z powierzchni drukującej.
 
-Zgodnie z „(...) prototypowanie z wykorzystaniem druku 3D pozwala na wypracowanie oszczędności – czasu i pieniędzy. Umożliwia szybkie testowanie prototypów i przyspiesza czas, jaki niezbędny jest do wprowadzenia docelowego produktu na rynek. Dodatkowo na każdym etapie procesu prototypowania można otrzymać natychmiast podgląd wydruku i śledzić proces powstawania modelu (...)” \cite{prototyp3dzalety}
+Zgodnie z \cite{prototyp3dzalety} „(...) prototypowanie z wykorzystaniem druku 3D pozwala na wypracowanie oszczędności – czasu i pieniędzy. Umożliwia szybkie testowanie prototypów i przyspiesza czas, jaki niezbędny jest do wprowadzenia docelowego produktu na rynek. Dodatkowo na każdym etapie procesu prototypowania można otrzymać natychmiast podgląd wydruku i śledzić proces powstawania modelu (...)”
 
 \begin{figure}[H]%
 \centering
@@ -901,7 +902,7 @@ W ramach wykonania projektu ostatecznego były wprowadzane poprawki do projektu 
 \textbf{A – ACT}: popraw
 
 \subsection{Wykonanie obudowy}
-W celu osiągnięcia ostatecznego wyniku przeprowadzono kilka iteracje cyklu Deminga (PDCA)
+W celu osiągnięcia ostatecznego wyniku przeprowadzono kilka iteracji cyklu Deminga (PDCA) \cite{leanByJK}. W tym celu dokonywano także poprawek ustawień drukarki.
 
 \begin{figure}[H]%
 \centering
