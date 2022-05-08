@@ -963,7 +963,7 @@ Wszystkie wydrukowane Iteracje PDCA (Patrz rys. \ref{PDCA_ALL}).
 \subsection{Napotkane problemy}
 W trakcie realizacji projektu napotkano następujące problemy.
 \begin{itemize}
-	\item \textbf{Wykorzystanie tylko jednego rdzenia procesora} (wątku). Raspberry Pi wyposażony jest w procesor czterordzeniowym, dzięki czemu można jednocześnie realizować 4 równoległe operacje. \newline \textbf{Problem:} \newline Okazało się że procesor Raspberry ma problemy z wykorzystaniem większej lioczby wątków w ramach jednego programu. \newline \textbf{\textcolor{to_check_at_end}{Rozwiązanie:}} \newline Znaleziono
+	\item \textbf{Wykorzystanie tylko jednego rdzenia procesora} (wątku). Raspberry Pi wyposażony jest w procesor czterordzeniowym, dzięki czemu można jednocześnie realizować 4 równoległe operacje. \newline \textbf{Problem:} \newline Okazało się że procesor Raspberry ma problemy z wykorzystaniem większej lioczby wątków w ramach jednego programu. \newline \textbf{Rozwiązanie:} \newline Użyto biblioteki threading do pracy na wątkach.
 	\item \textbf{Brak możliwość realizacji komunikatów głosowych.} \newline \textbf{Problem:} \newline Pierwotnie zastosowany głośnik nie posiadał wsparcia dla realizacji komunikatów głosowych zapisanych w pamięci prototypu. Jedyną możliwością było odtwarzanie plików przez Spotify. \newline \textbf{Rozwiązanie:} \newline Zastosowano zewnętrzne głośniki podpinane przez złącze jack. Plusem tego rozwiązanie jest równiesz dowolność wyboru głośników. Jeśli chce to i na metrowym głośniku mogę odtwarzać dźwięki.
 	\item \textbf{Zbyt duża temperatura prototypu ze względu na konieczność wykonywania dużej liczby obliczeń.} \newline \textbf{Problem:} \newline W początkowej fazie projektu planowano użyć wyświetlacza zintegrowanego z głośnikiem. Okazało się iż takie rozwiązanie powoduje, że brakuje miejsca na radiator. \newline \textbf{Rozwiązanie:} \newline Znaleziono nowy wyświetlacz oraz wyprowadzono głośniki na zewnątrz przy pomocy gniazda typu jack.
 	\item raspbian segmentation fault (Corrupted filesystem) - problem prawdopodobnie dodyczy wątkuw - do sprawdzenia
@@ -996,19 +996,19 @@ Nie mniej sam system jest elastyczny i można go z czasem rozszerzyć o kolejne 
 | 
 }
 \hline
-\textbf{Element projektu} & \textbf{Cena [zł]} & \textbf{Link do produktu} \\ \hline
-a & b & c  \\ \hline
-Raspberry Pi 4b & 435.00 zł & botland.com.pl/moduly-i-zestawy-raspberry-pi-4b/16579-raspberry-pi-4-model-b-wifi-dualband-bluetooth-8gb-ram-15ghz-765756931199.html  \\ \hline
-Kamera & 175.90 zł & botland.com.pl/kamery-do-raspberry-pi/6124-raspberry-pi-camera-hd-v2-8mpx-oryginalna-kamera-do-raspberry-pi-652508442112.html  \\ \hline
-Ekran & 115.00 zł & botland.com.pl/wyswietlacze-raspberry-pi/4479-ekran-dotykowy-a-rezystancyjny-lcd-tft-35-320x480px-gpio-dla-raspberry-pi-4-3-2-b-zero-waveshare-9904-5904422371296.html  \\ \hline
-Głośnik & 49.99 zł & mediamarkt.pl/komputery-i-tablety/glosniki-logic-concept-ls-09-czarny  \\ \hline
-Radiatory & 3,70 zł & botland.com.pl/radiatory/15211-zestaw-radiatorow-do-raspberry-pi-czarnych-z-tasma-termoprzewodzaca-3szt-5904422309992.html  \\ \hline
-Obudowa & nie dotyczy & produkt własny  \\ \hline
-podstawka & 34.99 zł & www.amazon.pl/gp/product/B08B7VS824/ref=ppx\_yo\_dt\_b\_asin\_image\_o00\_s01  \\ \hline
+\textbf{Element projektu} & \textbf{Cena [zł]} \\ \hline
+Raspberry Pi 4b & 435.00 zł  \\ \hline
+Kamera & 175.90 zł  \\ \hline
+Ekran & 115.00 zł  \\ \hline
+Głośnik & 49.99 zł  \\ \hline
+Radiatory & 3,70 zł  \\ \hline
+Obudowa & 50.00 zł  \\ \hline
+Podstawka & 34.99 zł  \\ \hline
+\textbf{Razem} & \textbf{865.58 zł}  \\ \hline
 \end{tabularx}
 \end{center}
 
-Całkowity koszt projektu wyniósł \textcolor{to_check_at_end}{815.58} zł, co oznacza iż całość kosztów zawiera się w założonym budżecie.
+Całkowity koszt projektu wyniósł \textcolor{to_check_at_end}{865.58} zł, co oznacza iż całość kosztów zawiera się w założonym budżecie.
 
 \newpage
 \section{Wnioski} \label{section:wnioski}
@@ -1026,31 +1026,6 @@ Stworzenie projektu inteligentnego rozpoznawania twarzy pozwala na sformułowani
 
 \bibliographystyle{plain}
 \bibliography{praca_dyplomowa_krzysztof_kukiz}
-
-\newpage
-
-\cite{prototyp3dzalety}
-\cite{watki_jak_pisac}
-\cite{funkcje_opakowan_01}
-\cite{funkcje_opakowan_02}
-\cite{face_recognition_with_python}
-\cite{face_recognition_github}
-\cite{face_recognition_python}
-\cite{face_recognition_with_python}
-\cite{face_detection_and_recognition_using_opencv}
-\cite{face_recognition_implementation_on_raspberrypi}
-\cite{how_to_setup_ender3}
-\cite{jakie_materialy_w_druku}
-\cite{jak_wybrac_tworzywo_do_drukarek}
-\cite{opakowanie}
-
-\bf{Color codes:}
-\begin{itemize}
-\item \textcolor{new}{new} – nowy text
-\item \textcolor{edited}{edited} – poprawiony text
-\item \textcolor{to_change}{to\_change} – coś mi tu nie pasuje i chce zmienić / dodać
-\item \textcolor{to_check_at_end}{to\_check\_at\_end} – sprawdzić przy oddawaniu pracy czy dalej się zgadza
-\end{itemize}
 
 \end{document}
 
