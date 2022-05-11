@@ -3,78 +3,50 @@ Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
 The top-level auxiliary file: praca_dyplomowa_krzysztof_kukiz.aux
 The style file: plain.bst
 Database file #1: praca_dyplomowa_krzysztof_kukiz.bib
-Warning--entry type for "prototyp3dzalety" isn't style-file defined
---line 26 of file praca_dyplomowa_krzysztof_kukiz.bib
-Warning--entry type for "watki_jak_pisac" isn't style-file defined
---line 33 of file praca_dyplomowa_krzysztof_kukiz.bib
-Warning--entry type for "face_recognition_with_python" isn't style-file defined
---line 57 of file praca_dyplomowa_krzysztof_kukiz.bib
-Warning--entry type for "face_recognition_github" isn't style-file defined
---line 65 of file praca_dyplomowa_krzysztof_kukiz.bib
-Warning--entry type for "face_recognition_python" isn't style-file defined
---line 73 of file praca_dyplomowa_krzysztof_kukiz.bib
-Warning--entry type for "face_detection_and_recognition_using_opencv" isn't style-file defined
---line 89 of file praca_dyplomowa_krzysztof_kukiz.bib
-Warning--entry type for "face_recognition_implementation_on_raspberrypi" isn't style-file defined
---line 97 of file praca_dyplomowa_krzysztof_kukiz.bib
-Warning--entry type for "jakie_materialy_w_druku" isn't style-file defined
---line 113 of file praca_dyplomowa_krzysztof_kukiz.bib
-Warning--entry type for "jak_wybrac_tworzywo_do_drukarek" isn't style-file defined
---line 121 of file praca_dyplomowa_krzysztof_kukiz.bib
-Warning--entry type for "moj_github" isn't style-file defined
---line 137 of file praca_dyplomowa_krzysztof_kukiz.bib
-Warning--entry type for "leanByJK" isn't style-file defined
---line 145 of file praca_dyplomowa_krzysztof_kukiz.bib
-Warning--entry type for "img_by_me" isn't style-file defined
---line 156 of file praca_dyplomowa_krzysztof_kukiz.bib
-Warning--entry type for "img_cam" isn't style-file defined
---line 164 of file praca_dyplomowa_krzysztof_kukiz.bib
-Warning--entry type for "img_rp4b" isn't style-file defined
---line 171 of file praca_dyplomowa_krzysztof_kukiz.bib
-Warning--entry type for "img_screen" isn't style-file defined
---line 178 of file praca_dyplomowa_krzysztof_kukiz.bib
 Warning--to sort, need author or key in img_cam
 Warning--to sort, need author or key in img_rp4b
 Warning--to sort, need author or key in img_screen
-You've used 15 entries,
+Warning--to sort, need author or key in prototyp3dzalety
+Warning--to sort, need author or key in jakie_materialy_w_druku
+You've used 14 entries,
             2118 wiz_defined-function locations,
-            541 strings with 5035 characters,
-and the built_in function-call counts, 2842 in all, are:
-= -- 243
-> -- 87
+            556 strings with 6103 characters,
+and the built_in function-call counts, 2817 in all, are:
+= -- 281
+> -- 68
 < -- 0
-+ -- 39
-- -- 24
-* -- 92
++ -- 32
+- -- 18
+* -- 84
 := -- 440
-add.period$ -- 27
-call.type$ -- 15
-change.case$ -- 57
+add.period$ -- 50
+call.type$ -- 14
+change.case$ -- 51
 chr.to.int$ -- 0
-cite$ -- 18
-duplicate$ -- 105
-empty$ -- 334
-format.name$ -- 24
-if$ -- 631
+cite$ -- 19
+duplicate$ -- 103
+empty$ -- 314
+format.name$ -- 18
+if$ -- 642
 int.to.chr$ -- 0
-int.to.str$ -- 15
-missing$ -- 0
-newline$ -- 60
-num.names$ -- 24
-pop$ -- 135
+int.to.str$ -- 14
+missing$ -- 2
+newline$ -- 81
+num.names$ -- 18
+pop$ -- 123
 preamble$ -- 1
-purify$ -- 42
+purify$ -- 37
 quote$ -- 0
-skip$ -- 119
+skip$ -- 77
 stack$ -- 0
-substring$ -- 75
-swap$ -- 15
+substring$ -- 70
+swap$ -- 14
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 60
-warning$ -- 3
-while$ -- 24
-width$ -- 17
-write$ -- 116
-(There were 18 warnings)
+type$ -- 54
+warning$ -- 5
+while$ -- 18
+width$ -- 16
+write$ -- 153
+(There were 5 warnings)
