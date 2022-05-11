@@ -204,7 +204,7 @@ Systemy inteligentne pomimo swoich kosztów zdobywają coraz większą popularno
 
 System inteligentnego rozpoznawania osób, który jest tematem niniejszego projektu, pozwala właśnie na identyfikację osób wchodzących do pomieszczenia na podstawie zapisanej wcześniej bazy zdjęć oraz powitanie ich indywidualnym komunikatem zarówno głosowym, jak i wizualnym.
 
-Do realizacji projektu wykorzystałem mikro-komputer Raspperry Pi 4B oraz język programowania Python 3. Jako elementu wejściowego sygnału użyłem kamery Raspberry Pi Camera HD v2 8MPx zgodnej z Raspperry Pi 4B, oraz najzwyklejszego głośnika pod wejscie jack 3,5mm
+Do realizacji projektu wykorzystałem mikro-komputer Raspperry Pi 4B oraz język programowania Python 3. Jako elementu wejściowego sygnału użyłem kamery Raspberry Pi Camera HD v2 8MPx zgodnej z Raspperry Pi 4B, oraz głośnika pod wejscie jack 3,5mm
 
 \subsection{Cel i zakres pracy}
 
@@ -254,7 +254,7 @@ Takie podejście miało zapewnić iż ewentualny błąd popełniony na dalszych 
 
 \subsection{Wymagania dla prototypu}
 
-W ramach realizacji projektu zostały określone następujące wymagania dla prototypu.
+W ramach realizacji projektu określone zostały następujące wymagania dla prototypu.
 
 \begin{itemize}
 	\item \textbf{Mobilność.} Głównym założeniem projektu jest mobilność prototypu. Oznacza to, iż będzie posiadał wymiary oraz wagę umożliwiającą łatwe przenoszenie w dowolne miejsce.
@@ -288,12 +288,12 @@ W celu wykonania prototypu zostały określone następujące wymagania dla proce
 W ramach realizacji projektu zostały zaimplementowane następujące funkcjonalności.
 
 \begin{itemize}
-	\item \textbf{Zapis zdjęć twarzy} do postaci numerycznej. Użytkownik do imiennych folderów wprowadza zdjęcia twarzy osoby (np. zdjęcia Jana wrzucam do folderu "Jan Nowak") i uruchamia program encodujący zamieniając zdjęcie twarzy na wartości liczbowe.
-	\item \textbf{Użycie syntezatora mowy.} System korzysta z syntezatora mowy w celu dodania deflautowego powitania do pliku .mp3.
+	\item \textbf{Zapis zdjęć twarzy} do postaci numerycznej. Użytkownik do imiennych folderów wprowadza zdjęcia twarzy osoby (np. zdjęcia Jana wrzucam do folderu "Jan Nowak") i uruchamia program kodujący zamieniając zdjęcie twarzy na wartości liczbowe.
+	\item \textbf{Użycie syntezatora mowy.} System korzysta z syntezatora mowy w celu dodania domyślnego powitania do pliku .mp3.
 	\item \textbf{Wykrycie osoby.} System skanuje wybrany obszar przestrzeni i wykrywa czy w nadzorowanym obszarze znajduje się osoba. W przypadku wykrycia aktywowane są kolejne kroki programu. System pomija zwierzęta oraz przedmioty.
-	\item \textbf{Skanowanie  twarzy.} Po wykryciu obiektu kamera koncentruje się na twarzy wykrytej osoby i encoduje twarz w celu porównania z lokalną bazą.
-	\item \textbf{Porównanie (Identyfikacja) twarzy.} System porównuje zencodowane zdjęcia z wcześniej zencodowanymi zdjęciami znajdującymi się wbazie danych. System przekształca dane wejściowe do macierzy liczb. Funkcja z biblioteki porównuje wszystkie macierze i patrzy czy dana osoba istnieje.
-	\item \textbf{Komunikat głosowy.} Z puli powitań plików .mp3 (domyślnie jeden, można wrzucić własne dzwięki), program losuje jeden i go odpala (W przypadku gdy jest tylko jeden plik, losowanie się nie odbywa).
+	\item \textbf{Skanowanie  twarzy.} Po wykryciu obiektu kamera koncentruje się na twarzy wykrytej osoby i koduje twarz w celu porównania z lokalną bazą.
+	\item \textbf{Porównanie (Identyfikacja) twarzy.} System porównuje zakodowane zdjęcia z wcześniej zakodowanymi zdjęciami znajdującymi się w bazie danych. System przekształca dane wejściowe do macierzy liczb. Funkcja z biblioteki porównuje wszystkie macierze i patrzy czy dana osoba istnieje.
+	\item \textbf{Komunikat głosowy.} Z puli powitań plików .mp3 (domyślnie jeden, można wrzucić własne dzwięki), program losuje jeden i go odpala (w przypadku gdy jest tylko jeden plik, losowanie się nie odbywa).
 	\item \textbf{Komunikat wizualny.} Na ekranie dodatkowo pojawia się komunikat graficzny z imieniem i nazwiskiem (Patrz rys. \ref{komunikatgraficzny:komunikatgraficzny}\subref{komunikatgraficzny:rozpoznana}). W przypadku wykrycia osoby nieznanej pojawia się stosowny komunikat (Patrz rys. \ref{komunikatgraficzny:komunikatgraficzny}\subref{komunikatgraficzny:NIErozpoznana})
 \end{itemize}
 \begin{figure}[H]%
@@ -343,7 +343,7 @@ Przykłady realizacji funkcji powitania:
 \newpage
 \section{Warstwa sprzętowa} \label{section:warstwa_sprzetowa}
 
-W ramach warstwy sprzętowej projekt składa się z 4 elementów. Kamery, mirko-komputera Raspberry Pi, głośnika oraz ekranu.
+W ramach warstwy sprzętowej projekt składa się z 4 elementów. Kamery, mikro-komputera Raspberry Pi, głośnika oraz ekranu.
 
 Podstawą systemu jest Raspberry Pi, do którego podłączone są wszystkie elementy wejściowe oraz wyjściowe prototypu, tak aby stanowiły spójną całość. W ten sposób przygotowana warstwa sprzętowa będzie następnie oprogramowana (patrz rozdział ~\ref{section:warstwa_programistyczna}) oraz zabezpieczona obudową pełniącą jednocześnie funkcje opakowania (patrz rozdział ~\ref{section:warstwa_produkcyjna})
 
@@ -390,35 +390,13 @@ Specyfikacja techniczna
 \begin{itemize}
 	\item Pamięć RAM - 1GB, 2GB lub 4GB LPDDR4
 	\item Procesor - Broadcom BCM2711, quad-core Cortex-A72 (ARM v8) 64-bit SoC @ 1.5GHz
-	\item GPIO - 2 x 20 pin, raster 2,54 mm (wstecznie kompatybilne)
 	\item Przesył danych
-		\begin{itemize}
-			\item 2.4 GHz oraz 5.0 GHz IEEE 802.11b/g/n/ac
-			\item LAN Gigabit Ethernet
-			\item Bluetooth 5.0
-			\item BLE
-			\item 2 × USB 3.0
-			\item 2 × USB 2.0
-			\item mini jack 3.5mm
-		\end{itemize}
-	\item Obraz i dźwięk - 2 × microHDMI (wsparcie 4k)
-	\item Złącza
-		\begin{itemize}
-			\item DSI dla wyświetlaczy
-			\item CSI dla kamer
-			\item Komunikacja - UART, SPI, I2C, GPIO
-		\end{itemize}
-	\item Multimedia
-		\begin{itemize}
-			\item H.265 (4Kp60 decode)
-			\item H.264 (1080p60 decode, 1080p30 encode)
-			\item OpenGL ES, 3.0 graphics
-		\end{itemize}
+	\item 4 × USB
+	\item mini jack 3.5mm
 	\item Karta pamięci - microSD
 	\item Systemy operacyjne - Linux Raspbian, Windows 10 loT i wiele innych
 	\item Temperatura pracy - 0–50°C
-	\item Zasilanie - złącze USB C minimum 5V/3A, złącza GPIO minimum 5V/3A
-PoE przy zastosowaniu dedykowanej nakładki
+	\item Zasilanie - złącze USB C minimum 5V/3A, złącza GPIO minimum 5V/3A PoE przy zastosowaniu dedykowanej nakładki
 	\item Wymiary - 85 x 56 x 17 mm
 \end{itemize}
 
@@ -489,12 +467,12 @@ W celu realizacji poszczególnych zadań zostały użyte następujące bibliotek
 \item cv2, odpowiadająca za pobieranie obrazu z kamerki.
 \item face\_recognition, odpowiadająca za rozpoznawanie twarzy \cite{face_recognition_github} \cite{face_recognition_implementation_on_raspberrypi} \cite{face_recognition_python}.
 \item gtts, odpowiadająca za stworzenie deflautowego powitania do pliku .mp3.
-\item json, odpowiadająca za zapisywanie i odczytywanie zencodowanych twarzy do plików.
+\item json, odpowiadająca za zapisywanie i odczytywanie zakodowanych twarzy do plików.
 \item numpy, odpowiadająca za tworzenie zoptymalizowanych pod bibliotekę rozpoznawania twarzy macierzy.
 \item os, odpowiadająca za poruszanie się po folderach.
 \item pygame, odpowiadająca za odtworzenie powitalnego dźwięku.
 \item random, odpowiadająca za wybranie losowej ścieżki do otworzenia.
-\item sys, odpowiadająca za pobranie wartości przy uruchomieniu programu sprawdzających czy zencodować wszystkich, czy tylko jedną osobę.
+\item sys, odpowiadająca za pobranie wartości przy uruchomieniu programu sprawdzających czy zakodować wszystkich, czy tylko jedną osobę.
 \item threading, odpowiadająca za wykorzystywanie przez program wszystkich dostępnych wątków procesora.
 \item tkinter - odpowiada za wyświetlenie obrazu
 \end{itemize}
@@ -507,7 +485,7 @@ Poniżej znajdują się algorytmy programów zastosowanych w projekcie:
 \begin{figure}[H]%
 \centering
 \includegraphics[width=0.7\columnwidth]{imgs/generujacy.drawio.jpg}
-\caption{Program encodujący zdjęcia do plików .json \label{algorytm_encode_faces}}
+\caption{Program kodujący zdjęcia do plików .json \label{algorytm_encode_faces}}
 \quad
 \end{figure}
 
@@ -523,7 +501,7 @@ Poniżej znajdują się algorytmy programów zastosowanych w projekcie:
 W tym rozdziale znajdują się listingi kodu odpowiedzialnego za realizację warstwy softwarowej projektu.
 Prezentowany kod podzielony jest na następujące elementy:\newline
 
-Zamiana obrazu twarzy na postać cyfrową (encodowanie) (Patrz \ref{listing:py_camAndStaff}).
+Zamiana obrazu twarzy na postać cyfrową (kodowanie) (Patrz \ref{listing:py_camAndStaff}).
 
 % code
 \begin{listing}[H]%
