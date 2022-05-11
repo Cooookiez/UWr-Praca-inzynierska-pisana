@@ -95,9 +95,9 @@ Wydział Fizyki i Astronomii\\
 
 \Large Krzysztof Kukiz \\
 \vspace{3.2cm}
-\Large \textbf{INTELIGENTNE POWITANIE NA PODSTAWIE ROZPOZNAWANIA TWARZY} \\
+\Large \textbf{Inteligentne powitanie na podstawie rozpoznawania twarzy} \\
 \vspace{1.5cm}
-INTELLIGENT WELCOMING BASET AT FACE RECOGNITION
+Smart greeting based on face recognition
 \end{center}
 \vspace{3.7cm}
 \begin{flushright}
@@ -129,31 +129,15 @@ Niniejsza praca przedstawia projekt systemu inteligentnego rozpoznawania osób o
 
 Projekt oparty jest na Raspberry Pi 4B, na języku programowania python 3, oraz wykorzystuje elementy wydrukowane na drukarce 3D Creality Ender-3 v.2
 
-Projekt łączy ze sobą w całość 3 warstwy niezbędne do wykonania wszystkich założonych zadań w taki sposób aby w przyszłości można było rozbudować system o kolejne funkcjonalności.
+Projekt łączy ze sobą w całość 3 warstwy niezbędne do wykonania wszystkich założonych zadań w taki sposób aby w przyszłości można było rozbudować system o kolejne funkcjonalności:
 
-\begin{enumerate} % itemize
-  \item Warstwę sprzętową składającą się z czterech głównych elementów.
-  \begin{itemize}
-  	\item kamery, stanowiącej element wejściowy sygnału i odpowiedzialnej za pobranie sygnału video z otoczenia
-  	\item micro-komputera Rasppery Pi, odpowiedzialnej za przetworzenie sygnału oraz z kamerki, oraz sprawdzenie czy zdjęcie danej osoby znajduje się w bazie danych oraz wypowiedzenia odpowidniego komunikatu
-  	\item głośnika, stanowiącego element wyjściowy z systemu i służącego do podawania komunikatów głosowych. Głośnik jest podpinany pod port jack 3,5mm, zatem istnieje możliwość zastosowania dowolnego głośnika.
-  	\item Wyświetlacza, na którym generowana jest część wizualną powitania. Wyświetlacz jet podłączony do Raspberry Pi
-  \end{itemize}
-  \item Warstwę programistyczną odpowiedzialną za:
-  \begin{itemize}
-  	\item obróbkę oraz optymalizację odczytanego obrazu
-  	\item interpretację pobranego obrazu oraz porównanie go z wcześniej zdefiniowaną bazą zdjęć
-  	\item podjęcie decyzji o tym jakie działanie ma być podjęte oraz wygenerowanie właściwego sygnału skutkującego podjęciem określonych działań
-  \end{itemize}
-  \item Warstwę produktową w postaci dedykowanej, zaprojektowanej specjalnie dla tego projektu obudowy będącej jednocześnie opakowaniem produktu, pełniącej jego funkcje \cite{funkcje_opakowan_02} \cite{funkcje_opakowan_01} \cite{opakowanie}:
-  \begin{itemize}
-  	\item Organizacyjną, zapewniającą spójną organizację podzespołów oraz ich prawidłową wentylację pasywną
-  	\item Ochronną, zabezpieczającą podzespoły użyte w projekcie przed uszkodzeniem
-  	\item Informacyjną, zawierającą podstawowe informacje o produkcie
-  \end{itemize}
-\end{enumerate}
+Warstwę sprzętową (Kamery, mikro-komputera, głośnika, wyświetlacza)
 
-Celem projektu było stworzenie systemu mobilnego, o jak najmniejszych wymiarach, który jest gotowy do działania natychmiast po podłączeniu zasilania.
+warstwę programistyczną odpowiedzialną za obróbkę oraz optymalizację odczytanego obrazu, interpretację pobranego obrazu oraz porównanie go z wcześniej zdefiniowaną bazą zdjęć, podjęcie decyzji o tym jakie działanie ma być podjęte oraz wygenerowanie właściwego sygnału skutkującego podjęciem określonych,
+
+warstwę produktową w postaci dedykowanej, zaprojektowanej specjalnie dla tego projektu obudowy będącej jednocześnie opakowaniem produktu, pełniącej jego funkcje organizacyjną, ochronną, informacyjną
+
+Głównym celem projektu było stworzenie systemu mobilnego, o jak najmniejszych wymiarach, który jest gotowy do działania natychmiast po podłączeniu zasilania.
 
 %
 %	Streszczenie EN
@@ -438,7 +422,7 @@ PoE przy zastosowaniu dedykowanej nakładki
 	\item Wymiary - 85 x 56 x 17 mm
 \end{itemize}
 
-\subsection{Głośnik jako element wyjściowy}
+\subsection{Głośnik, jako element wyjściowy}
 
 W zakresie komunikatów głosowych w projekcie został zastosowany głośnik LOGIC CONCEPT LS-09.
 
@@ -455,7 +439,7 @@ Zasilane realizowane jest poprzez kabel USB podłączany do Raspberry pi.
 \quad
 \end{figure}
 
-\subsection{Ekran jako element wyjściowy}
+\subsection{Ekran, jako element wyjściowy}
 
 W projekcie został zastosowany ekran Ekran dotykowy Waveshare 9904. Jest to ekran rezystancyjny LCD TFT o przekątnej 3,5'' i rozdzielczości 320x480px kompatybilny z Raspberry Pi 4/3/2/B+/Zero.
 
@@ -487,7 +471,7 @@ Radiatory zbudowane są ze stopów metali dobrze przewodzących ciepło. Ich pow
 
 \newpage
 \section{Warstwa programistyczna} \label{section:warstwa_programistyczna}
-\subsection{Python jako język programowania}
+\subsection{Python, jako język programowania}
 % dlaczego python a nie c++
 W celu realizacji funkcji prototypu zostały wzięte pod uwagę języki C++ oraz Python. Po wstępnej analizie został wybrany język Python ze względu na wsparcie producenta raspberry pi \cite{watki_jak_pisac}, większy wybór bibliotek \cite{face_detection_and_recognition_using_opencv} oraz łatwiejszy do pisania i debugowania kod \cite{face_recognition_with_python}. Jednocześnie język programowania Python charakteryzuje się wolniejszym działaniem w porównaniu do języka c++, co w moim przypadku nie jest problemem, gdyż zasobożerna biblioteka jest napisana pod pythona ale w języku c++. Dzięki czemu nie tracę na szybkości.
 
