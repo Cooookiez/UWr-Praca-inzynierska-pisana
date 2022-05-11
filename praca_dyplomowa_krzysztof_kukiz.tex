@@ -204,7 +204,7 @@ Systemy inteligentne pomimo swoich kosztów zdobywają coraz większą popularno
 
 System inteligentnego rozpoznawania osób, który jest tematem niniejszego projektu, pozwala właśnie na identyfikację osób wchodzących do pomieszczenia na podstawie zapisanej wcześniej bazy zdjęć oraz powitanie ich indywidualnym komunikatem zarówno głosowym, jak i wizualnym.
 
-Do realizacji projektu wykorzystałem micro-komputer Raspperry Pi 4B oraz język programowania Python 3. Jako elementu wejściowego sygnału użyłem kamery Raspberry Pi Camera HD v2 8MPx zgodnej z Raspperry Pi 4B, oraz najzwyklejszego głośnika pod wejscie jack 3,5mm
+Do realizacji projektu wykorzystałem mikro-komputer Raspperry Pi 4B oraz język programowania Python 3. Jako elementu wejściowego sygnału użyłem kamery Raspberry Pi Camera HD v2 8MPx zgodnej z Raspperry Pi 4B, oraz najzwyklejszego głośnika pod wejscie jack 3,5mm
 
 \subsection{Cel i zakres pracy}
 
@@ -226,7 +226,7 @@ Rozdział drugi zawiera założenia odnośnie szczegółowych wymagań stawianyc
 
 Rozdział trzeci zawiera zestawienie założone funkcjonalności projektu, które będą zaimplementowane w projektowanym systemie oraz sposób korzystania z tych funkcjonalności.
 
-Rozdział czwarty zawiera szczegółowy opis warstwy sprzętowej z wyszczególnieniem użytych w projekcie podzespołów oraz ich parametrów. Znajdują się w nim szczegółowe opisy użytej do projektu kamery, mikrokomputera Raspberry Pi, głośnika oraz ekranu służącego do komunikacji z użytkownikiem.
+Rozdział czwarty zawiera szczegółowy opis warstwy sprzętowej z wyszczególnieniem użytych w projekcie podzespołów oraz ich parametrów. Znajdują się w nim szczegółowe opisy użytej do projektu kamery, mikro-komputera Raspberry Pi, głośnika oraz ekranu służącego do komunikacji z użytkownikiem.
 
 W rozdziale piątym znajduje się opis warstwy programistycznej projektu z uzasadnieniem wyboru języka Python jako języka programowania użytego w projekcie, opis zastosowanych bibliotek, algorytm oraz główne elementy kodu odpowiedzialne za działanie całego projektu.
 
@@ -349,7 +349,7 @@ Podstawą systemu jest Raspberry Pi, do którego podłączone są wszystkie elem
 
 \subsection{Kamera jako element wejściowy}
 
-Spośród dostępnych kamer w projekcie zastosowano kamerę  HD v2 8MPx dedykowaną do mikrokomputera Raspberry Pi. Urządzenie posiada matrycę o rozdzielczości 8 Mpx, wspiera tryb HD 1080p, 720p oraz 640 x 480p oraz jest w stanie wykonywać zdjęcia w wyższej rozdzielczości 3280 x 2464 px.
+Spośród dostępnych kamer w projekcie zastosowano kamerę  HD v2 8MPx dedykowaną do mikro-komputera Raspberry Pi. Urządzenie posiada matrycę o rozdzielczości 8 Mpx, wspiera tryb HD 1080p, 720p oraz 640 x 480p oraz jest w stanie wykonywać zdjęcia w wyższej rozdzielczości 3280 x 2464 px.
 
 Aby uniknąć potencjalnych problemów w przesyle sygnału zastosowano oficjalny moduł Raspberry Pi Camera HD v2, który jest całkowicie zgodny ze sterownikami, dostarczanymi wraz z systemem Raspberry Pi OS.
 
@@ -376,7 +376,7 @@ Spośród dostępnych modeli Raspberry Pi do projektu wykorzystano model w wersj
 
 Posiada on dwa złącza microHDMI, dwa złączami USB 3.0 i 2 złącza USB 2.0. Zasilanie realizowane jest przez złącze USB C.
 
-Mikrokomputer wyposażony jest także w dwuzakresowe WiFi 2,4 GHz i 5 GHz, Bluetooth w standardzie 5, oraz port Ethernet o prędkości do 1000 Mb/s.
+Mikro-komputer wyposażony jest także w dwuzakresowe WiFi 2,4 GHz i 5 GHz, Bluetooth w standardzie 5, oraz port Ethernet o prędkości do 1000 Mb/s.
 
 \begin{figure}[H]%
 \centering
@@ -825,7 +825,7 @@ def say_hello(name, path2root=PATH_TO_ROOT):
 Prototyp to nie tylko elektronika oraz oprogramowanie. Bardzo ważnym elementem jest stworzenie całościowego produktu, do czego niezbędne jest zaprojektowanie oraz wykonanie odpowiedniej obudowy. W celu realizacji tego zadania zostały użyte poniższe programy:
 \begin{itemize}
 \item SOLIDWORKS – do tworzenia projektu obudowy
-\item ultimaker cura – do przygodowania wexportowanego z solidworksa pliku do postaci g-code którą czytają drukatki 3D.
+\item ultimaker cura – do przygodowania wexportowanego z SOLIDWORKSA pliku do postaci g-code którą czytają drukatki 3D.
 \item octoprint (+ Raspbarry pi) – do nadzorowania wydruku
 \end{itemize}
 oraz prototypowanie przy pomocy drukarki 3D.
@@ -876,8 +876,8 @@ Zgodnie z \cite{prototyp3dzalety} „(...) prototypowanie z wykorzystaniem druku
 \end{figure}
 
 \subsection{Projekt obudowy}
-W celu wykonania projektu obudowy zostały wykorzystane oprogramowanie solidworks	 w wersji 21
-W początkowej fazie użyto oprogramowania autodesk fusion 360, jednak nie mogłem znaleźć w nim wielu narzędzi których się nauczyłem korzystać w solidworksie
+W celu wykonania projektu obudowy zostały wykorzystane oprogramowanie SOLIDWORKSA	 w wersji 20
+W początkowej fazie użyto oprogramowania autodesk fusion 360, jednak nie mogłem znaleźć w nim wielu narzędzi których się nauczyłem korzystać w SOLIDWORKSIE
 
 W ramach wykonania projektu ostatecznego były wprowadzane poprawki do projektu zgodnie z zasadą PDCA stanowiącą podstawę zwinnego projektowania \newline
 \textbf{P – PLAN}: zaplanuj \newline
