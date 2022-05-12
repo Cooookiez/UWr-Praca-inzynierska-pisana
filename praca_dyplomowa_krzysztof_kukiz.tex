@@ -213,7 +213,7 @@ W rozdziale ósmym zawarto wnioski oraz „Lessons learned” z wykonanego proje
 \newpage
 \section{Wymagania stawiane projektowi} \label{section:wymagania}
 
-W celu realizacji pracy w pierwszej kolejności zostały określone wymagania, które stanowiły punkt docelowy projektu, jaki należało osiągnąć w ramach prac projektowych, a następnie pozwoliły na zaplanowanie drogi dojścia do założonego celu.
+W celu realizacji pracy w pierwszej kolejności określone zostały wymagania, które stanowiły punkt docelowy projektu, jaki należało osiągnąć w ramach prac projektowych, a następnie pozwoliły na zaplanowanie drogi dojścia do założonego celu.
 
 Na podstawie założonego celu zostały określone kroki milowe, które należało osiągnąć. Kroki te dzieliły cały projekt na mniejsze etapy, z jednej strony pozwalające na lepszy nadzór nad postępami pracy, oraz natychmiastowe określenie punktów stanowiących problem i wstrzymujących postępy, a z drugiej strony pozwalały na elastyczne reagowanie i zmiany projektowe bez konieczności zmian poprzednich etapów.
 
@@ -336,10 +336,10 @@ Dzięki takiemu rozwiązaniu możliwe jest jednocześnie szerokie wsparcie w zak
 \quad
 \end{figure}
 
-Parametry kamery
+\textcolor{edited}{Tryby} kamery \footnote{dodać tu jakiś odnośnik? (i w późniejszych też)}
 
 \begin{itemize}
-	\item HD 1080p / 30 fps,
+	\item 1080p / 30 fps,
 	\item 720p / 60 fps,
 	\item 640 x 480p / 90 fps.
 \end{itemize}
@@ -364,7 +364,6 @@ Specyfikacja techniczna
 \begin{itemize}
 	\item Pamięć RAM - 1GB, 2GB lub 4GB LPDDR4
 	\item Procesor - Broadcom BCM2711, quad-core Cortex-A72 (ARM v8) 64-bit SoC @ 1.5GHz
-	\item Przesył danych
 	\item 4 × USB
 	\item mini jack 3.5mm
 	\item Karta pamięci - microSD
@@ -425,15 +424,15 @@ Radiatory zbudowane są ze stopów metali dobrze przewodzących ciepło. Ich pow
 \section{Warstwa programistyczna} \label{section:warstwa_programistyczna}
 \subsection{Python, jako język programowania}
 % dlaczego python a nie c++
-W celu realizacji funkcji prototypu zostały wzięte pod uwagę języki C++ oraz Python. Po wstępnej analizie został wybrany język Python ze względu na wsparcie producenta raspberry pi \cite{watki_jak_pisac}, większy wybór bibliotek \cite{face_detection_and_recognition_using_opencv} oraz łatwiejszy do pisania i debugowania kod \cite{face_recognition_with_python}. Jednocześnie język programowania Python charakteryzuje się wolniejszym działaniem w porównaniu do języka c++, co w moim przypadku nie jest problemem, gdyż zasobożerna biblioteka jest napisana pod pythona ale w języku c++. Dzięki czemu nie tracę na szybkości.
+W celu realizacji funkcji prototypu zostały wzięte pod uwagę języki C++ oraz Python. Po wstępnej analizie został wybrany język Python ze względu na wsparcie producenta Raspberry Pi \cite{watki_jak_pisac}, większy wybór bibliotek \cite{face_detection_and_recognition_using_opencv} oraz łatwiejszy do pisania i debugowania kod \cite{face_recognition_with_python}. Jednocześnie język programowania Python charakteryzuje się wolniejszym działaniem w porównaniu do języka c++, co w moim przypadku nie jest problemem, gdyż biblioteka jest napisana pod pythona ale w języku c++. Dzięki czemu nie tracę na szybkości.
 
 Z tego powodu biorąc pod uwagę przede wszystkim:
 \begin{itemize}
-\item większy wybór bibliotek
-\item wsparcie raspberry pi
-\item przejrzystość kodu
+\item większy wybór bibliotek,
+\item wsparcie raspberry pi,
+\item przejrzystość kodu,
 \end{itemize}
-Język Python stanowi lepszy wybór z punktu widzenia działania całości projektu
+to język Python stanowi lepszy wybór.
 \subsection{Biblioteki}
 % lista bibliotek i do czego je wykorzystuje
 W celu realizacji poszczególnych zadań zostały użyte następujące biblioteki języka Python:
@@ -787,11 +786,11 @@ Obecnie prototypowanie przy użyciu wydruków 3D zdecydowanie ułatwia i przyspi
 
 Zalety prototypowania przy pomocy druku 3D \cite{prototyp3dzalety}
 \begin{itemize}
-\item Łatwość modyfikacji projektu 
-\item Możliwość natychmiastowego rozpoczęcia drukowania projektu
-\item Brak konieczności oczekiwania na realizację zadania przez firmy zewnętrzne
-\item Możliwość zastosowania materiałów o różnych własnościach
-\item Relatywnie mała cena
+\item łatwość modyfikacji projektu,
+\item możliwość natychmiastowego rozpoczęcia drukowania projektu,
+\item brak konieczności oczekiwania na realizację zadania przez firmy zewnętrzne,
+\item możliwość zastosowania materiałów o różnych własnościach,
+\item relatywnie niska cena.
 \end{itemize}
 
 Drukarki 3D używane do prototypowania, wykorzystują 2 podstawowe technologie przyrostowe.
@@ -800,7 +799,7 @@ Drukarki 3D używane do prototypowania, wykorzystują 2 podstawowe technologie p
 \item SLA, oraz
 \item FDM
 \end{itemize}
-\textbf{W technologii SLA} do wydruku wykorzystuje się żywicę, która jest materiałem światło utwardzalnym. Poszczególne warstwy nanosi się na specjalnie zaprojektowanej płytce. Poszczególne warstwy utwardzane są wiązką laserową. \cite{jakie_materialy_w_druku}
+\textbf{W technologii SLA} do wydruku wykorzystuje się żywicę, która jest materiałem światło utwardzalnym. Poszczególne warstwy nanosi się na specjalnie zaprojektowanej płytce. Poszczególne warstwy utwardzane są wiązką laserową \cite{jakie_materialy_w_druku}.
 
 Zaletą tej metody jest duża dokładność otrzymanego modelu, natomiast podstawową wadą tej technologii jest:
 \begin{itemize}
@@ -829,7 +828,7 @@ Zgodnie z \cite{prototyp3dzalety} „(...) prototypowanie z wykorzystaniem druku
 
 \subsection{Projekt obudowy}
 W celu wykonania projektu obudowy zostały wykorzystane oprogramowanie SOLIDWORKSA	 w wersji 20
-W początkowej fazie użyto oprogramowania autodesk fusion 360, jednak nie mogłem znaleźć w nim wielu narzędzi których się nauczyłem korzystać w SOLIDWORKSIE
+W początkowej fazie użyto oprogramowania autodesk fusion 360, jednak nie mogłem znaleźć w nim wielu narzędzi których się nauczyłem korzystać w SOLIDWORKSIE.
 
 W ramach wykonania projektu ostatecznego były wprowadzane poprawki do projektu zgodnie z zasadą PDCA stanowiącą podstawę zwinnego projektowania \newline
 \textbf{P – PLAN}: zaplanuj \newline
@@ -847,10 +846,10 @@ W celu osiągnięcia ostatecznego wyniku przeprowadzono kilka iteracji cyklu Dem
 \quad
 \end{figure}
 
-W pierwszej iteracji (Patrz rys. \ref{PDCA_00}) okazało się, że wymiary i rozmieszczenie bolców jest lekko przesunięte względem Raspberry Pi
+W pierwszej iteracji (Patrz rys. \ref{PDCA_00}) okazało się, że wymiary i rozmieszczenie bolców jest lekko przesunięte względem Raspberry Pi.
 
 \newpage
-W jednej z pośrednich iteracji (Patrz rys. \ref{PDCA_01}) okazało się, że wymiary i rozmieszczenie bolców jest lekko przesunięte względem Raspberry Pi
+W jednej z pośrednich iteracji (Patrz rys. \ref{PDCA_01}) \textcolor{edited}{okazało się, że otwory na paneli wyjścia / wejścia są zbyt ciasne. Oraz ekran był niestabilny przez brak podpór}.
 
 \begin{figure}[H]%
 \centering
@@ -866,7 +865,7 @@ W jednej z pośrednich iteracji (Patrz rys. \ref{PDCA_01}) okazało się, że wy
 \quad
 \end{figure}
 
-Następna iteracji (Patrz rys. \ref{PDCA_02}) miała na celu wydrukowanie poprawynch wymiarów dla kamery. Z powodu niewielkich rozmiarów urządzenia nie było łatwo dokładnie zmierzyć otworów. Nawet z uwzględnieniem niepewności pomiarowej trzeba było wydrukować komponent kilka razy z różnicą kilku dziesiątych mm.
+Następna iteracji (Patrz rys. \ref{PDCA_02}) miała na celu wydrukowanie poprawnych wymiarów dla kamery. Z powodu niewielkich rozmiarów urządzenia nie było łatwo dokładnie zmierzyć otworów. Nawet z uwzględnieniem niepewności pomiarowej trzeba było wydrukować komponent kilka razy z różnicą kilku dziesiątych mm.
 
 \begin{figure}[H]%
 \centering
@@ -900,23 +899,22 @@ Wszystkie wydrukowane Iteracje PDCA (Patrz rys. \ref{PDCA_ALL}).
 W trakcie realizacji projektu napotkano następujące problemy.
 \begin{itemize}
 	\item \textbf{Wykorzystanie tylko jednego rdzenia procesora} (wątku). Raspberry Pi wyposażony jest w procesor czterordzeniowym, dzięki czemu można jednocześnie realizować 4 równoległe operacje. \newline \textbf{Problem:} \newline Okazało się że procesor Raspberry ma problemy z wykorzystaniem większej lioczby wątków w ramach jednego programu. \newline \textbf{Rozwiązanie:} \newline Użyto biblioteki threading do pracy na wątkach.
-	\item \textbf{Brak możliwość realizacji komunikatów głosowych.} \newline \textbf{Problem:} \newline Pierwotnie zastosowany głośnik nie posiadał wsparcia dla realizacji komunikatów głosowych zapisanych w pamięci prototypu. Jedyną możliwością było odtwarzanie plików przez Spotify. \newline \textbf{Rozwiązanie:} \newline Zastosowano zewnętrzne głośniki podpinane przez złącze jack. Plusem tego rozwiązanie jest równiesz dowolność wyboru głośników. Jeśli chce to i na metrowym głośniku mogę odtwarzać dźwięki.
+	\item \textbf{Brak możliwość realizacji komunikatów głosowych.} \newline \textbf{Problem:} \newline Pierwotnie zastosowany głośnik nie posiadał wsparcia dla realizacji komunikatów głosowych zapisanych w pamięci prototypu. Jedyną możliwością było odtwarzanie plików przez Spotify. \newline \textbf{Rozwiązanie:} \newline Zastosowano zewnętrzne głośniki podpinane przez złącze jack. Plusem tego rozwiązanie jest równiesz dowolność wyboru głośników.
 	\item \textbf{Zbyt duża temperatura prototypu ze względu na konieczność wykonywania dużej liczby obliczeń.} \newline \textbf{Problem:} \newline W początkowej fazie projektu planowano użyć wyświetlacza zintegrowanego z głośnikiem. Okazało się iż takie rozwiązanie powoduje, że brakuje miejsca na radiator. \newline \textbf{Rozwiązanie:} \newline Znaleziono nowy wyświetlacz oraz wyprowadzono głośniki na zewnątrz przy pomocy gniazda typu jack.
-	\item raspbian segmentation fault (Corrupted filesystem) - problem prawdopodobnie dodyczy wątkuw - do sprawdzenia
 \end{itemize}
 
 \subsection{Możliwości rozbudowy}
 W ramach projektu powstał pierwszy w pełni funkcjonalny prototyp inteligentnego rozpoznawania twarzy. Na etapie prototypu zostały zaimplementowane funkcjonalności, zgodnie z założeniami projektu.
 
-Nie mniej sam system jest elastyczny i można go z czasem rozszerzyć o kolejne funkcjonalności.
+Nie mniej sam system jest elastyczny i można go z czasem rozszerzyć o kolejne funkcjonalności:
 
 \begin{itemize}
-	\item Integrację z istniejącymi na rynku systemami Smart Home
-	\item Wprowadzenie funkcji nadzoru obszaru ze śledzeniem osób przemieszczających się w danych strefach
-	\item Dodawanie zdjęć twarzy do bazy danych z wykorzystaniem kamery w którą wyposażony jest prototyp
-	\item Zintegrowanie funkcji dostępu do pomieszczeń po rozpoznaniu twarzy, lub dzięki dotykowemu ekranowi, w który wyposażony jest projekt
-	\item Generowanie sygnału uruchomiającego sekwencję zdarzeń po rozpoznaniu danej osoby. Na przykład włączenie czajnika lub ekspresu do kawy, czy też zapalenie światła w określonym pomieszczeniu.
-	\item Stworzenie centrali pobierającej dane z kilku - kilkunastu punktów zbudowanych na bazie obecnego prototypu.
+	\item integrację z istniejącymi na rynku systemami Smart Home,
+	\item wprowadzenie funkcji nadzoru obszaru ze śledzeniem osób przemieszczających się w danych strefach,
+	\item dodawanie zdjęć twarzy do bazy danych z wykorzystaniem kamery w którą wyposażony jest prototyp,
+	\item zintegrowanie funkcji dostępu do pomieszczeń po rozpoznaniu twarzy, lub dzięki dotykowemu ekranowi, w który wyposażony jest projekt,
+	\item generowanie sygnału uruchomiającego sekwencję zdarzeń po rozpoznaniu danej osoby. (Na przykład włączenie czajnika lub ekspresu do kawy, czy też zapalenie światła w określonym pomieszczeniu),
+	\item stworzenie centrali pobierającej dane z kilku - kilkunastu punktów zbudowanych na bazie obecnego prototypu.
 \end{itemize}
 
 \subsection{Koszty realizacji projektu}
@@ -944,7 +942,7 @@ Podstawka & 34.99 zł  \\ \hline
 \end{tabularx}
 \end{center}
 
-Całkowity koszt projektu wyniósł \textcolor{to_check_at_end}{865.58} zł, co oznacza iż całość kosztów zawiera się w założonym budżecie.
+Całkowity koszt projektu wyniósł 865.58 zł, co oznacza iż całość kosztów zawiera się w założonym budżecie.
 
 \newpage
 \section{Wnioski} \label{section:wnioski}
@@ -955,7 +953,7 @@ Stworzenie projektu inteligentnego rozpoznawania twarzy pozwala na sformułowani
 \item Nawet przy ograniczonym budżecie możliwa jest realizacja zadań związanych z rozpoznawaniem twarzy i zbudowania prototypu, który w przyszłości będzie można integrować z rozwiązaniami typu Smart Home.
 \item W trakcie realizacji projektu napotkano problemy, które należało rozwiązać. Okazało się, iż każdy problem może być rozwiązany przy zastosowaniu odpowiednich środków zaradczych
 \item Zastosowana technika druku 3D jest techniką zbyt wolą, aby produkować obudowy prototypów seryjnie. Nadaje się świetnie natomiast do prototypowania.
-\item Zastosowane oprogramowanie nie może być na ty etapie użyte w zakresie ochrony dostępu, ponieważ nie zaimplementowano rozróżnienia żywej osoby od zdjęcia
+\item Zastosowane oprogramowanie nie może być na tym etapie użyte w zakresie ochrony dostępu, ponieważ nie zaimplementowano rozróżnienia żywej osoby od zdjęcia
 \end{enumerate}
 
 \newpage
