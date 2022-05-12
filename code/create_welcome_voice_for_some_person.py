@@ -10,7 +10,7 @@ PATH_TO_ROOT):
     basic_welcome_file)
 
 def create_welcome_voice_for_unknown_person(path2root=PATH_TO_ROOT):
-    # create folder for unknow face
+    # stworz folder dla nieznanych osob
     unknowe_dir_name = f"{WELCOMES_DIR_PATH_NAME}_unknown"
     know_people_dir = os.path.join(path2root, 
     KNOW_PEOPLE_DIR_PATH_NAME)
@@ -22,7 +22,7 @@ def create_welcome_voice_for_unknown_person(path2root=PATH_TO_ROOT):
         os.chdir(know_people_dir)
         os.mkdir(unknowe_dir_name)
     
-    # create welocme message
+    # stworz plik z wiadomoscia
     file_path = os.path.join(unknown_dir_path, 
     BASIC_WELCOME_FILE_NAME)
     create_and_save_welcome_message("Witaj nieznajomy nieznajoma", 

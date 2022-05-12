@@ -1,24 +1,23 @@
-# check if person desnt repeat too soon
+# sprawdz czy osoba nie powtarza się zbyt szybko
 face_names_to_alert = []
 time_differences = {}
 for regognized_face in face_names:
     if regognized_face in ALERT_PEOPLE.keys():
-        # check last seen time
+        # sprawdz czas ostatniego wykrycia
         time_difference = time.time() - ALERT_PEOPLE[
         regognized_face]
         time_differences[regognized_face] = time_difference
         ALERT_PEOPLE[regognized_face] = time.time()
         if time_difference >= ALERT_DELAY_IGNORE:
-            # notify
+            # powiadom
             face_names_to_alert.append(regognized_face)
             pass
         else:
-            # skip
+            # pomin
             pass
         pass
     else:
-        # add to ALERT_PEOPLE
-        # notify
+        # dodaj to ALERT_PEOPLE & powiadom
         ALERT_PEOPLE[regognized_face] = time.time()
         face_names_to_alert.append(regognized_face)
         pass
@@ -27,5 +26,4 @@ f" ({(time.time() - timeStart):.4}s)\t\t\t{time_differences}")
 
 for face in face_names_to_alert:
     say_hello(face)
-# back2idle()
 pass

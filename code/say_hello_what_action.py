@@ -3,7 +3,7 @@ def say_hello(name, path2root=PATH_TO_ROOT):
     
     appActiveName = name
     
-    # get mp3' dir
+    # pobierz folder z mp3
     mp3s = []
     path_to_welcomes_for_name = os.path.join(path2root, 
     KNOW_PEOPLE_DIR_PATH_NAME)
@@ -16,10 +16,10 @@ def say_hello(name, path2root=PATH_TO_ROOT):
         path_to_welcomes_for_name = os.path.join(
         path_to_welcomes_for_name, name, WELCOMES_DIR_PATH_NAME)
         
-    # get mp3s
+    # pobierz scieszki do plikow mp3
     for file in os.listdir(path_to_welcomes_for_name):
         print(file)
-        extension = os.path.splitext(file)[1] # extension of file
+        extension = os.path.splitext(file)[1] # rozszerzenie pliku
         print(extension)
         if extension.lower() == ".mp3":
             mp3s.append(os.path.join(path_to_welcomes_for_name, 
