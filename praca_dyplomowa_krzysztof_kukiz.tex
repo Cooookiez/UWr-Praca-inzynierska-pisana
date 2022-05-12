@@ -26,6 +26,8 @@
 \usepackage{mdframed}
 \usepackage{tabularx}
 \usepackage{float}
+\usepackage{blindtext}
+\usepackage{hyperref}
 
 \definecolor{codegreen}{rgb}{0.5, 0.09, 0.09}
 \definecolor{codegray}{rgb}{0.5,0.5,0.5}
@@ -127,15 +129,9 @@ Smart greeting based on face recognition
 
 Niniejsza praca przedstawia projekt systemu inteligentnego rozpoznawania osób oraz podejmowania przez system wcześniej zdefiniowanych działań, w zależności od rozpoznanej osoby. W przypadku braku rozpoznania osoby, system poda także odpowiedni komunikat głosowy oraz wizualny. 
 
-Projekt oparty jest na Raspberry Pi 4B, na języku programowania python 3, oraz wykorzystuje elementy wydrukowane na drukarce 3D Creality Ender-3 v.2
+Projekt oparty jest na Raspberry Pi 4B, na języku programowania python 3, oraz wykorzystuje elementy wydrukowane na drukarce 3D Creality Ender-3 v.2.
 
-Projekt łączy ze sobą w całość 3 warstwy niezbędne do wykonania wszystkich założonych zadań w taki sposób aby w przyszłości można było rozbudować system o kolejne funkcjonalności:
-
-Warstwę sprzętową (Kamery, mikro-komputera, głośnika, wyświetlacza)
-
-warstwę programistyczną odpowiedzialną za obróbkę oraz optymalizację odczytanego obrazu, interpretację pobranego obrazu oraz porównanie go z wcześniej zdefiniowaną bazą zdjęć, podjęcie decyzji o tym jakie działanie ma być podjęte oraz wygenerowanie właściwego sygnału skutkującego podjęciem określonych,
-
-warstwę produktową w postaci dedykowanej, zaprojektowanej specjalnie dla tego projektu obudowy będącej jednocześnie opakowaniem produktu, pełniącej jego funkcje organizacyjną, ochronną, informacyjną
+Projekt łączy ze sobą w całość 3 warstwy niezbędne do wykonania wszystkich założonych zadań w taki sposób aby w przyszłości można było rozbudować system o kolejne funkcjonalności: Warstwę sprzętową (Kamery, mikro-komputera Raspberry Pi, głośnika, wyświetlacza), warstwę programistyczną odpowiedzialną za obróbkę oraz optymalizację odczytanego obrazu, interpretację pobranego obrazu oraz porównanie go z wcześniej zdefiniowaną bazą zdjęć, podjęcie decyzji o tym jakie działanie ma być podjęte oraz wygenerowanie właściwego sygnału skutkującego podjęciem określonych, warstwę produktową w postaci dedykowanej, zaprojektowanej specjalnie dla tego projektu obudowy będącej jednocześnie opakowaniem produktu, pełniącej jego funkcje organizacyjną, ochronną, informacyjną.
 
 Głównym celem projektu było stworzenie systemu mobilnego, o jak najmniejszych wymiarach, który jest gotowy do działania natychmiast po podłączeniu zasilania.
 
@@ -152,31 +148,9 @@ This work presents the design of a system for the intelligent recognition of per
 
 The project is based on a Raspberry Pi 4B, the python 3 programming language, and uses components printed on a Creality Ender-3 v.2 3D printer
 
-The project brings together the 3 layers needed to carry out all the tasks in such a way that the system can be extended in the future with further functionalities.
+The project brings together the 3 layers needed to carry out all the tasks in such a way that the system can be extended in the future with further functionalities: A hardware layer (the camera, the Rasppery Pi micro-computer, a speaker, a display), the programming layer responsible for processing and optimisation of the read image, interpretation of the retrieved image and comparison with a predefined image database, deciding on the action to be taken and generating the right signal to take the specified action, a product layer in the form of a dedicated enclosure (Etui), designed specifically for this project, performing its organisational, protective, informative functions.
 
-\begin{enumerate} % itemize
-  \item A hardware layer consisting of four main components.
-  \begin{itemize}
-  	\item the camera, which is the signal input element and is responsible for collecting the video signal from the environment
-  	\item the Rasppery Pi microcomputer, which is in charge of processing the signal from the camera, checking whether a given person's photo is in the database and issuing an appropriate message
-  	\item A speaker that is an output from the system and is used to give voice announcements. The speaker plugs into a 3.5mm jack port, so any speaker can be used.
-  	\item A display on which the visual part of the greeting is generated. The display is connected to the Raspberry Pi
-  \end{itemize}
-  \item The programming layer responsible for:
-  \begin{itemize}
-  	\item processing and optimisation of the read image
-  	\item interpretation of the retrieved image and comparison with a predefined image database (library)
-  	\item deciding on the action to be taken and generating the right signal to take the specified action
-  \end{itemize}
-  \item A product layer in the form of a dedicated enclosure (Etui), designed specifically for this project, performing 3 basic functions:
-  \begin{itemize}
-  	\item Organisational, to ensure consistent organisation of the components and their proper passive ventilation
-  	\item Protective, to prevent damage to the components used in the project
-  	\item Information, including basic product information
-  \end{itemize}
-\end{enumerate}
-
-The aim of the project was to create a mobile system with the smallest possible dimensions, which is ready for operation as soon as the power is connected.
+The main goal of the project was to create a mobile system, with the smallest possible dimensions, which is ready to operate immediately after connecting the power supply.
 
 \newpage
 
@@ -189,7 +163,7 @@ The aim of the project was to create a mobile system with the smallest possible 
 
 Systemy inteligentne są stosowane obecnie na całym świecie. Znajdują coraz szersze zastosowanie w życiu codziennym każdego z nas zarówno w pracy jak i w domu. Potrafią reagować na nasze zachowania, odczytywać intencje oraz gromadzić i wykorzystywać dane, które im udostępnimy zarówno na poziomie jednostki, jak i całych grup społecznych.
 
-W naszym codziennym życiu są elementem składowym inteligentnych budynków opartych między innymi o systemy LOXONE, KNX, AMPIO, czy też FIBARO i znacznie ułatwiają codzienne czynności poprzez sterowanie klimatem, ogrzewaniem, rekuperacją, czy też podlewaniem ogrodów, sprzątaniem, a nawet optymalnym wykorzystaniem energii elektrycznej.
+W naszym codziennym życiu są elementem składowym inteligentnych budynków opartych między innymi o systemy LOXONE\footnote{coś}, KNX\footnote{tutaj}, AMPIO\footnote{jeszcze}, czy też FIBARO\footnote{bedzie} i znacznie ułatwiają codzienne czynności poprzez sterowanie klimatem, ogrzewaniem, rekuperacją, czy też podlewaniem ogrodów, sprzątaniem, a nawet optymalnym wykorzystaniem energii elektrycznej.
 
 Systemy inteligentne pomimo swoich kosztów zdobywają coraz większą popularność nie tylko w zastosowaniach profesjonalnych, ale także w zastosowaniach prywatnych i mogą być oparte zarówno o infrastrukturę przewodową (patrz rys. \ref{kable}), jak i mogą być oparte na rozwiązaniach bezprzewodowych.
 
