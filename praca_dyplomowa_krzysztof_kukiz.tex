@@ -28,6 +28,7 @@
 \usepackage{float}
 \usepackage{blindtext}
 \usepackage{hyperref}
+\usepackage[bottom]{footmisc}
 
 \definecolor{codegreen}{rgb}{0.5, 0.09, 0.09}
 \definecolor{codegray}{rgb}{0.5,0.5,0.5}
@@ -543,8 +544,8 @@ Wysłanie komunikatu głosowego do głośników  (Patrz listing \ref{listing:py_
 \section{Warstwa produktowa} \label{section:warstwa_produkcyjna} % wysłać skreeny z solidworksa i zdjęcia obudowy
 Prototyp to nie tylko elektronika oraz oprogramowanie. Bardzo ważnym elementem jest stworzenie całościowego produktu, do czego niezbędne jest zaprojektowanie oraz wykonanie odpowiedniej obudowy. W celu realizacji tego zadania zostały użyte poniższe programy:
 \begin{itemize}
-\item SOLIDWORKS – do tworzenia projektu obudowy (patrz rys. \ref{okno_solidworks})
-\item ultimaker cura – do przygodowania wexportowanego z SOLIDWORKS pliku do postaci g-code którą czytają drukatki 3D.
+\item SOLIDWORKS – do tworzenia projektu obudowy (patrz rys. \ref{okno_solidworks}).
+\item ultimaker cura – do przygodowania wexportowanego z SOLIDWORKS pliku do postaci g-code którą czytają drukatki 3D,
 \item octoprint (+ Raspbarry pi) – do nadzorowania wydruku
 \end{itemize}
 oraz prototypowanie przy pomocy drukarki 3D.
@@ -571,13 +572,13 @@ Drukarki 3D używane do prototypowania, wykorzystują 2 podstawowe technologie p
 \cite{prototyp3dzalety}.
 \begin{itemize}
 \item SLA, oraz
-\item FDM
+\item FDM.
 \end{itemize}
 \textbf{W technologii SLA} do wydruku wykorzystuje się żywicę, która jest materiałem światło utwardzalnym. Poszczególne warstwy nanosi się na specjalnie zaprojektowanej płytce. Poszczególne warstwy utwardzane są wiązką laserową \cite{jakie_materialy_w_druku}.
 
 Zaletą tej metody jest duża dokładność otrzymanego modelu, natomiast podstawową wadą tej technologii jest:
 \begin{itemize}
-\item stosunkowo wysoki koszt użycia w warunkach domowych oraz
+\item stosunkowo wysoki koszt użycia w warunkach domowych, oraz
 \item konieczność stosowania wyciągów mechanicznych w celu odprowadzenia powstających w trakcie procesu oparów.
 \end{itemize}
 
@@ -600,79 +601,70 @@ Zgodnie z \cite{prototyp3dzalety} „(...) prototypowanie z wykorzystaniem druku
 \quad
 \end{figure}
 
+\newpage
 \subsection{Projekt obudowy}
 W celu wykonania projektu obudowy zostały wykorzystane oprogramowanie SOLIDWORKS w wersji 20.
 W początkowej fazie użyto oprogramowania Autodesk Fusion 360, jednak nie mogłem znaleźć w nim wielu narzędzi których się nauczyłem korzystać w SOLIDWORKS.
 
-W ramach wykonania projektu ostatecznego były wprowadzane poprawki do projektu zgodnie z zasadą PDCA stanowiącą podstawę zwinnego projektowania \newline
-\textbf{P – PLAN}: zaplanuj \newline
-\textbf{D – DO}: wykonaj \newline
-\textbf{C – CHECK}: sprawdź \newline
-\textbf{A – ACT}: popraw
-
-\begin{figure}[H]%
-	\centering
-	\begin{subfigure}{.5\textwidth}
-		\centering
-		\includegraphics[width=0.8\linewidth]{imgs/etui_bot_v1.jpg}
-		\caption{etui\_bot\_v1.STL \cite{img_me}.}	
-		\label{etui_bot:1}
-	\end{subfigure}%
-	\begin{subfigure}{.5\textwidth}
-		\centering
-		\includegraphics[width=0.8\linewidth]{imgs/etui_bot_v7.1.jpg}
-		\caption{etui\_bot\_v7.1.STL \cite{img_me}.}
-		\label{etui_bot:7.1}
-	\end{subfigure}%
-\caption{Komunikaty graficzne}
-\label{etui_bot:etui_bot}
-\end{figure}
-
-\begin{figure}[H]%
-	\centering
-	\begin{subfigure}{.5\textwidth}
-		\centering
-		\includegraphics[width=0.8\linewidth]{imgs/etui_bot_v1.jpg}
-		\caption{etui\_bot\_v1.STL \cite{img_me}.}	
-		\label{etui_bot:1}
-	\end{subfigure}%
-	\begin{subfigure}{.5\textwidth}
-		\centering
-		\includegraphics[width=0.8\linewidth]{imgs/etui_bot_v7.1.jpg}
-		\caption{etui\_bot\_v7.1.STL \cite{img_me}.}
-		\label{etui_bot:7.1}
-	\end{subfigure}%
-	\newline
-	\begin{subfigure}{.5\textwidth}
-		\centering
-		\includegraphics[width=0.8\linewidth]{imgs/etui_bot_v9.1.jpg}
-		\caption{etui\_bot\_v9.1.STL \cite{img_me}.}	
-		\label{etui_bot:9.1}
-	\end{subfigure}%
-	\begin{subfigure}{.5\textwidth}
-		\centering
-		\includegraphics[width=0.8\linewidth]{imgs/etui_bot_v10.2.jpg}
-		\caption{etui\_bot\_v10.2.STL \cite{img_me}.}
-		\label{etui_bot:10.2}
-	\end{subfigure}%
-\caption{Kilka wersji etui}
-\label{etui_bot:etui_bot}
-\end{figure}
+W ramach wykonania projektu ostatecznego były wprowadzane poprawki do projektu zgodnie z zasadą PDCA\footnote{P – PLAN (zaplanuj), D – DO (wykonaj), C – CHECK (sprawdź), A – ACT (popraw).} stanowiącą podstawę zwinnego projektowania
 
 \begin{figure}[H]%
 \centering
 \includegraphics[width=0.8\columnwidth]{imgs/etui_bot_v1.jpg}
-\caption{etui\_bot\_v1.STL \cite{img_me}. \label{etui_bot_1}}
+\caption{Podstawa obudowy. Wersja 1 \cite{img_me}. \label{etui_bot_v1}}
 \quad
 \end{figure}
 
 \begin{figure}[H]%
 \centering
 \includegraphics[width=0.8\columnwidth]{imgs/etui_bot_v7.1.jpg}
-\caption{etui\_bot\_v7.1.STL \cite{img_me}. \label{etui_bot_7.1}}
+\caption{Podstawa obudowy. Wersja 7 \cite{img_me}. \label{etui_bot_v7.1}}
 \quad
 \end{figure}
 
+\begin{figure}[H]%
+\centering
+\includegraphics[width=0.8\columnwidth]{imgs/etui_bot_v9.1.jpg}
+\caption{Podstawa obudowy. Wersja 9 \cite{img_me}. \label{etui_bot_v9.1}}
+\quad
+\end{figure}
+
+\begin{figure}[H]%
+\centering
+\includegraphics[width=0.8\columnwidth]{imgs/etui_bot_v10.2.jpg}
+\caption{Podstawa obudowy. Wersja 10 \cite{img_me}. \label{etui_bot_v10.2}}
+\quad
+\end{figure}
+
+\begin{figure}[H]%
+\centering
+\includegraphics[width=0.8\columnwidth]{imgs/etui_top_v1.1.jpg}
+\caption{Pokrywa obudowy. Wersja 1.1 \cite{img_me}. \label{etui_top_v1.1}}
+\quad
+\end{figure}
+
+\begin{figure}[H]%
+\centering
+\includegraphics[width=0.8\columnwidth]{imgs/etui_top_v1.5.jpg}
+\caption{Pokrywa obudowy. Wersja 1.5 \cite{img_me}. \label{etui_top_v1.5}}
+\quad
+\end{figure}
+
+\begin{figure}[H]%
+\centering
+\includegraphics[width=0.8\columnwidth]{imgs/etui_top_v4.4.jpg}
+\caption{Pokrywa obudowy. Wersja 4 \cite{img_me}. \label{etui_top_v4.4}}
+\quad
+\end{figure}
+
+\begin{figure}[H]%
+\centering
+\includegraphics[width=0.8\columnwidth]{imgs/zlozenie.jpg}
+\caption{Rysunek złożeniowy kompletnej obudowy \cite{img_me}. \label{etui_zlozenie}}
+\quad
+\end{figure}
+
+\newpage
 \subsection{Wykonanie obudowy}
 W celu osiągnięcia ostatecznego wyniku przeprowadzono kilka iteracji cyklu Deminga\footnote{Cykl Deminga – sposób strukturalnego wykonywania pracy w postaci 4 kroków (zaplanuj, wykonaj, sprawdź, popraw)} (PDCA) \cite{leanByJK}. W tym celu dokonywano także poprawek ustawień drukarki.
 
