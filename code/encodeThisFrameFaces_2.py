@@ -1,4 +1,4 @@
-# sprawdz czy osoba nie powtarza się zbyt szybko
+# sprawdz czy osoba nie powtarza się zbyt często
 face_names_to_alert = []
 time_differences = {}
 for regognized_face in face_names:

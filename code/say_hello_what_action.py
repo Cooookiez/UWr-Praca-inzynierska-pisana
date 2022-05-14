@@ -16,7 +16,7 @@ def say_hello(name, path2root=PATH_TO_ROOT):
         path_to_welcomes_for_name = os.path.join(
         path_to_welcomes_for_name, name, WELCOMES_DIR_PATH_NAME)
         
-    # pobierz scieszki do plikow mp3
+    # pobierz sciezki do plikow mp3
     for file in os.listdir(path_to_welcomes_for_name):
         print(file)
         extension = os.path.splitext(file)[1] # rozszerzenie pliku

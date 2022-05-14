@@ -131,7 +131,7 @@ Niniejsza praca przedstawia projekt systemu inteligentnego rozpoznawania osób o
 
 Projekt oparty jest na Raspberry Pi 4B, na języku programowania python 3, oraz wykorzystuje elementy wydrukowane na drukarce 3D Creality Ender-3 v.2.
 
-Projekt łączy ze sobą w całość 3 warstwy niezbędne do wykonania wszystkich założonych zadań w taki sposób aby w przyszłości można było rozbudować system o kolejne funkcjonalności: Warstwę sprzętową (Kamery, mikro-komputera Raspberry Pi, głośnika, wyświetlacza), warstwę programistyczną odpowiedzialną za obróbkę oraz optymalizację odczytanego obrazu, interpretację pobranego obrazu oraz porównanie go z wcześniej zdefiniowaną bazą zdjęć, podjęcie decyzji o tym jakie działanie ma być podjęte oraz wygenerowanie właściwego sygnału skutkującego podjęciem określonych, warstwę produktową w postaci dedykowanej, zaprojektowanej specjalnie dla tego projektu obudowy będącej jednocześnie opakowaniem produktu, pełniącej jego funkcje organizacyjną, ochronną, informacyjną.
+Projekt łączy ze sobą w całość 3 warstwy niezbędne do wykonania wszystkich założonych zadań w taki sposób aby w przyszłości można było rozbudować system o kolejne funkcjonalności: warstwę sprzętową (kamery, mikro-komputera Raspberry Pi, głośnika, wyświetlacza), warstwę programistyczną odpowiedzialną za obróbkę oraz optymalizację odczytanego obrazu, interpretację pobranego obrazu oraz porównanie go z wcześniej zdefiniowaną bazą zdjęć, podjęcie decyzji o tym jakie działanie ma być podjęte oraz wygenerowanie właściwego sygnału skutkującego podjęciem określonych, warstwę produktową w postaci dedykowanej, zaprojektowanej specjalnie dla tego projektu obudowy będącej jednocześnie opakowaniem produktu, pełniącej jego funkcje organizacyjną, ochronną, informacyjną.
 
 Głównym celem projektu było stworzenie systemu mobilnego, o jak najmniejszych wymiarach, który jest gotowy do działania natychmiast po podłączeniu zasilania.
 
@@ -163,28 +163,28 @@ The main goal of the project was to create a mobile system, with the smallest po
 
 Systemy inteligentne są stosowane obecnie na całym świecie. Znajdują coraz szersze zastosowanie w życiu codziennym każdego z nas zarówno w pracy jak i w domu. Potrafią reagować na nasze zachowania, odczytywać intencje oraz gromadzić i wykorzystywać dane, które im udostępnimy zarówno na poziomie jednostki, jak i całych grup społecznych.
 
-W naszym codziennym życiu są elementem składowym inteligentnych budynków opartych między innymi o systemy LOXONE\footnote{coś}, KNX\footnote{tutaj}, AMPIO\footnote{jeszcze}, czy też FIBARO\footnote{bedzie} i znacznie ułatwiają codzienne czynności poprzez sterowanie klimatem, ogrzewaniem, rekuperacją, czy też podlewaniem ogrodów, sprzątaniem, a nawet optymalnym wykorzystaniem energii elektrycznej.
+W naszym codziennym życiu są elementem składowym inteligentnych budynków opartych między innymi o systemy LOXONE, KNX, AMPIO, czy też FIBARO\footnote{LOXONE, KNX, AMPIO, FIBARO są to nazwy producentów oferujących rozwiązania stosowane w budowie domów inteligentnych} i znacznie ułatwiają codzienne czynności poprzez sterowanie klimatem, ogrzewaniem, rekuperacją, czy też podlewaniem ogrodów, sprzątaniem, a nawet optymalnym wykorzystaniem energii elektrycznej.
 
 Systemy inteligentne pomimo swoich kosztów zdobywają coraz większą popularność nie tylko w zastosowaniach profesjonalnych, ale także w zastosowaniach prywatnych i mogą być oparte zarówno o infrastrukturę przewodową (patrz rys. \ref{kable}), jak i mogą być oparte na rozwiązaniach bezprzewodowych.
 
 \begin{figure}[H]%
 \centering
 \includegraphics[width=0.8\columnwidth]{imgs/domkable.jpg}
-\caption{Przykład okablowaniem domu inteligentnego. \label{kable}}
+\caption{Przykład okablowania domu inteligentnego \cite{img_me}. \label{kable}}
 \quad
 \end{figure}
 
 Żaden system nie posiada jednak wszystkich funkcjonalności, które są niezbędne danemu użytkownikowi. W większości z nich brakuje mobilnego systemu pozwalającego na rozpoznanie osób oraz podjęcia konkretnych działań w zależności od osoby, która została zidentyfikowana.
 
-System inteligentnego rozpoznawania osób, który jest tematem niniejszego projektu, pozwala właśnie na identyfikację osób wchodzących do pomieszczenia na podstawie zapisanej wcześniej bazy zdjęć oraz powitanie ich indywidualnym komunikatem zarówno głosowym, jak i wizualnym.
+System inteligentnego rozpoznawania osób, który jest tematem niniejszego projektu, docelowa ma umożliwić identyfikację osób wchodzących do pomieszczenia na podstawie zapisanej wcześniej bazy zdjęć oraz powitanie ich indywidualnym komunikatem zarówno głosowym, jak i wizualnym.
 
-Do realizacji projektu wykorzystałem mikro-komputer Raspperry Pi 4B oraz język programowania Python 3. Jako elementu wejściowego sygnału użyłem kamery Raspberry Pi Camera HD v2 8MPx zgodnej z Raspperry Pi 4B, oraz głośnika pod wejscie jack 3,5mm
+Do realizacji projektu wykorzystałem mikro-komputer Raspperry Pi 4B oraz język programowania Python 3. Jako elementu wejściowego sygnału użyłem kamery Raspberry Pi Camera HD v2 8MPx zgodnej z Raspperry Pi 4B, oraz głośnika pod wejscie jack 3,5mm.
 
 \subsection{Cel i zakres pracy}
 
 Celem głównym projektu jest stworzenie prototypu inteligentnego, mobilnego systemu rozpoznawania osób, na podstawie wcześniej zgromadzonej bazy zdjęciowej, a także wygenerowanie unikatowego powitania głosowego oraz wizualnego w zależności od rozpoznanej osoby.
 
-Celami szczegółowymi projektu są wybór technologii sprzętowej, wybór technologii programistycznej oraz zaprojektowanie i wykonanie obudowy prototypu, mieszczącej wszystkie elementy projektu
+Celami szczegółowymi projektu są: wybór technologii sprzętowej, wybór technologii programistycznej oraz zaprojektowanie i wykonanie obudowy prototypu, mieszczącej wszystkie elementy projektu
 
 Praca swoim zakresem obejmuje zarówno tematykę z dziedziny elektroniki, informatyki projektowania oraz prototypowania 3D.
 
@@ -336,7 +336,7 @@ Dzięki takiemu rozwiązaniu możliwe jest jednocześnie szerokie wsparcie w zak
 \quad
 \end{figure}
 
-\textcolor{edited}{Tryby} kamery \footnote{dodać tu jakiś odnośnik? (i w późniejszych też)}
+Parametry kamery
 
 \begin{itemize}
 	\item 1080p / 30 fps,
@@ -424,7 +424,7 @@ Radiatory zbudowane są ze stopów metali dobrze przewodzących ciepło. Ich pow
 \section{Warstwa programistyczna} \label{section:warstwa_programistyczna}
 \subsection{Python, jako język programowania}
 % dlaczego python a nie c++
-W celu realizacji funkcji prototypu zostały wzięte pod uwagę języki C++ oraz Python. Po wstępnej analizie został wybrany język Python ze względu na wsparcie producenta Raspberry Pi \cite{watki_jak_pisac}, większy wybór bibliotek \cite{face_detection_and_recognition_using_opencv} oraz łatwiejszy do pisania i debugowania kod \cite{face_recognition_with_python}. Jednocześnie język programowania Python charakteryzuje się wolniejszym działaniem w porównaniu do języka c++, co w moim przypadku nie jest problemem, gdyż biblioteka jest napisana pod pythona ale w języku c++. Dzięki czemu nie tracę na szybkości.
+W celu realizacji funkcji prototypu zostały wzięte pod uwagę języki C++ oraz Python. Po wstępnej analizie został wybrany język Python ze względu na wsparcie producenta Raspberry Pi \cite{watki_jak_pisac}, większy wybór bibliotek \cite{face_detection_and_recognition_using_opencv} oraz łatwiejszy do pisania i debugowania kod \cite{face_recognition_with_python}. Jednocześnie język programowania Python charakteryzuje się wolniejszym działaniem w porównaniu do języka c++, co w moim przypadku nie jest problemem, gdyż najbardziej wymagająca biblioteka jest napisana pod pythona właśnie w języku c++. Dzięki czemu nie tracę na szybkości.
 
 Z tego powodu biorąc pod uwagę przede wszystkim:
 \begin{itemize}
@@ -474,22 +474,22 @@ Poniżej znajdują się algorytmy programów zastosowanych w projekcie:
 W tym rozdziale znajdują się listingi kodu odpowiedzialnego za realizację warstwy softwarowej projektu.
 Prezentowany kod podzielony jest na następujące elementy:\newline
 
-Zamiana obrazu twarzy na postać cyfrową (kodowanie) (Patrz \ref{listing:py_camAndStaff}).
+Zamiana obrazu twarzy na postać cyfrową (kodowanie) (Patrz listing \ref{listing:py_camAndStaff}).
 \begin{listing}[H]%
 \begin{mdframed}[backgroundcolor=codebg]
 \inputminted{python}{code/start_cam.py}
 \end{mdframed}
-\caption{start\_cam()}
+\caption{Optymalizacja klatki wejściowej.}
 \label{listing:py_camAndStaff}
 \end{listing}
 
 \newpage
-Przypisanie rozpoznanej twarzy do zdefiniowanego w bazie danych imienia i nazwiska (Patrz \ref{listing:py_encodeThisFrameFaces_1}, \ref{listing:py_encodeThisFrameFaces_2}).
+Przypisanie rozpoznanej twarzy do zdefiniowanego w bazie danych imienia i nazwiska (Patrz listing \ref{listing:py_encodeThisFrameFaces_1}, \ref{listing:py_encodeThisFrameFaces_2}).
 \begin{listing}[H]%
 \begin{mdframed}[backgroundcolor=codebg]
 \inputminted{python}{code/encodeThisFrameFaces_1.py}
 \end{mdframed}
-\caption{encodeThisFrameFaces(frame) (part 1 / 2)}
+\caption{Rozpoznanie osoby (cz. 1 / 2).}
 \label{listing:py_encodeThisFrameFaces_1}
 \end{listing}
 
@@ -497,47 +497,45 @@ Przypisanie rozpoznanej twarzy do zdefiniowanego w bazie danych imienia i nazwis
 \begin{mdframed}[backgroundcolor=codebg]
 \inputminted{python}{code/encodeThisFrameFaces_2.py}
 \end{mdframed}
-\caption{encodeThisFrameFaces(frame) (part 2 / 2)}
+\caption{Rozpoznanie osoby (cz. 2 / 2).}
 \label{listing:py_encodeThisFrameFaces_2}
 \end{listing}
 
 \newpage
-Generowanie domyślnego komunikatu głosowego  (Patrz \ref{listing:py_make_sound}).
 \begin{listing}[H]%
 \begin{mdframed}[backgroundcolor=codebg]
 \inputminted{python}{code/create_welcome_voice_for_some_person.py}
 \end{mdframed}
-\caption{create\_welcome\_voice\_for\_[]\_person(name, path2root=PATH\_TO\_ROOT)}
+\caption{Generowanie domyślnego komunikatu głosowego}
 \label{listing:py_make_sound}
 \end{listing}
 
 \newpage
-Wysłanie komunikatu graficznego na ekran (Patrz \ref{listing:py_visual}).
 \begin{listing}[H]%
 \begin{mdframed}[backgroundcolor=codebg]
 \inputminted{python}{code/screenVisualization.py}
 \end{mdframed}
-\caption{screenVisualization()}
+\caption{Wysłanie komunikatu graficznego na ekran}
 \label{listing:py_visual}
 \end{listing}
 
 \newpage
-Obsługa sytuacji w zależności od tego czy twarz została rozpoznana  (Patrz \ref{listing:py_sytuacje}).
+Obsługa sytuacji w zależności od tego czy twarz została rozpoznana  (Patrz listing\,\,\ref{listing:py_sytuacje}).
 \begin{listing}[H]%
 \begin{mdframed}[backgroundcolor=codebg]
 \inputminted{python}{code/say_hello_what_action.py}
 \end{mdframed}
-\caption{say\_hello(name, path2root=PATH\_TO\_ROOT)}
+\caption{Przygotowanie komunikatów głosowych.}
 \label{listing:py_sytuacje}
 \end{listing}
 
 \newpage
-Wysłanie komunikatu głosowego do głośników  (Patrz \ref{listing:py_play_sound}).
+Wysłanie komunikatu głosowego do głośników  (Patrz listing \ref{listing:py_play_sound}).
 \begin{listing}[H]%
 \begin{mdframed}[backgroundcolor=codebg]
 \inputminted{python}{code/say_hello_play_sound.py}
 \end{mdframed}
-\caption{say\_hello(name, path2root=PATH\_TO\_ROOT)}
+\caption{Odtworzenie pliku mp3.}
 \label{listing:py_play_sound}
 \end{listing}
 
@@ -545,16 +543,22 @@ Wysłanie komunikatu głosowego do głośników  (Patrz \ref{listing:py_play_sou
 \section{Warstwa produktowa} \label{section:warstwa_produkcyjna} % wysłać skreeny z solidworksa i zdjęcia obudowy
 Prototyp to nie tylko elektronika oraz oprogramowanie. Bardzo ważnym elementem jest stworzenie całościowego produktu, do czego niezbędne jest zaprojektowanie oraz wykonanie odpowiedniej obudowy. W celu realizacji tego zadania zostały użyte poniższe programy:
 \begin{itemize}
-\item SOLIDWORKS – do tworzenia projektu obudowy
-\item ultimaker cura – do przygodowania wexportowanego z SOLIDWORKSA pliku do postaci g-code którą czytają drukatki 3D.
+\item SOLIDWORKS – do tworzenia projektu obudowy (patrz rys. \ref{okno_solidworks})
+\item ultimaker cura – do przygodowania wexportowanego z SOLIDWORKS pliku do postaci g-code którą czytają drukatki 3D.
 \item octoprint (+ Raspbarry pi) – do nadzorowania wydruku
 \end{itemize}
 oraz prototypowanie przy pomocy drukarki 3D.
+\begin{figure}[H]%
+\centering
+\includegraphics[width=0.8\columnwidth]{imgs/solidworks.jpg}
+\caption{Okno programu SOLIDWORKS z projektem obudowy \label{okno_solidworks}}
+\quad
+\end{figure}
 \subsection{Technologia druku 3D}
 Druk 3D został wynaleziony z konieczności szybkiego i stosunkowo taniego przygotowywania wszelkiego rodzaju prototypów praktycznie we wszystkich branżach działalności gospodarczej. 
 Obecnie prototypowanie przy użyciu wydruków 3D zdecydowanie ułatwia i przyspiesza całość prac od projektu do wykonania wyrobu końcowego.
 
-Zalety prototypowania przy pomocy druku 3D \cite{prototyp3dzalety}
+Zalety prototypowania przy pomocy druku 3D \cite{prototyp3dzalety}:
 \begin{itemize}
 \item łatwość modyfikacji projektu,
 \item możliwość natychmiastowego rozpoczęcia drukowania projektu,
@@ -597,8 +601,8 @@ Zgodnie z \cite{prototyp3dzalety} „(...) prototypowanie z wykorzystaniem druku
 \end{figure}
 
 \subsection{Projekt obudowy}
-W celu wykonania projektu obudowy zostały wykorzystane oprogramowanie SOLIDWORKSA	 w wersji 20
-W początkowej fazie użyto oprogramowania autodesk fusion 360, jednak nie mogłem znaleźć w nim wielu narzędzi których się nauczyłem korzystać w SOLIDWORKSIE.
+W celu wykonania projektu obudowy zostały wykorzystane oprogramowanie SOLIDWORKS w wersji 20.
+W początkowej fazie użyto oprogramowania Autodesk Fusion 360, jednak nie mogłem znaleźć w nim wielu narzędzi których się nauczyłem korzystać w SOLIDWORKS.
 
 W ramach wykonania projektu ostatecznego były wprowadzane poprawki do projektu zgodnie z zasadą PDCA stanowiącą podstawę zwinnego projektowania \newline
 \textbf{P – PLAN}: zaplanuj \newline
@@ -607,7 +611,7 @@ W ramach wykonania projektu ostatecznego były wprowadzane poprawki do projektu 
 \textbf{A – ACT}: popraw
 
 \subsection{Wykonanie obudowy}
-W celu osiągnięcia ostatecznego wyniku przeprowadzono kilka iteracji cyklu Deminga (PDCA) \cite{leanByJK}. W tym celu dokonywano także poprawek ustawień drukarki.
+W celu osiągnięcia ostatecznego wyniku przeprowadzono kilka iteracji cyklu Deminga\footnote{Cykl Deminga – sposób strukturalnego wykonywania pracy w postaci 4 kroków (zaplanuj, wykonaj, sprawdź, popraw)} (PDCA) \cite{leanByJK}. W tym celu dokonywano także poprawek ustawień drukarki.
 
 \begin{figure}[H]%
 \centering
@@ -619,7 +623,7 @@ W celu osiągnięcia ostatecznego wyniku przeprowadzono kilka iteracji cyklu Dem
 W pierwszej iteracji (Patrz rys. \ref{PDCA_00}) okazało się, że wymiary i rozmieszczenie bolców jest lekko przesunięte względem Raspberry Pi.
 
 \newpage
-W jednej z pośrednich iteracji (Patrz rys. \ref{PDCA_01}) \textcolor{edited}{okazało się, że otwory na paneli wyjścia / wejścia są zbyt ciasne. Oraz ekran był niestabilny przez brak podpór}.
+W jednej z pośrednich iteracji (Patrz rys. \ref{PDCA_01}) okazało się, że otwory na panelach wyjścia / wejścia posiadają zbyt małą średnicę, oraz ekran nie był zamocowany stabilnie, ze względu na brak podpór.
 
 \begin{figure}[H]%
 \centering
@@ -635,7 +639,7 @@ W jednej z pośrednich iteracji (Patrz rys. \ref{PDCA_01}) \textcolor{edited}{ok
 \quad
 \end{figure}
 
-Następna iteracji (Patrz rys. \ref{PDCA_02}) miała na celu wydrukowanie poprawnych wymiarów dla kamery. Z powodu niewielkich rozmiarów urządzenia nie było łatwo dokładnie zmierzyć otworów. Nawet z uwzględnieniem niepewności pomiarowej trzeba było wydrukować komponent kilka razy z różnicą kilku dziesiątych mm.
+Następna iteracja (Patrz rys. \ref{PDCA_02}) miała na celu wydrukowanie poprawnych wymiarów dla kamery. Z powodu niewielkich rozmiarów urządzenia nie było łatwo dokładnie zmierzyć otworów. Nawet z uwzględnieniem niepewności pomiarowej trzeba było wydrukować komponent kilka razy z różnicą kilku dziesiątych mm.
 
 \begin{figure}[H]%
 \centering
@@ -647,7 +651,7 @@ Następna iteracji (Patrz rys. \ref{PDCA_02}) miała na celu wydrukowanie popraw
 W jednej z końcowych iteracji (Patrz rys. \ref{PDCA_03}) celem było wpasowanie obu części obudowy w siebie nawzajem. Na "Papierze" wszystkie wymiary się zgadzały i powinny pasować. Jednak z względu niedoskonałości wydruku było inaczej.
 
 \newpage
-Ostatnia iteracjia (Patrz rys. \ref{PDCA_END}) złożona z zamontowanymi w niej częściami, oraz śrubą aparatową pod stojak.
+Ostatnia iteracja (Patrz rys. \ref{PDCA_END}) złożona z zamontowanymi w niej częściami, oraz śrubą aparatową pod stojak.
 \begin{figure}[H]%
 \centering
 \includegraphics[width=0.8\columnwidth]{imgs/print_last_assembled.jpg}
@@ -669,7 +673,7 @@ Wszystkie wydrukowane Iteracje PDCA (Patrz rys. \ref{PDCA_ALL}).
 W trakcie realizacji projektu napotkano następujące problemy.
 \begin{itemize}
 	\item \textbf{Wykorzystanie tylko jednego rdzenia procesora} (wątku). Raspberry Pi wyposażony jest w procesor czterordzeniowym, dzięki czemu można jednocześnie realizować 4 równoległe operacje. \newline \textbf{Problem:} \newline Okazało się że procesor Raspberry ma problemy z wykorzystaniem większej lioczby wątków w ramach jednego programu. \newline \textbf{Rozwiązanie:} \newline Użyto biblioteki threading do pracy na wątkach.
-	\item \textbf{Brak możliwość realizacji komunikatów głosowych.} \newline \textbf{Problem:} \newline Pierwotnie zastosowany głośnik nie posiadał wsparcia dla realizacji komunikatów głosowych zapisanych w pamięci prototypu. Jedyną możliwością było odtwarzanie plików przez Spotify. \newline \textbf{Rozwiązanie:} \newline Zastosowano zewnętrzne głośniki podpinane przez złącze jack. Plusem tego rozwiązanie jest równiesz dowolność wyboru głośników.
+	\item \textbf{Brak możliwość realizacji komunikatów głosowych.} \newline \textbf{Problem:} \newline Pierwotnie zastosowany głośnik nie posiadał wsparcia dla realizacji komunikatów głosowych zapisanych w pamięci prototypu. Jedyną możliwością było odtwarzanie plików przez Spotify. \newline \textbf{Rozwiązanie:} \newline Zastosowano zewnętrzne głośniki podpinane przez złącze jack. Plusem tego rozwiązanie jest równiesz dowolność wyboru rozmiaru głośników.
 	\item \textbf{Zbyt duża temperatura prototypu ze względu na konieczność wykonywania dużej liczby obliczeń.} \newline \textbf{Problem:} \newline W początkowej fazie projektu planowano użyć wyświetlacza zintegrowanego z głośnikiem. Okazało się iż takie rozwiązanie powoduje, że brakuje miejsca na radiator. \newline \textbf{Rozwiązanie:} \newline Znaleziono nowy wyświetlacz oraz wyprowadzono głośniki na zewnątrz przy pomocy gniazda typu jack.
 \end{itemize}
 
@@ -683,7 +687,7 @@ Nie mniej sam system jest elastyczny i można go z czasem rozszerzyć o kolejne 
 	\item wprowadzenie funkcji nadzoru obszaru ze śledzeniem osób przemieszczających się w danych strefach,
 	\item dodawanie zdjęć twarzy do bazy danych z wykorzystaniem kamery w którą wyposażony jest prototyp,
 	\item zintegrowanie funkcji dostępu do pomieszczeń po rozpoznaniu twarzy, lub dzięki dotykowemu ekranowi, w który wyposażony jest projekt,
-	\item generowanie sygnału uruchomiającego sekwencję zdarzeń po rozpoznaniu danej osoby. (Na przykład włączenie czajnika lub ekspresu do kawy, czy też zapalenie światła w określonym pomieszczeniu),
+	\item generowanie sygnału uruchomiającego sekwencję zdarzeń po rozpoznaniu danej osoby. (na przykład włączenie czajnika lub ekspresu do kawy, czy też zapalenie światła w określonym pomieszczeniu),
 	\item stworzenie centrali pobierającej dane z kilku - kilkunastu punktów zbudowanych na bazie obecnego prototypu.
 \end{itemize}
 
@@ -722,7 +726,7 @@ Stworzenie projektu inteligentnego rozpoznawania twarzy pozwala na sformułowani
 \item Wybrany temat pracy wymagał skutecznego połączenia wiedzy nabytej w trakcie studiów z zakresu elektroniki, programowania oraz projektowania z wykorzystaniem oprogramowania typu CAD.
 \item Nawet przy ograniczonym budżecie możliwa jest realizacja zadań związanych z rozpoznawaniem twarzy i zbudowania prototypu, który w przyszłości będzie można integrować z rozwiązaniami typu Smart Home.
 \item W trakcie realizacji projektu napotkano problemy, które należało rozwiązać. Okazało się, iż każdy problem może być rozwiązany przy zastosowaniu odpowiednich środków zaradczych
-\item Zastosowana technika druku 3D jest techniką zbyt wolą, aby produkować obudowy prototypów seryjnie. Nadaje się świetnie natomiast do prototypowania.
+\item Zastosowana technika druku 3D jest techniką zbyt wolną, aby produkować obudowy prototypów seryjnie. Nadaje się świetnie natomiast do prototypowania.
 \item Zastosowane oprogramowanie nie może być na tym etapie użyte w zakresie ochrony dostępu, ponieważ nie zaimplementowano rozróżnienia żywej osoby od zdjęcia
 \end{enumerate}
 

@@ -8,14 +8,14 @@ def screenVisualization():
     print(f"\t|{mods2ShowQueue}|")
     if len(mods2ShowQueue) > 0:
         mods2ShowQueue.sort()
-        # czy termin waznosci nie minol
+        # sprawdzenie wykorzystania limitu czasu
         if time.time() > mods2ShowQueue[0].time_end:
             mods2ShowQueue.pop(0)
             screenVisualization()
             pass
         else:
             activeMode2show = mods2ShowQueue[0]
-            # zmien tylko gy mod2show jest nowy
+            # zmien tylko gdy mod2show jest nowy
             if activeMode2show != lastMods2Show:
                 Tk.configure(background=appBackground[
                 activeMode2show.activeMode])
