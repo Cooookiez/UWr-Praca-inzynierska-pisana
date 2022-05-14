@@ -146,7 +146,7 @@ Głównym celem projektu było stworzenie systemu mobilnego, o jak najmniejszych
 
 This work presents the design of a system for the intelligent recognition of persons and for the system to take predefined actions, depending on the recognised person. If the person is not recognised, the system will also give an appropriate voice and visual message.
 
-The project is based on a Raspberry Pi 4B, the python 3 programming language, and uses components printed on a Creality Ender-3 v.2 3D printer
+The project is based on a Raspberry Pi 4B, the python 3 programming language, and uses components printed on a Creality Ender-3 v.2 3D printer.
 
 The project brings together the 3 layers needed to carry out all the tasks in such a way that the system can be extended in the future with further functionalities: A hardware layer (the camera, the Rasppery Pi micro-computer, a speaker, a display), the programming layer responsible for processing and optimisation of the read image, interpretation of the retrieved image and comparison with a predefined image database, deciding on the action to be taken and generating the right signal to take the specified action, a product layer in the form of a dedicated enclosure (Etui), designed specifically for this project, performing its organisational, protective, informative functions.
 
@@ -194,7 +194,7 @@ Projekt z jednej strony pokazuje, że połączenie wiedzy z zakresu elektroniki,
 
 \subsection{Struktura pracy} % tutorial jak prrace czytać
 
-Rozdział pierwszy zawiera wstęp, wprowadzenie, opis celu oraz zakresu pracy, a także strukturę pracy. Znajdują się w nim podstawowe informacje opisujące główne elementy składowe projektu, oraz umożliwia szybkie zapoznania się z projektem na poziomie ogólnym
+Rozdział pierwszy zawiera wstęp, wprowadzenie, opis celu oraz zakresu pracy, a także strukturę pracy. Znajdują się w nim podstawowe informacje opisujące główne elementy składowe projektu, oraz umożliwia szybkie zapoznania się z projektem na poziomie ogólnym.
 
 Rozdział drugi zawiera założenia odnośnie szczegółowych wymagań stawianych projektowi i umożliwia zrozumienie koncepcji projektu zarówno na poziomie ogólnym i bardziej szczegółowym.
 
@@ -222,7 +222,7 @@ Takie podejście miało zapewnić iż ewentualny błąd popełniony na dalszych 
 \begin{figure}[H]%
 \centering
 \includegraphics[width=0.5\columnwidth]{imgs/etapy.drawio.jpg}
-\caption{Etapy prac projektowych. \label{etapypracy}}
+\caption{Etapy prac projektowych \cite{img_me}. \label{etapypracy}}
 \quad
 \end{figure}
 
@@ -234,7 +234,7 @@ W ramach realizacji projektu określone zostały następujące wymagania dla pro
 	\item \textbf{Mobilność.} Głównym założeniem projektu jest mobilność prototypu. Oznacza to, iż będzie posiadał wymiary oraz wagę umożliwiającą łatwe przenoszenie w dowolne miejsce.
 	\item \textbf{Łatwość zasilania.} Prototyp powinien mieć możliwość zasilania z ogólnodostępnej sieci 230V, tak aby istniała możliwość stałego podłączenia do gniazda elektrycznego. Opcjonalnie założono, że prototyp będzie posiadał możliwość podłączenia do zasilania z powerbanku, tak aby mógł znaleźć zastosowanie w miejscach, w których dostęp do sieci elektrycznej jest utrudniony.
 	\item \textbf{Dostępność.} Prototyp zostanie wykonany ze standardowych elementów dostępnych na rynku polskim.
-	\item \textbf{Relatywnie niski koszt.} Wykonanie prototypu powinno mieścić się w kwocie nie większej niż 1000 zł
+	\item \textbf{Relatywnie niski koszt.} Wykonanie prototypu powinno mieścić się w kwocie nie większej niż 1000 zł.
 	\item \textbf{Łatwość obsługi.} Prototyp będzie umożliwiał obsługę bez konieczności znajomości zagadnień technicznych. Zadaniem użytkownika będzie jedynie wprowadzenie bazy zdjęć do określonego folderu, oraz uruchomienie dwóch programów:
 		\begin{itemize}
 			\item program "zapisujący" zdjęcia twarzy do zakodowanego pliku,
@@ -253,7 +253,7 @@ W celu wykonania prototypu zostały określone następujące wymagania dla proce
 	\item \textbf{Elastyczność.} Projekt zostanie podzielony na mniejsze etapy, tak aby w każdej chwili istniała możliwość modyfikacji założeń lub działań przy jednoczesnym zapewnieniu realizacji założonych celów.
 	\item \textbf{Dostępność narzędzi.} Dla każdego etapu projektu zostaną użyte narzędzia dostępne na rynku, tak aby uniknąć konieczności projektowania samych narzędzi.
 	\item \textbf{Przejrzystość.} Na każdym etapie status prac będzie łatwo weryfikowalny aby zidentyfikować potencjalne przeszkody mogące powodować opóźnienie realizacji projektu.
-	\item \textbf{Backup.} W celu uniknięcia utraty danych lub kodu źródłowego zostanie wykorzystane repozytorium Git. Wersja dostępna online znajduje się na Githubie \cite{moj_github}
+	\item \textbf{Backup.} W celu uniknięcia utraty danych lub kodu źródłowego zostanie wykorzystane repozytorium Git. Wersja dostępna online znajduje się na Githubie \cite{moj_github}.
 \end{itemize}
 
 \newpage
@@ -268,20 +268,20 @@ W ramach realizacji projektu zostały zaimplementowane następujące funkcjonaln
 	\item \textbf{Skanowanie  twarzy.} Po wykryciu obiektu kamera koncentruje się na twarzy wykrytej osoby i koduje twarz w celu porównania z lokalną bazą.
 	\item \textbf{Porównanie (Identyfikacja) twarzy.} System porównuje zakodowane zdjęcia z wcześniej zakodowanymi zdjęciami znajdującymi się w bazie danych. System przekształca dane wejściowe do macierzy liczb. Funkcja z biblioteki porównuje wszystkie macierze i patrzy czy dana osoba istnieje.
 	\item \textbf{Komunikat głosowy.} Z puli powitań plików .mp3 (domyślnie jeden, można wrzucić własne dzwięki), program losuje jeden i go odpala (w przypadku gdy jest tylko jeden plik, losowanie się nie odbywa).
-	\item \textbf{Komunikat wizualny.} Na ekranie dodatkowo pojawia się komunikat graficzny z imieniem i nazwiskiem (Patrz rys. \ref{komunikatgraficzny:komunikatgraficzny}\subref{komunikatgraficzny:rozpoznana}). W przypadku wykrycia osoby nieznanej pojawia się stosowny komunikat (Patrz rys. \ref{komunikatgraficzny:komunikatgraficzny}\subref{komunikatgraficzny:NIErozpoznana})
+	\item \textbf{Komunikat wizualny.} Na ekranie dodatkowo pojawia się komunikat graficzny z imieniem i nazwiskiem (Patrz rys. \ref{komunikatgraficzny:komunikatgraficzny}\subref{komunikatgraficzny:rozpoznana}). W przypadku wykrycia osoby nieznanej pojawia się stosowny komunikat (Patrz rys. \ref{komunikatgraficzny:komunikatgraficzny}\subref{komunikatgraficzny:NIErozpoznana}).
 \end{itemize}
 \begin{figure}[H]%
 	\centering
 	\begin{subfigure}{.5\textwidth}
 		\centering
 		\includegraphics[width=0.8\linewidth]{imgs/testy_rozpoznana.jpg}
-		\caption{Rozpoznanej osoby.}	
+		\caption{Rozpoznanej osoby \cite{img_me}.}	
 		\label{komunikatgraficzny:rozpoznana}
 	\end{subfigure}%
 	\begin{subfigure}{.5\textwidth}
 		\centering
 		\includegraphics[width=0.8\linewidth]{imgs/testy_NIErozpoznana.jpg}
-		\caption{NIE rozpoznanej osoby}
+		\caption{NIE rozpoznanej osoby \cite{img_me}.}
 		\label{komunikatgraficzny:NIErozpoznana}
 	\end{subfigure}%
 \caption{Komunikaty graficzne}
@@ -319,7 +319,7 @@ Przykłady realizacji funkcji powitania:
 
 W ramach warstwy sprzętowej projekt składa się z 4 elementów. Kamery, mikro-komputera Raspberry Pi, głośnika oraz ekranu.
 
-Podstawą systemu jest Raspberry Pi, do którego podłączone są wszystkie elementy wejściowe oraz wyjściowe prototypu, tak aby stanowiły spójną całość. W ten sposób przygotowana warstwa sprzętowa będzie następnie oprogramowana (patrz rozdział ~\ref{section:warstwa_programistyczna}) oraz zabezpieczona obudową pełniącą jednocześnie funkcje opakowania (patrz rozdział ~\ref{section:warstwa_produkcyjna})
+Podstawą systemu jest Raspberry Pi, do którego podłączone są wszystkie elementy wejściowe oraz wyjściowe prototypu, tak aby stanowiły spójną całość. W ten sposób przygotowana warstwa sprzętowa będzie następnie oprogramowana (patrz rozdział ~\ref{section:warstwa_programistyczna}) oraz zabezpieczona obudową pełniącą jednocześnie funkcje opakowania (patrz rozdział ~\ref{section:warstwa_produkcyjna}).
 
 \subsection{Kamera jako element wejściowy}
 
@@ -332,7 +332,7 @@ Dzięki takiemu rozwiązaniu możliwe jest jednocześnie szerokie wsparcie w zak
 \begin{figure}[H]%
 \centering
 \includegraphics[width=0.8\columnwidth]{imgs/camera.jpg}
-\caption{Kamera HD \cite{img_cam} \label{kamera}}
+\caption{Kamera HD \cite{img_cam}. \label{kamera}}
 \quad
 \end{figure}
 
@@ -355,7 +355,7 @@ Mikro-komputer wyposażony jest także w dwuzakresowe WiFi 2,4 GHz i 5 GHz, Blue
 \begin{figure}[H]%
 \centering
 \includegraphics[width=0.8\columnwidth]{imgs/raspberrypi4.jpg}
-\caption{Raspberry Pi 4B \cite{img_rp4b} \label{rp4b}}
+\caption{Raspberry Pi 4B \cite{img_rp4b}. \label{rp4b}}
 \quad
 \end{figure}
 
@@ -386,7 +386,7 @@ Zasilane realizowane jest poprzez kabel USB podłączany do Raspberry pi.
 \begin{figure}[H]%
 \centering
 \includegraphics[width=0.8\columnwidth]{imgs/glosnik.jpg}
-\caption{Głośniki LOGIC CONCEPT LS-09  \label{glosnik}}
+\caption{Głośniki LOGIC CONCEPT LS-09 \cite{img_me}.  \label{glosnik}}
 \quad
 \end{figure}
 
@@ -399,7 +399,7 @@ Oprogramowanie ekranu dotykowego przygotowane przez producenta zawiera sterownik
 \begin{figure}[H]%
 \centering
 \includegraphics[width=0.8\columnwidth]{imgs/ekran.jpg}
-\caption{Ekran Waveshare 9904 \cite{img_screen} \label{ekran}}
+\caption{Ekran Waveshare 9904 \cite{img_screen}. \label{ekran}}
 \quad
 \end{figure}
 
@@ -458,14 +458,14 @@ Poniżej znajdują się algorytmy programów zastosowanych w projekcie:
 \begin{figure}[H]%
 \centering
 \includegraphics[width=0.7\columnwidth]{imgs/generujacy.drawio.jpg}
-\caption{Program kodujący zdjęcia do plików .json \label{algorytm_encode_faces}}
+\caption{Program kodujący zdjęcia do plików .json \cite{img_me}. \label{algorytm_encode_faces}}
 \quad
 \end{figure}
 
 \begin{figure}[H]%
 \centering
 \includegraphics[width=0.7\columnwidth]{imgs/glowny.drawio.jpg}
-\caption{Algorytm programu głównego \label{algorytm_start_recognition}}
+\caption{Algorytm programu głównego \cite{img_me}. \label{algorytm_start_recognition}}
 \quad
 \end{figure}
 
@@ -551,7 +551,7 @@ oraz prototypowanie przy pomocy drukarki 3D.
 \begin{figure}[H]%
 \centering
 \includegraphics[width=0.8\columnwidth]{imgs/solidworks.jpg}
-\caption{Okno programu SOLIDWORKS z projektem obudowy \label{okno_solidworks}}
+\caption{Okno programu SOLIDWORKS z projektem obudowy \cite{img_me}. \label{okno_solidworks}}
 \quad
 \end{figure}
 \subsection{Technologia druku 3D}
@@ -567,8 +567,8 @@ Zalety prototypowania przy pomocy druku 3D \cite{prototyp3dzalety}:
 \item relatywnie niska cena.
 \end{itemize}
 
-Drukarki 3D używane do prototypowania, wykorzystują 2 podstawowe technologie przyrostowe.
-\cite{prototyp3dzalety}
+Drukarki 3D używane do prototypowania, wykorzystują 2 podstawowe technologie przyrostowe
+\cite{prototyp3dzalety}.
 \begin{itemize}
 \item SLA, oraz
 \item FDM
@@ -591,12 +591,12 @@ Dysza rozprowadza w przestrzeni roboczej filament w postaci nakładania na siebi
 Po nałożeniu warstwy następuje jej schłodzenie i filament twardnieje. 
 Po naniesieniu ostatniej warstwy wydruku, wydruk (i elementy drugarki) musi się schłodzić, a następnie sam schodzi z powierzchni drukującej.
 
-Zgodnie z \cite{prototyp3dzalety} „(...) prototypowanie z wykorzystaniem druku 3D pozwala na wypracowanie oszczędności – czasu i pieniędzy. Umożliwia szybkie testowanie prototypów i przyspiesza czas, jaki niezbędny jest do wprowadzenia docelowego produktu na rynek. Dodatkowo na każdym etapie procesu prototypowania można otrzymać natychmiast podgląd wydruku i śledzić proces powstawania modelu (...)”
+Zgodnie z \cite{prototyp3dzalety} „(...) prototypowanie z wykorzystaniem druku 3D pozwala na wypracowanie oszczędności – czasu i pieniędzy. Umożliwia szybkie testowanie prototypów i przyspiesza czas, jaki niezbędny jest do wprowadzenia docelowego produktu na rynek. Dodatkowo na każdym etapie procesu prototypowania można otrzymać natychmiast podgląd wydruku i śledzić proces powstawania modelu (...)”.
 
 \begin{figure}[H]%
 \centering
 \includegraphics[width=0.8\columnwidth]{imgs/ender3v2.jpg}
-\caption{Drukarka 3D Creality Ender wykorzystana w projekcie \label{ender3d}}
+\caption{Drukarka 3D Creality Ender wykorzystana w projekcie \cite{img_me}. \label{ender3d}}
 \quad
 \end{figure}
 
@@ -616,7 +616,7 @@ W celu osiągnięcia ostatecznego wyniku przeprowadzono kilka iteracji cyklu Dem
 \begin{figure}[H]%
 \centering
 \includegraphics[width=0.8\columnwidth]{imgs/print_0.jpg}
-\caption{Iteracja Początkowa \label{PDCA_00}}
+\caption{Iteracja Początkowa \cite{img_me}. \label{PDCA_00}}
 \quad
 \end{figure}
 
@@ -628,14 +628,14 @@ W jednej z pośrednich iteracji (Patrz rys. \ref{PDCA_01}) okazało się, że ot
 \begin{figure}[H]%
 \centering
 \includegraphics[width=0.8\columnwidth]{imgs/print_1.jpg}
-\caption{Iteracja pośrednia 1 \label{PDCA_01}}
+\caption{Iteracja pośrednia 1 \cite{img_me}. \label{PDCA_01}}
 \quad
 \end{figure}
 
 \begin{figure}[H]%
 \centering
 \includegraphics[width=0.8\columnwidth]{imgs/print_2.jpg}
-\caption{Iteracja pośrednia 2 \label{PDCA_02}}
+\caption{Iteracja pośrednia 2 \cite{img_me}. \label{PDCA_02}}
 \quad
 \end{figure}
 
@@ -644,7 +644,7 @@ Następna iteracja (Patrz rys. \ref{PDCA_02}) miała na celu wydrukowanie popraw
 \begin{figure}[H]%
 \centering
 \includegraphics[width=0.8\columnwidth]{imgs/print_3.jpg}
-\caption{Iteracja pośrednia 3 \label{PDCA_03}}
+\caption{Iteracja pośrednia 3 \cite{img_me}. \label{PDCA_03}}
 \quad
 \end{figure}
 
@@ -655,7 +655,7 @@ Ostatnia iteracja (Patrz rys. \ref{PDCA_END}) złożona z zamontowanymi w niej c
 \begin{figure}[H]%
 \centering
 \includegraphics[width=0.8\columnwidth]{imgs/print_last_assembled.jpg}
-\caption{Iteracja końcowa \label{PDCA_END}}
+\caption{Iteracja końcowa \cite{img_me}. \label{PDCA_END}}
 \quad
 \end{figure}
 
@@ -664,7 +664,7 @@ Wszystkie wydrukowane Iteracje PDCA (Patrz rys. \ref{PDCA_ALL}).
 \begin{figure}[H]%
 \centering
 \includegraphics[width=0.8\columnwidth]{imgs/print_all.jpg}
-\caption{Wszystkie wydrukowane Iteracje \label{PDCA_ALL}}
+\caption{Wszystkie wydrukowane Iteracje \cite{img_me}. \label{PDCA_ALL}}
 \quad
 \end{figure}
 
@@ -725,9 +725,9 @@ Stworzenie projektu inteligentnego rozpoznawania twarzy pozwala na sformułowani
 \begin{enumerate}
 \item Wybrany temat pracy wymagał skutecznego połączenia wiedzy nabytej w trakcie studiów z zakresu elektroniki, programowania oraz projektowania z wykorzystaniem oprogramowania typu CAD.
 \item Nawet przy ograniczonym budżecie możliwa jest realizacja zadań związanych z rozpoznawaniem twarzy i zbudowania prototypu, który w przyszłości będzie można integrować z rozwiązaniami typu Smart Home.
-\item W trakcie realizacji projektu napotkano problemy, które należało rozwiązać. Okazało się, iż każdy problem może być rozwiązany przy zastosowaniu odpowiednich środków zaradczych
+\item W trakcie realizacji projektu napotkano problemy, które należało rozwiązać. Okazało się, iż każdy problem może być rozwiązany przy zastosowaniu odpowiednich środków zaradczych.
 \item Zastosowana technika druku 3D jest techniką zbyt wolną, aby produkować obudowy prototypów seryjnie. Nadaje się świetnie natomiast do prototypowania.
-\item Zastosowane oprogramowanie nie może być na tym etapie użyte w zakresie ochrony dostępu, ponieważ nie zaimplementowano rozróżnienia żywej osoby od zdjęcia
+\item Zastosowane oprogramowanie nie może być na tym etapie użyte w zakresie ochrony dostępu, ponieważ nie zaimplementowano rozróżnienia żywej osoby od zdjęcia.
 \end{enumerate}
 
 \newpage
