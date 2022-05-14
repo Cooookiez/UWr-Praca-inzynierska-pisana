@@ -177,7 +177,7 @@ Systemy inteligentne pomimo swoich kosztów zdobywają coraz większą popularno
 
 Żaden system nie posiada jednak wszystkich funkcjonalności, które są niezbędne danemu użytkownikowi. W większości z nich brakuje mobilnego systemu pozwalającego na rozpoznanie osób oraz podjęcia konkretnych działań w zależności od osoby, która została zidentyfikowana.
 
-System inteligentnego rozpoznawania osób, który jest tematem niniejszego projektu, docelowa ma umożliwić identyfikację osób wchodzących do pomieszczenia na podstawie zapisanej wcześniej bazy zdjęć oraz powitanie ich indywidualnym komunikatem zarówno głosowym, jak i wizualnym.
+System inteligentnego rozpoznawania osób, który jest tematem niniejszego projektu, docelowo ma umożliwić identyfikację osób wchodzących do pomieszczenia na podstawie zapisanej wcześniej bazy zdjęć oraz powitanie ich indywidualnym komunikatem zarówno głosowym, jak i wizualnym.
 
 Do realizacji projektu wykorzystałem mikro-komputer Raspperry Pi 4B oraz język programowania Python 3. Jako elementu wejściowego sygnału użyłem kamery Raspberry Pi Camera HD v2 8MPx zgodnej z Raspperry Pi 4B, oraz głośnika pod wejscie jack 3,5mm.
 
@@ -185,7 +185,7 @@ Do realizacji projektu wykorzystałem mikro-komputer Raspperry Pi 4B oraz język
 
 Celem głównym projektu jest stworzenie prototypu inteligentnego, mobilnego systemu rozpoznawania osób, na podstawie wcześniej zgromadzonej bazy zdjęciowej, a także wygenerowanie unikatowego powitania głosowego oraz wizualnego w zależności od rozpoznanej osoby.
 
-Celami szczegółowymi projektu są: wybór technologii sprzętowej, wybór technologii programistycznej oraz zaprojektowanie i wykonanie obudowy prototypu, mieszczącej wszystkie elementy projektu
+Celami szczegółowymi projektu są: wybór technologii sprzętowej, wybór technologii programistycznej oraz zaprojektowanie i wykonanie obudowy prototypu, mieszczącej wszystkie elementy projektu.
 
 Praca swoim zakresem obejmuje zarówno tematykę z dziedziny elektroniki, informatyki projektowania oraz prototypowania 3D.
 
@@ -232,17 +232,17 @@ Takie podejście miało zapewnić iż ewentualny błąd popełniony na dalszych 
 W ramach realizacji projektu określone zostały następujące wymagania dla prototypu.
 
 \begin{itemize}
-	\item \textbf{Mobilność.} Głównym założeniem projektu jest mobilność prototypu. Oznacza to, iż będzie posiadał wymiary oraz wagę umożliwiającą łatwe przenoszenie w dowolne miejsce.
-	\item \textbf{Łatwość zasilania.} Prototyp powinien mieć możliwość zasilania z ogólnodostępnej sieci 230V, tak aby istniała możliwość stałego podłączenia do gniazda elektrycznego. Opcjonalnie założono, że prototyp będzie posiadał możliwość podłączenia do zasilania z powerbanku, tak aby mógł znaleźć zastosowanie w miejscach, w których dostęp do sieci elektrycznej jest utrudniony.
-	\item \textbf{Dostępność.} Prototyp zostanie wykonany ze standardowych elementów dostępnych na rynku polskim.
-	\item \textbf{Relatywnie niski koszt.} Wykonanie prototypu powinno mieścić się w kwocie nie większej niż 1000 zł.
+	\item \textbf{Mobilność.} Głównym założeniem projektu jest mobilność prototypu. Oznacza to, iż będzie posiadał wymiary oraz wagę umożliwiającą łatwe przenoszenie w dowolne miejsce,
+	\item \textbf{Łatwość zasilania.} Prototyp powinien mieć możliwość zasilania z ogólnodostępnej sieci 230V, tak aby istniała możliwość stałego podłączenia do gniazda elektrycznego. Opcjonalnie założono, że prototyp będzie posiadał możliwość podłączenia do zasilania z powerbanku, tak aby mógł znaleźć zastosowanie w miejscach, w których dostęp do sieci elektrycznej jest utrudniony,
+	\item \textbf{Dostępność.} Prototyp zostanie wykonany ze standardowych elementów dostępnych na rynku polskim,
+	\item \textbf{Relatywnie niski koszt.} Wykonanie prototypu powinno mieścić się w kwocie nie większej niż 1000 zł,
 	\item \textbf{Łatwość obsługi.} Prototyp będzie umożliwiał obsługę bez konieczności znajomości zagadnień technicznych. Zadaniem użytkownika będzie jedynie wprowadzenie bazy zdjęć do określonego folderu, oraz uruchomienie dwóch programów:
 		\begin{itemize}
-			\item program "zapisujący" zdjęcia twarzy do zakodowanego pliku,
-			\item główny program rozpoznający osoby przechodzące przed kamerą
+			\item program "zapisujący" zdjęcia twarzy do zakodowanego pliku;
+			\item główny program rozpoznający osoby przechodzące przed kamerą;
 		\end{itemize}
-	i odpowiednie nakierowanie kamery prototypu.
-	\item \textbf{Łatwość rozbudowy.} Platforma na jakiej zostanie zbudowany prototyp będzie pozwalała na jego łatwą rozbudowę.
+	i odpowiednie nakierowanie kamery prototypu,
+	\item \textbf{Łatwość rozbudowy.} Platforma na jakiej zostanie zbudowany prototyp będzie pozwalała na jego łatwą rozbudowę,
 	\item \textbf{Łatwość programowania.} System będzie oparty o jeden z popularnych języków programowania, w którym dostępne są biblioteki niezbędne do realizacji wszystkich zadań, tak aby użytkownik mógł skorzystać z dostępnych standardowych rozwiązań programistycznych, bez ponoszenia dodatkowych kosztów.
 \end{itemize}
 
@@ -251,9 +251,9 @@ W ramach realizacji projektu określone zostały następujące wymagania dla pro
 W celu wykonania prototypu zostały określone następujące wymagania dla procesu projektowego.
 
 \begin{itemize}
-	\item \textbf{Elastyczność.} Projekt zostanie podzielony na mniejsze etapy, tak aby w każdej chwili istniała możliwość modyfikacji założeń lub działań przy jednoczesnym zapewnieniu realizacji założonych celów.
-	\item \textbf{Dostępność narzędzi.} Dla każdego etapu projektu zostaną użyte narzędzia dostępne na rynku, tak aby uniknąć konieczności projektowania samych narzędzi.
-	\item \textbf{Przejrzystość.} Na każdym etapie status prac będzie łatwo weryfikowalny aby zidentyfikować potencjalne przeszkody mogące powodować opóźnienie realizacji projektu.
+	\item \textbf{Elastyczność.} Projekt zostanie podzielony na mniejsze etapy, tak aby w każdej chwili istniała możliwość modyfikacji założeń lub działań przy jednoczesnym zapewnieniu realizacji założonych celów,
+	\item \textbf{Dostępność narzędzi.} Dla każdego etapu projektu zostaną użyte narzędzia dostępne na rynku, tak aby uniknąć konieczności projektowania samych narzędzi,
+	\item \textbf{Przejrzystość.} Na każdym etapie status prac będzie łatwo weryfikowalny aby zidentyfikować potencjalne przeszkody mogące powodować opóźnienie realizacji projektu,
 	\item \textbf{Backup.} W celu uniknięcia utraty danych lub kodu źródłowego zostanie wykorzystane repozytorium Git. Wersja dostępna online znajduje się na Githubie \cite{moj_github}.
 \end{itemize}
 
@@ -263,12 +263,12 @@ W celu wykonania prototypu zostały określone następujące wymagania dla proce
 W ramach realizacji projektu zostały zaimplementowane następujące funkcjonalności.
 
 \begin{itemize}
-	\item \textbf{Zapis zdjęć twarzy} do postaci numerycznej. Użytkownik do imiennych folderów wprowadza zdjęcia twarzy osoby (np. zdjęcia Jana wrzucam do folderu "Jan Nowak") i uruchamia program kodujący zamieniając zdjęcie twarzy na wartości liczbowe.
-	\item \textbf{Użycie syntezatora mowy.} System korzysta z syntezatora mowy w celu dodania domyślnego powitania do pliku .mp3.
-	\item \textbf{Wykrycie osoby.} System skanuje wybrany obszar przestrzeni i wykrywa czy w nadzorowanym obszarze znajduje się osoba. W przypadku wykrycia aktywowane są kolejne kroki programu. System pomija zwierzęta oraz przedmioty.
-	\item \textbf{Skanowanie  twarzy.} Po wykryciu obiektu kamera koncentruje się na twarzy wykrytej osoby i koduje twarz w celu porównania z lokalną bazą.
-	\item \textbf{Porównanie (Identyfikacja) twarzy.} System porównuje zakodowane zdjęcia z wcześniej zakodowanymi zdjęciami znajdującymi się w bazie danych. System przekształca dane wejściowe do macierzy liczb. Funkcja z biblioteki porównuje wszystkie macierze i patrzy czy dana osoba istnieje.
-	\item \textbf{Komunikat głosowy.} Z puli powitań plików .mp3 (domyślnie jeden, można wrzucić własne dzwięki), program losuje jeden i go odpala (w przypadku gdy jest tylko jeden plik, losowanie się nie odbywa).
+	\item \textbf{Zapis zdjęć twarzy} do postaci numerycznej. Użytkownik do imiennych folderów wprowadza zdjęcia twarzy osoby (np. zdjęcia Jana wrzucam do folderu "Jan Nowak") i uruchamia program kodujący zamieniając zdjęcie twarzy na wartości liczbowe,
+	\item \textbf{Użycie syntezatora mowy.} System korzysta z syntezatora mowy w celu dodania domyślnego powitania do pliku .mp3,
+	\item \textbf{Wykrycie osoby.} System skanuje wybrany obszar przestrzeni i wykrywa czy w nadzorowanym obszarze znajduje się osoba. W przypadku wykrycia aktywowane są kolejne kroki programu. System pomija zwierzęta oraz przedmioty,
+	\item \textbf{Skanowanie  twarzy.} Po wykryciu obiektu kamera koncentruje się na twarzy wykrytej osoby i koduje twarz w celu porównania z lokalną bazą,
+	\item \textbf{Porównanie (Identyfikacja) twarzy.} System porównuje zakodowane zdjęcia z wcześniej zakodowanymi zdjęciami znajdującymi się w bazie danych. System przekształca dane wejściowe do macierzy liczb. Funkcja z biblioteki porównuje wszystkie macierze i patrzy czy dana osoba istnieje,
+	\item \textbf{Komunikat głosowy.} Z puli powitań plików .mp3 (domyślnie jeden, można wrzucić własne dzwięki), program losuje jeden i go odpala (w przypadku gdy jest tylko jeden plik, losowanie się nie odbywa),
 	\item \textbf{Komunikat wizualny.} Na ekranie dodatkowo pojawia się komunikat graficzny z imieniem i nazwiskiem (Patrz rys. \ref{komunikatgraficzny:komunikatgraficzny}\subref{komunikatgraficzny:rozpoznana}). W przypadku wykrycia osoby nieznanej pojawia się stosowny komunikat (Patrz rys. \ref{komunikatgraficzny:komunikatgraficzny}\subref{komunikatgraficzny:NIErozpoznana}).
 \end{itemize}
 \begin{figure}[H]%
@@ -292,23 +292,23 @@ W ramach realizacji projektu zostały zaimplementowane następujące funkcjonaln
 Powyższe funkcjonalności pozwalają na realizację funkcji
 
 \begin{itemize}
-	\item powitania
-	\item nadzór obszaru
+	\item powitania,
+	\item nadzór obszaru.
 \end{itemize}
 
 Przykłady realizacji funkcji powitania:
 \begin{itemize}
-	\item "Urządzenie rozpoznała Jana, który ma 3 wersje powitania. Program wylosuje i powie jedno z:"
+	\item "urządzenie rozpoznało Jana, który ma 3 wersje powitania. Program wylosuje i powie jedno z:"
 	\begin{itemize}
-		\item "Cześć Jan, miło Cię widzieć"
-		\item "Witaj w domu Janek"
+		\item "Cześć Jan, miło Cię widzieć",
+		\item "Witaj w domu Janek",
 		\item "Panie Janie, Panie Janie ..." % ♫ ... ♫
 	\end{itemize}
-	\item "Urządzenie rozpoznała Adama Nowaka, który ma tylko podstawowe pytanie. Program bez losowania odrazu je wybierze i powie:"
+	\item "urządzenie rozpoznało Adama Nowaka, który ma tylko podstawowe pytanie. Program bez losowania odrazu je wybierze i powie:"
 	\begin{itemize}
 		\item "Witaj Adam Nowak"
 	\end{itemize}
-	\item Dla nierozpoznanej osoby możemy mieć tylko domyślne przywitanie, ale możemy dać ich więcej. Program zachowa się analogicznie do wcześniej wymienionych przypadków:
+	\item dla nierozpoznanej osoby możemy mieć tylko domyślne przywitanie, ale możemy dać ich więcej. Program zachowa się analogicznie do wcześniej wymienionych przypadków:
 	\begin{itemize}
 		\item "Witaj nieznajomy"
 		\item "Witamy w domostwie Nowaków"
@@ -363,15 +363,15 @@ Mikro-komputer wyposażony jest także w dwuzakresowe WiFi 2,4 GHz i 5 GHz, Blue
 Specyfikacja techniczna
 
 \begin{itemize}
-	\item Pamięć RAM - 1GB, 2GB lub 4GB LPDDR4
-	\item Procesor - Broadcom BCM2711, quad-core Cortex-A72 (ARM v8) 64-bit SoC @ 1.5GHz
-	\item 4 × USB
-	\item mini jack 3.5mm
-	\item Karta pamięci - microSD
-	\item Systemy operacyjne - Linux Raspbian, Windows 10 loT i wiele innych
-	\item Temperatura pracy - 0–50°C
-	\item Zasilanie - złącze USB C minimum 5V/3A, złącza GPIO minimum 5V/3A PoE przy zastosowaniu dedykowanej nakładki
-	\item Wymiary - 85 x 56 x 17 mm
+	\item Pamięć RAM - 1GB, 2GB lub 4GB LPDDR4,
+	\item Procesor - Broadcom BCM2711, quad-core Cortex-A72 (ARM v8) 64-bit SoC @ 1.5GHz,
+	\item 4 × USB,
+	\item mini jack 3.5mm,
+	\item Karta pamięci - microSD,
+	\item Systemy operacyjne - Linux Raspbian, Windows 10 loT i wiele innych,
+	\item Temperatura pracy - 0–50°C,
+	\item Zasilanie - złącze USB C minimum 5V/3A, złącza GPIO minimum 5V/3A PoE przy zastosowaniu dedykowanej nakładki,
+	\item Wymiary - 85 x 56 x 17 mm.
 \end{itemize}
 
 \subsection{Głośnik, jako element wyjściowy}
@@ -382,7 +382,7 @@ Logic Concept LS-09, to zestaw dwóch głośników, które można podłączyć z
 
 Każdy głośnik o mocy 3W. Dzięki niewielkim rozmiarom oraz lekkiej konstrukcji w łatwy i wygodny sposób można je przetransportować.
 
-Zasilane realizowane jest poprzez kabel USB podłączany do Raspberry pi.
+Zasilane realizowane jest poprzez kabel USB podłączany do Raspberry Pi.
 
 \begin{figure}[H]%
 \centering
@@ -407,12 +407,12 @@ Oprogramowanie ekranu dotykowego przygotowane przez producenta zawiera sterownik
 Specyfikacja ekranu dotykowego Waveshare
 
 \begin{itemize}
-	\item Typ: ekran dotykowy, rezystancyjny
-	\item Przekątna: 3.5"
-	\item Rozdzielczość: 320px x 480px
-	\item Komunikacja SPI
-	\item Współpracuje z: Raspberry Pi w wersji 4B, 3B+, 3B, 2B, B+, Zero i Zero
-	\item Wymiary ekranu: 85mm x 56.5mm
+	\item Typ: ekran dotykowy, rezystancyjny,
+	\item Przekątna: 3.5",
+	\item Rozdzielczość: 320px x 480px,
+	\item Komunikacja SPI,
+	\item Współpracuje z: Raspberry Pi w wersji 4B, 3B+, 3B, 2B, B+, Zero i Zero,
+	\item Wymiary ekranu: 85mm x 56.5mm.
 \end{itemize}
 
 \subsection{Radiatory}
@@ -430,7 +430,7 @@ W celu realizacji funkcji prototypu zostały wzięte pod uwagę języki C++ oraz
 Z tego powodu biorąc pod uwagę przede wszystkim:
 \begin{itemize}
 \item większy wybór bibliotek,
-\item wsparcie raspberry pi,
+\item wsparcie Raspberry Pi,
 \item przejrzystość kodu,
 \end{itemize}
 to język Python stanowi lepszy wybór.
@@ -438,17 +438,17 @@ to język Python stanowi lepszy wybór.
 % lista bibliotek i do czego je wykorzystuje
 W celu realizacji poszczególnych zadań zostały użyte następujące biblioteki języka Python:
 \begin{itemize}
-\item cv2, odpowiadająca za pobieranie obrazu z kamerki.
-\item face\_recognition, odpowiadająca za rozpoznawanie twarzy \cite{face_recognition_github} \cite{face_recognition_implementation_on_raspberrypi} \cite{face_recognition_python}.
-\item gtts, odpowiadająca za stworzenie deflautowego powitania do pliku .mp3.
-\item json, odpowiadająca za zapisywanie i odczytywanie zakodowanych twarzy do plików.
-\item numpy, odpowiadająca za tworzenie zoptymalizowanych pod bibliotekę rozpoznawania twarzy macierzy.
-\item os, odpowiadająca za poruszanie się po folderach.
-\item pygame, odpowiadająca za odtworzenie powitalnego dźwięku.
-\item random, odpowiadająca za wybranie losowej ścieżki do otworzenia.
-\item sys, odpowiadająca za pobranie wartości przy uruchomieniu programu sprawdzających czy zakodować wszystkich, czy tylko jedną osobę.
-\item threading, odpowiadająca za wykorzystywanie przez program wszystkich dostępnych wątków procesora.
-\item tkinter - odpowiada za wyświetlenie obrazu
+\item cv2, odpowiadająca za pobieranie obrazu z kamerki,
+\item face\_recognition, odpowiadająca za rozpoznawanie twarzy \cite{face_recognition_github} \cite{face_recognition_implementation_on_raspberrypi} \cite{face_recognition_python},
+\item gtts, odpowiadająca za stworzenie deflautowego powitania do pliku .mp3,
+\item json, odpowiadająca za zapisywanie i odczytywanie zakodowanych twarzy do plików,
+\item numpy, odpowiadająca za tworzenie zoptymalizowanych pod bibliotekę rozpoznawania twarzy macierzy,
+\item os, odpowiadająca za poruszanie się po folderach,
+\item pygame, odpowiadająca za odtworzenie powitalnego dźwięku,
+\item random, odpowiadająca za wybranie losowej ścieżki do otworzenia,
+\item sys, odpowiadająca za pobranie wartości przy uruchomieniu programu sprawdzających czy zakodować wszystkich, czy tylko jedną osobę,
+\item threading, odpowiadająca za wykorzystywanie przez program wszystkich dostępnych wątków procesora,
+\item tkinter - odpowiada za wyświetlenie obrazu.
 \end{itemize}
 
 \newpage
@@ -544,7 +544,7 @@ Wysłanie komunikatu głosowego do głośników  (Patrz listing \ref{listing:py_
 \section{Warstwa produktowa} \label{section:warstwa_produkcyjna} % wysłać skreeny z solidworksa i zdjęcia obudowy
 Prototyp to nie tylko elektronika oraz oprogramowanie. Bardzo ważnym elementem jest stworzenie całościowego produktu, do czego niezbędne jest zaprojektowanie oraz wykonanie odpowiedniej obudowy. W celu realizacji tego zadania zostały użyte poniższe programy:
 \begin{itemize}
-\item SOLIDWORKS – do tworzenia projektu obudowy (patrz rys. \ref{okno_solidworks}).
+\item SOLIDWORKS – do tworzenia projektu obudowy (patrz rys. \ref{okno_solidworks},
 \item ultimaker cura – do przygodowania wexportowanego z SOLIDWORKS pliku do postaci g-code którą czytają drukatki 3D,
 \item octoprint (+ Raspbarry pi) – do nadzorowania wydruku
 \end{itemize}
@@ -606,7 +606,7 @@ Zgodnie z \cite{prototyp3dzalety} „(...) prototypowanie z wykorzystaniem druku
 W celu wykonania projektu obudowy zostały wykorzystane oprogramowanie SOLIDWORKS w wersji 20.
 W początkowej fazie użyto oprogramowania Autodesk Fusion 360, jednak nie mogłem znaleźć w nim wielu narzędzi których się nauczyłem korzystać w SOLIDWORKS.
 
-W ramach wykonania projektu ostatecznego były wprowadzane poprawki do projektu zgodnie z zasadą PDCA\footnote{P – PLAN (zaplanuj), D – DO (wykonaj), C – CHECK (sprawdź), A – ACT (popraw).} stanowiącą podstawę zwinnego projektowania
+W ramach wykonania projektu ostatecznego były wprowadzane poprawki do projektu zgodnie z zasadą PDCA\footnote{P – PLAN (zaplanuj), D – DO (wykonaj), C – CHECK (sprawdź), A – ACT (popraw).} stanowiącą podstawę zwinnego projektowania.
 
 \begin{figure}[H]%
 \centering
