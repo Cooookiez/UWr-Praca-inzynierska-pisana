@@ -19,7 +19,7 @@
 \usepackage{lipsum}  
 \usepackage{listings}
 \usepackage[toc,page]{appendix}
-\usepackage{url}
+\usepackage[hyphens]{url}
 \usepackage{indentfirst}
 \usepackage{subcaption}
 \usepackage{minted}
@@ -27,7 +27,8 @@
 \usepackage{tabularx}
 \usepackage{float}
 \usepackage{blindtext}
-\usepackage{hyperref}
+\usepackage[hidelinks]{hyperref}
+\hypersetup{breaklinks=true}
 \usepackage[bottom]{footmisc}
 
 \definecolor{codegreen}{rgb}{0.5, 0.09, 0.09}
@@ -787,11 +788,8 @@ Stworzenie projektu inteligentnego rozpoznawania twarzy pozwala na sformułowani
 
 \newpage
 
+\Urlmuskip=1mu plus 1mu\relax
 \bibliographystyle{plain}
 \bibliography{praca_dyplomowa_krzysztof_kukiz}
 
 \end{document}
-
-
-
-
